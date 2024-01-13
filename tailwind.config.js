@@ -8,9 +8,6 @@ export default {
         hvppyPurple: 'rgb(104, 33, 164)',
         hvppyYellow: 'rgb(255, 184, 0)',
       },
-      backgroundImage: {
-        hero: "url('./src/assets/hero.jpg')",
-      },
       transformOrigin: {
         'left-center': 'left center',
       },
