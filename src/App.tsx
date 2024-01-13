@@ -5,7 +5,7 @@ function App() {
   return (
     <Layout>
       <main>
-        <div className='bg-hero w-screen h-screen bg-no-repeat bg-cover'></div>
+        <div className='bg-hero bg-center w-screen h-screen bg-no-repeat bg-cover'></div>
       </main>
     </Layout>
   );

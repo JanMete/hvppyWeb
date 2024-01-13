@@ -8,7 +8,7 @@ import { sections } from '../../utils/sections';
 
 export default function WebHeader() {
   return (
-    <header className='flex items-center text-2xl fixed top-0 w-full font-bold'>
+    <header className='flex items-center text-2xl fixed top-0 w-full font-bold text-white'>
       <div className='w-6/12'>
         <nav>
           <ul className='flex justify-around'>
@@ -47,7 +47,7 @@ export default function WebHeader() {
         >
           <FontAwesomeIcon
             icon={faFacebook}
-            style={{ color: '#000000' }}
+            style={{ color: '#FFF' }}
             className='hover:scale-125 transition-all'
           />
         </a>
@@ -58,7 +58,7 @@ export default function WebHeader() {
         >
           <FontAwesomeIcon
             icon={faInstagram}
-            style={{ color: '#000000' }}
+            style={{ color: '#FFF' }}
             className='hover:scale-125 transition-all'
           />
         </a>
@@ -69,7 +69,7 @@ export default function WebHeader() {
         >
           <FontAwesomeIcon
             icon={faTiktok}
-            style={{ color: '#000000' }}
+            style={{ color: '#FFF' }}
             className='hover:scale-125 transition-all'
           />
         </a>
