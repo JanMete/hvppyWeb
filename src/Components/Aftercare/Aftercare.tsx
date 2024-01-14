@@ -7,9 +7,9 @@ type AftercareProp = {
 };
 
 export default function Aftercare({ isMobile }: AftercareProp) {
-  const section1Ref = useRef();
-  const section2Ref = useRef();
-  const section3Ref = useRef();
+  const section1Ref = useRef<HTMLDivElement>(null);
+  const section2Ref = useRef<HTMLDivElement>(null);
+  const section3Ref = useRef<HTMLDivElement>(null);
 
   const [section1RefIsVisible, setSection1RefIsVisible] = useState(false);
   const [section2RefIsVisible, setSection2RefIsVisible] = useState(false);
@@ -20,19 +20,19 @@ export default function Aftercare({ isMobile }: AftercareProp) {
       const entry = entries[0];
       setSection1RefIsVisible(entry.isIntersecting);
     });
-    observer1.observe(section1Ref.current);
+    observer1.observe(section1Ref.current!);
 
     const observer2 = new IntersectionObserver((entries) => {
       const entry = entries[0];
       setSection2RefIsVisible(entry.isIntersecting);
     });
-    observer2.observe(section2Ref.current);
+    observer2.observe(section2Ref.current!);
 
     const observer3 = new IntersectionObserver((entries) => {
       const entry = entries[0];
       setSection3RefIsVisible(entry.isIntersecting);
     });
-    observer3.observe(section3Ref.current);
+    observer3.observe(section3Ref.current!);
 
     return () => {
       observer1.disconnect();
@@ -42,7 +42,7 @@ export default function Aftercare({ isMobile }: AftercareProp) {
   }, []);
 
   return (
-    <div className='section layer1 text-white overflow-x-hidden'>
+    <div className='section layer1 text-white overflow-x-hidden min-h-fit'>
       <h1 className='text-center text-5xl py-10'>AFTERCARE</h1>
       <div>
         {/* SECTION 1 */}
