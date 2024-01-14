@@ -1,5 +1,4 @@
 .section {
-  aspect-ratio: 900/600;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -7,4 +6,31 @@
 }
 .layer1 {
   background-image: url('../../assets/weaveSection.svg');
+}
+.image {
+  transition: all 1s;
+}
+.txt {
+  transition: all 1s;
+  transition-delay: 0.2s;
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0);
+}
+.hide {
+  filter: blur(5px);
+  transform: translate(-50%);
+  opacity: 0;
+}
+.showReverse {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0);
+}
+.hideReverse {
+  filter: blur(5px);
+  transform: translate(50%);
+  opacity: 0;
 }

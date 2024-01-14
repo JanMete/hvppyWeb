@@ -14,6 +14,9 @@ export default {
       width: {
         1.5: '2.9rem',
       },
+      spacing: {
+        '-full': '-100%',
+      },
     },
   },
   plugins: [],
