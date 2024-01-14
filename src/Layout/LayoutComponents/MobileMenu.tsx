@@ -13,9 +13,11 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
   return (
     <div
       className={`overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
-        isMobileMenuOpen ? 'opacity-1' : 'opacity-0'
+        isMobileMenuOpen ? 'w-full' : 'w-0'
       }`}
     >
+      {/* LINKS */}
+
       <ul>
         <li className='text-white p-4 text-5xl'>
           <Link to='/'>{sections[0].sectionName.toUpperCase()}</Link>
@@ -27,6 +29,10 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
           <Link to='/'>{sections[2].sectionName.toUpperCase()}</Link>
         </li>
       </ul>
+
+      {/* LINKS END */}
+
+      {/* ICONS */}
 
       <div className='flex gap-5 mt-4 ml-4 text-5xl'>
         <a
@@ -63,6 +69,8 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
           />
         </a>
       </div>
+
+      {/* ICONS END */}
     </div>
   );
 }

@@ -7,9 +7,11 @@ export default function MobileHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className={`fixed top-0 w-screen`}>
+    <header className={`fixed top-0 w-screen z-50`}>
       <nav className='flex flex-col'>
         <div className='flex justify-between items-center'>
+          {/* LOGO */}
+
           <div
             className={`w-24 h-auto ml-4 mt-3 ${
               isMobileMenuOpen ? 'text-white' : ''
@@ -23,6 +25,11 @@ export default function MobileHeader() {
               />
             </Link>
           </div>
+
+          {/* LOGO END */}
+
+          {/* MENU BUTTON */}
+
           <button
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -47,6 +54,8 @@ export default function MobileHeader() {
               }`}
             ></span>
           </button>
+
+          {/* MENU BUTTON END */}
         </div>
         <MobileMenu isMobileMenuOpen={isMobileMenuOpen} />
       </nav>
