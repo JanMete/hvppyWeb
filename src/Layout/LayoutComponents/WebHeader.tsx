@@ -8,7 +8,7 @@ import { sections } from '../../utils/sections';
 
 export default function WebHeader() {
   return (
-    <header className='flex items-center text-2xl fixed top-0 w-full font-bold text-white'>
+    <header className='flex items-center text-2xl fixed top-0 w-full font-bold text-white mt-3'>
       <div className='w-6/12'>
         <nav>
           <ul className='flex justify-around'>
