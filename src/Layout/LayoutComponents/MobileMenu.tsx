@@ -7,18 +7,20 @@ import { sections } from '../../utils/sections';
 
 type MobileMenuProps = {
   isMobileMenuOpen: boolean;
+  headerHeight: number;
 };
 
-export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
+export default function MobileMenu({
+  isMobileMenuOpen,
+  headerHeight,
+}: MobileMenuProps) {
   return (
     <div
-      className={`bg-black/60 h-screen absolute pt-32 overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
+      className={`bg-black/60 flex flex-col justify-between h-screen absolute overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
         isMobileMenuOpen ? 'w-full' : 'w-0'
       }`}
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+        paddingTop: `${headerHeight.toString()}px`,
       }}
     >
       {/* LINKS */}

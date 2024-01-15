@@ -16,7 +16,7 @@ export default function Layout({
   return (
     <>
       {isMobile ? (
-        <MobileHeader />
+        <MobileHeader scrollPosition={scrollPosition} />
       ) : (
         <WebHeader scrollPosition={scrollPosition} />
       )}

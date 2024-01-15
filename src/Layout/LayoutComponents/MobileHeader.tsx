@@ -1,21 +1,41 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import LOGO from '../../assets/homeLogo.jpg';
 import MobileMenu from './MobileMenu';
 
-export default function MobileHeader() {
+type MobileHeaderProp = {
+  scrollPosition: number;
+};
+
+export default function MobileHeader({ scrollPosition }: MobileHeaderProp) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrollExceededHeader, setScrollExceededHeader] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const mobileHeaderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mobileHeaderRef.current) {
+      setHeaderHeight(mobileHeaderRef.current.getBoundingClientRect().height);
+      if (
+        scrollPosition > mobileHeaderRef.current.getBoundingClientRect().height
+      ) {
+        setScrollExceededHeader(true);
+      } else {
+        setScrollExceededHeader(false);
+      }
+    }
+  }, [scrollPosition]);
 
   return (
     <header className={`fixed top-0 w-screen z-50`}>
-      <nav className='flex flex-col'>
+      <nav ref={mobileHeaderRef} className='flex flex-col'>
         <div className='flex justify-between items-center'>
           {/* LOGO */}
 
           <div
-            className={`w-24 h-auto ml-4 mt-3 z-50 ${
+            className={`h-auto ml-4 mt-3 z-50 transition-all duration-300 ${
               isMobileMenuOpen ? 'text-white' : ''
-            }`}
+            } ${scrollExceededHeader ? 'w-16' : 'w-24'}`}
           >
             <Link to='/'>
               <img
@@ -57,7 +77,10 @@ export default function MobileHeader() {
 
           {/* MENU BUTTON END */}
         </div>
-        <MobileMenu isMobileMenuOpen={isMobileMenuOpen} />
+        <MobileMenu
+          headerHeight={headerHeight}
+          isMobileMenuOpen={isMobileMenuOpen}
+        />
       </nav>
     </header>
   );
