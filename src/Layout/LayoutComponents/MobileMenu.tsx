@@ -12,9 +12,14 @@ type MobileMenuProps = {
 export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
   return (
     <div
-      className={`overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
+      className={`bg-black/60 h-screen absolute pt-32 overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
         isMobileMenuOpen ? 'w-full' : 'w-0'
       }`}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}
     >
       {/* LINKS */}
 
@@ -30,8 +35,6 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
         </li>
       </ul>
 
-      {/* LINKS END */}
-
       {/* ICONS */}
 
       <div className='flex gap-5 mt-4 ml-4 text-5xl'>
@@ -43,7 +46,7 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
           <FontAwesomeIcon
             icon={faFacebook}
             style={{ color: '#FFF' }}
-            className='hover:scale-125 transition-all'
+            className='transition-all'
           />
         </a>
         <a
@@ -54,7 +57,7 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
           <FontAwesomeIcon
             icon={faInstagram}
             style={{ color: '#FFF' }}
-            className='hover:scale-125 transition-all'
+            className='transition-all'
           />
         </a>
         <a
@@ -65,7 +68,7 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
           <FontAwesomeIcon
             icon={faTiktok}
             style={{ color: '#FFF' }}
-            className='hover:scale-125 transition-all'
+            className='transition-all'
           />
         </a>
       </div>

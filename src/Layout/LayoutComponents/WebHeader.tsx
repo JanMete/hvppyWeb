@@ -5,13 +5,37 @@ import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { NavLink, Link } from 'react-router-dom';
 import LOGO from '../../assets/homeLogo.jpg';
 import { sections } from '../../utils/sections';
+import { useEffect, useRef, useState } from 'react';
 
-export default function WebHeader() {
+type webHeaderProp = {
+  scrollPosition: number;
+};
+
+export default function WebHeader({ scrollPosition }: webHeaderProp) {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [scrollExceededHeader, setScrollExceededHeader] = useState(false);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      if (scrollPosition > headerRef.current.getBoundingClientRect().height) {
+        setScrollExceededHeader(true);
+      } else {
+        setScrollExceededHeader(false);
+      }
+    }
+  }, [scrollPosition]);
+
   return (
-    <header className='flex items-center text-2xl fixed top-0 w-full font-bold text-white mt-3 z-50'>
-      <div className='w-6/12'>
-        <nav>
-          <ul className='flex justify-around'>
+    <header
+      ref={headerRef}
+      className={`flex text-2xl fixed top-0 w-full font-bold text-white z-50 transition-all duration-300 ${
+        scrollExceededHeader ? 'bg-black/50' : 'bg-transparent'
+      }`}
+    >
+      {/* FIRST PART OF NAVIGATION */}
+      <div className='w-6/12 py-5 flex items-center'>
+        <nav className='w-full'>
+          <ul className='w-full flex justify-around'>
             <li>
               <NavLink to='/'>{sections[0].sectionName.toUpperCase()}</NavLink>
             </li>
@@ -21,58 +45,71 @@ export default function WebHeader() {
           </ul>
         </nav>
       </div>
+
+      {/* LOGO */}
       <div>
         <Link to='/'>
           <img
             src={LOGO}
             alt='Logo portrait of artist'
-            className='w-32 h-auto rounded-full'
+            className={`w-20 h-auto rounded-full transition-all duration-300 ${
+              scrollExceededHeader ? '' : 'scale-150 mt-7'
+            }`}
           />
         </Link>
       </div>
-      <div className='w-6/12'>
-        <nav className='flex justify-around'>
-          <ul>
+
+      {/* SECOND PART OF NAVIGATION */}
+      <div className='w-6/12 py-5 flex'>
+        <nav className='flex justify-between w-full'>
+          <ul className='flex justify-around w-full items-center'>
             <li>
               <NavLink to='/'>{sections[2].sectionName.toUpperCase()}</NavLink>
             </li>
           </ul>
+          {/* SOCIAL LINKS */}
+          <ul className='mr-5 flex gap-3 items-center'>
+            <li>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.facebook.com/hvppytattoo'
+              >
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  style={{ color: '#FFF' }}
+                  className='hover:scale-125 transition-all'
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.instagram.com/hvppy_tattoo/'
+              >
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  style={{ color: '#FFF' }}
+                  className='hover:scale-125 transition-all'
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
+              >
+                <FontAwesomeIcon
+                  icon={faTiktok}
+                  style={{ color: '#FFF' }}
+                  className='hover:scale-125 transition-all'
+                />
+              </a>
+            </li>
+          </ul>
         </nav>
-      </div>
-      <div className='flex flex-col gap-1 mr-6'>
-        <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://www.facebook.com/hvppytattoo'
-        >
-          <FontAwesomeIcon
-            icon={faFacebook}
-            style={{ color: '#FFF' }}
-            className='hover:scale-125 transition-all'
-          />
-        </a>
-        <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://www.instagram.com/hvppy_tattoo/'
-        >
-          <FontAwesomeIcon
-            icon={faInstagram}
-            style={{ color: '#FFF' }}
-            className='hover:scale-125 transition-all'
-          />
-        </a>
-        <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
-        >
-          <FontAwesomeIcon
-            icon={faTiktok}
-            style={{ color: '#FFF' }}
-            className='hover:scale-125 transition-all'
-          />
-        </a>
       </div>
     </header>
   );

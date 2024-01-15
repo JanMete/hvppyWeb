@@ -4,10 +4,16 @@ import Hero from './Components/Hero';
 import Layout from './Layout/Layout';
 
 function App() {
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
     window.innerHeight,
   ]);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -16,14 +22,17 @@ function App() {
 
     window.addEventListener('resize', handleWindowResize);
 
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
       window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const isMobile = windowSize[0] < 640;
   return (
-    <Layout isMobile={isMobile}>
+    <Layout scrollPosition={scrollPosition} isMobile={isMobile}>
       <main>
         <Hero />
         <Aftercare isMobile={isMobile} />

@@ -13,7 +13,7 @@ export default function MobileHeader() {
           {/* LOGO */}
 
           <div
-            className={`w-24 h-auto ml-4 mt-3 ${
+            className={`w-24 h-auto ml-4 mt-3 z-50 ${
               isMobileMenuOpen ? 'text-white' : ''
             }`}
           >
@@ -34,7 +34,7 @@ export default function MobileHeader() {
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className={`flex flex-col justify-between w-1.5 h-9 mr-5 ${
+            className={`flex flex-col justify-between w-1.5 h-9 mr-5 z-50 ${
               isMobileMenuOpen ? 'text-white' : ''
             }`}
           >
