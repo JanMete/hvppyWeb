@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Aftercare from './Components/Aftercare/Aftercare';
-import Hero from './Components/Hero';
+import Hero from './Components/Hero/Hero';
 import Layout from './Layout/Layout';
 
 function App() {
@@ -33,10 +33,8 @@ function App() {
   const isMobile = windowSize[0] < 640;
   return (
     <Layout scrollPosition={scrollPosition} isMobile={isMobile}>
-      <main>
-        <Hero />
-        <Aftercare isMobile={isMobile} />
-      </main>
+      <Hero />
+      <Aftercare isMobile={isMobile} />
     </Layout>
   );
 }

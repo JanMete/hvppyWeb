@@ -34,12 +34,12 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className=' w-screen overflow-hidden relative bg-black flex flex-col items-center justify-center text-white'>
+    <footer className='flex justify-center gap-8 py-10 w-screen items-center flex-col bg-black text-white'>
       <div>
         {/* ICONS */}
         <div
           ref={iconsRef}
-          className={`flex gap-5 text-5xl p-10 ${
+          className={`flex gap-5 text-5xl ${
             iconsRefIsVisible ? 'showIconTop' : 'hideIconTop'
           }`}
         >
@@ -77,16 +77,16 @@ export default function Footer() {
             />
           </a>
         </div>
+        {/* ICONS END */}
       </div>
-      {/* ICONS END */}
       {/* SECTION LINKS */}
       <div
         ref={sectionsRef}
-        className={` ${
+        className={`flex flex-col ${
           sectionsRefIsVisible ? 'showIconBottom' : 'hideIconBottom'
         }`}
       >
-        <ul className='flex flex-row gap-6 pb-10'>
+        <ul className='flex flex-row gap-5'>
           <li>
             <Link to='/'>{sections[0].sectionName}</Link>
           </li>

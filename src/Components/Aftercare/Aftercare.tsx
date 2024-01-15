@@ -42,14 +42,14 @@ export default function Aftercare({ isMobile }: AftercareProp) {
   }, []);
 
   return (
-    <div className='section layer1 text-white overflow-x-hidden min-h-fit w-screen'>
+    <div className='section layer1 text-white overflow-x-hidden min-h-fit w-screen pr-4'>
       <h1 className='text-center text-5xl py-10'>AFTERCARE</h1>
       <div>
         {/* SECTION 1 */}
 
         <section
           ref={section1Ref}
-          className={` flex justify-center gap-14 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen`}
+          className={` flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen`}
         >
           <div
             className={`image w-1/2 max-sm:w-full h-auto ${
@@ -82,7 +82,7 @@ export default function Aftercare({ isMobile }: AftercareProp) {
         {isMobile ? (
           <section
             ref={section2Ref}
-            className='flex justify-center gap-14 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14'
+            className='flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen'
           >
             <div
               className={`image w-1/2 max-sm:w-full h-auto ${
@@ -114,7 +114,7 @@ export default function Aftercare({ isMobile }: AftercareProp) {
         ) : (
           <section
             ref={section2Ref}
-            className='flex justify-center gap-14 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14'
+            className='flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen'
           >
             <div
               className={`txt w-1/2 max-sm:w-full ${
@@ -149,7 +149,7 @@ export default function Aftercare({ isMobile }: AftercareProp) {
 
         <section
           ref={section3Ref}
-          className={` flex justify-center gap-14 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14`}
+          className={` flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen`}
         >
           <div
             className={`image w-1/2 max-sm:w-full h-auto ${
