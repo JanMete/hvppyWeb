@@ -8,8 +8,8 @@ import { useEffect, useRef, useState } from 'react';
 import './footer.css';
 
 export default function Footer() {
-  const iconsRef = useRef<HTMLLinkElement>(null);
-  const sectionsRef = useRef<HTMLLinkElement>(null);
+  const iconsRef = useRef<HTMLDivElement>(null);
+  const sectionsRef = useRef<HTMLDivElement>(null);
 
   const [iconsRefIsVisible, setIconsRefIsVisible] = useState(false);
   const [sectionsRefIsVisible, setSectionsRefIsVisible] = useState(false);
