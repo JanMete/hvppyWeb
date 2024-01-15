@@ -4,26 +4,36 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { sections } from '../../utils/sections';
+import LOGO from '../../assets/homeLogo.jpg';
 
 type MobileMenuProps = {
   isMobileMenuOpen: boolean;
-  headerHeight: number;
 };
 
-export default function MobileMenu({
-  isMobileMenuOpen,
-  headerHeight,
-}: MobileMenuProps) {
+export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
   return (
     <div
-      className={`bg-black/60 flex flex-col justify-between absolute overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
-        isMobileMenuOpen ? 'w-full' : 'w-0'
-      }`}
+      className={`bg-black/60 flex flex-col absolute overflow-hidden transition-all duration-300 ease-in-out pb-5`}
       style={{
-        paddingTop: `${headerHeight.toString()}px`,
         height: '100dvh',
+        opacity: isMobileMenuOpen ? 1 : 0,
+        width: isMobileMenuOpen ? '100dvw' : '0',
       }}
     >
+      {/* LOGO */}
+
+      <div
+        className={`h-auto ml-3 mt-3 ${isMobileMenuOpen ? 'text-white' : ''}`}
+      >
+        <Link to='/'>
+          <img
+            src={LOGO}
+            alt='Logo portrait of artist'
+            className='rounded-full w-20'
+          />
+        </Link>
+      </div>
+
       {/* LINKS */}
 
       <ul>
@@ -37,10 +47,8 @@ export default function MobileMenu({
           <Link to='/'>{sections[2].sectionName.toUpperCase()}</Link>
         </li>
       </ul>
-
       {/* ICONS */}
-
-      <div className='flex gap-5 mt-4 ml-4 text-5xl'>
+      <div className='flex mt-auto gap-5  ml-4 text-5xl'>
         <a
           target='_blank'
           rel='noopener noreferrer'
@@ -75,7 +83,6 @@ export default function MobileMenu({
           />
         </a>
       </div>
-
       {/* ICONS END */}
     </div>
   );
