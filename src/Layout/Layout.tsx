@@ -1,6 +1,6 @@
 import WebHeader from './LayoutComponents/WebHeader';
 import MobileHeader from './LayoutComponents/MobileHeader';
-import Footer from './LayoutComponents/Footer';
+import Footer from './LayoutComponents/Footer/Footer';
 
 type LayoutProp = {
   children: React.ReactNode;

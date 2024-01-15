@@ -42,7 +42,7 @@ export default function Aftercare({ isMobile }: AftercareProp) {
   }, []);
 
   return (
-    <div className='section layer1 text-white overflow-x-hidden min-h-fit'>
+    <div className='section layer1 text-white overflow-x-hidden min-h-fit w-screen'>
       <h1 className='text-center text-5xl py-10'>AFTERCARE</h1>
       <div>
         {/* SECTION 1 */}

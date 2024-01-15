@@ -1,17 +1,56 @@
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
-import { sections } from '../../utils/sections';
+import { sections } from '../../../utils/sections';
+import { useEffect, useRef, useState } from 'react';
+import './footer.css';
 
 export default function Footer() {
+  const fbRef = useRef<HTMLLinkElement>(null);
+  const igRef = useRef<HTMLLinkElement>(null);
+  const ttRef = useRef<HTMLLinkElement>(null);
+
+  const [fbRefIsVisible, setFbRefIsVisible] = useState(false);
+  const [igRefIsVisible, setIgRefIsVisible] = useState(false);
+  const [ttRefIsVisible, setTtRefIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer1 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setFbRefIsVisible(entry.isIntersecting);
+    });
+    observer1.observe(fbRef.current!);
+
+    const observer2 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIgRefIsVisible(entry.isIntersecting);
+    });
+    observer2.observe(igRef.current!);
+
+    const observer3 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setTtRefIsVisible(entry.isIntersecting);
+    });
+    observer3.observe(ttRef.current!);
+
+    return () => {
+      observer1.disconnect();
+      observer2.disconnect();
+      observer3.disconnect();
+    };
+  }, []);
+
   return (
     <footer className='relative bg-black flex flex-col items-center justify-center text-white'>
       {/* ICONS */}
       <div>
         <div className='flex gap-5 text-5xl p-10'>
           <a
+            className={`${fbRefIsVisible ? 'showIcon' : 'hideIcon'}`}
+            ref={fbRef}
             target='_blank'
             rel='noopener noreferrer'
             href='https://www.facebook.com/hvppytattoo'
@@ -19,10 +58,12 @@ export default function Footer() {
             <FontAwesomeIcon
               icon={faFacebook}
               style={{ color: '#FFF' }}
-              className='hover:scale-125 transition-all'
+              className={`hover:scale-125 transition-all`}
             />
           </a>
           <a
+            className={`${igRefIsVisible ? 'showIcon' : 'hideIcon'}`}
+            ref={igRef}
             target='_blank'
             rel='noopener noreferrer'
             href='https://www.instagram.com/hvppy_tattoo/'
@@ -34,6 +75,8 @@ export default function Footer() {
             />
           </a>
           <a
+            className={`${ttRefIsVisible ? 'showIcon' : 'hideIcon'}`}
+            ref={ttRef}
             target='_blank'
             rel='noopener noreferrer'
             href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'

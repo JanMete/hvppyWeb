@@ -52,7 +52,7 @@ export default function WebHeader({ scrollPosition }: webHeaderProp) {
           <img
             src={LOGO}
             alt='Logo portrait of artist'
-            className={`w-20 h-auto rounded-full transition-all duration-300 ${
+            className={`w-16 h-auto rounded-full transition-all duration-300 ${
               scrollExceededHeader ? '' : 'scale-150 mt-7'
             }`}
           />
