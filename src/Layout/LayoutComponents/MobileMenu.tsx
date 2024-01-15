@@ -16,11 +16,12 @@ export default function MobileMenu({
 }: MobileMenuProps) {
   return (
     <div
-      className={`bg-black/60 flex flex-col justify-between h-screen absolute overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
+      className={`bg-black/60 flex flex-col justify-between absolute overflow-hidden transition-all duration-300 ease-in-out pb-5 ${
         isMobileMenuOpen ? 'w-full' : 'w-0'
       }`}
       style={{
         paddingTop: `${headerHeight.toString()}px`,
+        height: '100dvh',
       }}
     >
       {/* LINKS */}
