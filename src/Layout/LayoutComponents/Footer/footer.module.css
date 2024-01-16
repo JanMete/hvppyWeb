@@ -1,0 +1,51 @@
+.footerContainer {
+  padding: 2.5rem 0;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.iconsContainer {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 3rem;
+}
+.icon {
+  transition: transform 0.2s ease-in-out;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+.showIconTop {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 1s;
+}
+.hideIconTop {
+  filter: blur(5px);
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.sectionLinksContaner {
+  display: flex;
+  flex-direction: column;
+}
+.showIconBottom {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 1s;
+}
+.hideIconBottom {
+  filter: blur(5px);
+  transform: translateY(50%);
+  opacity: 0;
+}
+.linksList {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}

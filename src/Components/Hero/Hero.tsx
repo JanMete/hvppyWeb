@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import './hero.css';
+import styles from './hero.module.css';
 
 export default function Hero() {
   const heroTextRef = useRef<HTMLDivElement>(null);
@@ -14,16 +14,10 @@ export default function Hero() {
   });
 
   return (
-    <div
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1552627019-947c3789ffb5?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-      }}
-      className='bg-center w-screen h-screen bg-no-repeat bg-cover flex items-center'
-    >
+    <div className={styles.mainContainer}>
       <div
         ref={heroTextRef}
-        className={`heroContainer text-white w-1/3 ml-44 bg-white/15 px-10 py-5 rounded-3xl max-sm:w-full max-sm:px-2  max-sm:mx-4 mt-36 ${
+        className={`${styles.heroContainer} ${
           isHeroTextRefVisible ? 'opacity-1' : 'opacity-0'
         }`}
       >

@@ -1,4 +1,4 @@
-import './aftercare.css';
+import styles from './aftercare.module.css';
 import { useEffect, useRef, useState } from 'react';
 import aftercare1 from '../../assets/aftercare1.jpg';
 
@@ -42,28 +42,25 @@ export default function Aftercare({ isMobile }: AftercareProp) {
   }, []);
 
   return (
-    <div className='section layer1 text-white overflow-x-hidden min-h-fit w-screen pr-4'>
-      <h1 className='text-center text-5xl py-10'>AFTERCARE</h1>
+    <div className={styles.aftercareContainer}>
+      <h1 className={styles.aftercareHeading}>AFTERCARE</h1>
       <div>
         {/* SECTION 1 */}
 
-        <section
-          ref={section1Ref}
-          className={` flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen`}
-        >
+        <section ref={section1Ref} className={styles.section}>
           <div
-            className={`image w-1/2 max-sm:w-full h-auto ${
-              section1RefIsVisible ? 'show' : 'hide'
+            className={`${styles.imageContainer} ${
+              section1RefIsVisible ? styles.show : styles.hide
             }`}
           >
             <img src={aftercare1} alt='' />
           </div>
           <div
-            className={`txt w-1/2 max-sm:w-full ${
-              section1RefIsVisible ? 'show' : 'hide'
+            className={`${styles.txtContainer} ${
+              section1RefIsVisible ? styles.show : styles.hide
             }`}
           >
-            <h1 className='font-bold text-3xl pb-2'>Lorem ipsum dolor sit.</h1>
+            <h2>Lorem ipsum dolor sit.</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
@@ -80,25 +77,20 @@ export default function Aftercare({ isMobile }: AftercareProp) {
         {/* SECTION 2 */}
 
         {isMobile ? (
-          <section
-            ref={section2Ref}
-            className='flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen'
-          >
+          <section ref={section2Ref} className={styles.section}>
             <div
-              className={`image w-1/2 max-sm:w-full h-auto ${
-                section2RefIsVisible ? 'showReverse' : 'hideReverse'
+              className={`${styles.imageContainer} ${
+                section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
               <img src={aftercare1} alt='' />
             </div>
             <div
-              className={`txt w-1/2 max-sm:w-full ${
-                section2RefIsVisible ? 'showReverse' : 'hideReverse'
+              className={`${styles.txtContainer} ${
+                section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
-              <h1 className='font-bold text-3xl pb-2'>
-                Lorem ipsum dolor sit.
-              </h1>
+              <h2>Lorem ipsum dolor sit.</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
@@ -112,18 +104,13 @@ export default function Aftercare({ isMobile }: AftercareProp) {
             </div>
           </section>
         ) : (
-          <section
-            ref={section2Ref}
-            className='flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen'
-          >
+          <section ref={section2Ref} className={styles.section}>
             <div
-              className={`txt w-1/2 max-sm:w-full ${
-                section2RefIsVisible ? 'showReverse' : 'hideReverse'
+              className={`${styles.txtContainer} ${
+                section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
-              <h1 className='font-bold text-3xl pb-2'>
-                Lorem ipsum dolor sit.
-              </h1>
+              <h2>Lorem ipsum dolor sit.</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
@@ -136,8 +123,8 @@ export default function Aftercare({ isMobile }: AftercareProp) {
               </p>
             </div>
             <div
-              className={`image w-1/2 max-sm:w-full h-auto ${
-                section2RefIsVisible ? 'showReverse' : 'hideReverse'
+              className={`${styles.imageContainer} ${
+                section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
               <img src={aftercare1} alt='' />
@@ -147,23 +134,20 @@ export default function Aftercare({ isMobile }: AftercareProp) {
 
         {/* SECTION 3 */}
 
-        <section
-          ref={section3Ref}
-          className={` flex justify-center gap-20 px-40 pb-10 max-sm:px-4 max-sm:flex-col max-sm:gap-3 max-sm:pb-14 max-sm:w-screen`}
-        >
+        <section ref={section3Ref} className={styles.section}>
           <div
-            className={`image w-1/2 max-sm:w-full h-auto ${
-              section3RefIsVisible ? 'show' : 'hide'
+            className={`${styles.imageContainer} ${
+              section3RefIsVisible ? styles.show : styles.hide
             }`}
           >
             <img src={aftercare1} alt='' />
           </div>
           <div
-            className={`txt w-1/2 max-sm:w-full ${
-              section3RefIsVisible ? 'show' : 'hide'
+            className={`${styles.txtContainer} ${
+              section3RefIsVisible ? styles.show : styles.hide
             }`}
           >
-            <h1 className='font-bold text-3xl pb-2'>Lorem ipsum dolor sit.</h1>
+            <h2>Lorem ipsum dolor sit.</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis

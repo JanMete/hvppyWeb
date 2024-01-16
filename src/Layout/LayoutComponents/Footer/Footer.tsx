@@ -5,7 +5,7 @@ import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { sections } from '../../../utils/sections';
 import { useEffect, useRef, useState } from 'react';
-import './footer.css';
+import styles from './footer.module.css';
 
 export default function Footer() {
   const iconsRef = useRef<HTMLDivElement>(null);
@@ -34,56 +34,44 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className='flex justify-center gap-8 py-10 w-screen items-center flex-col bg-black text-white'>
-      <div>
-        {/* ICONS */}
-        <div
-          ref={iconsRef}
-          className={`flex gap-5 text-5xl ${
-            iconsRefIsVisible ? 'showIconTop' : 'hideIconTop'
-          }`}
+    <footer className={styles.footerContainer}>
+      {/* ICONS */}
+
+      <div
+        ref={iconsRef}
+        className={`${styles.iconsContainer} ${
+          iconsRefIsVisible ? styles.showIconTop : styles.hideIconTop
+        }`}
+      >
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://www.facebook.com/hvppytattoo'
         >
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://www.facebook.com/hvppytattoo'
-          >
-            <FontAwesomeIcon
-              icon={faFacebook}
-              style={{ color: '#FFF' }}
-              className={`hover:scale-125 transition-all`}
-            />
-          </a>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://www.instagram.com/hvppy_tattoo/'
-          >
-            <FontAwesomeIcon
-              icon={faInstagram}
-              style={{ color: '#FFF' }}
-              className='hover:scale-125 transition-all'
-            />
-          </a>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
-          >
-            <FontAwesomeIcon
-              icon={faTiktok}
-              style={{ color: '#FFF' }}
-              className='hover:scale-125 transition-all'
-            />
-          </a>
-        </div>
-        {/* ICONS END */}
+          <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
+        </a>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://www.instagram.com/hvppy_tattoo/'
+        >
+          <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+        </a>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
+        >
+          <FontAwesomeIcon icon={faTiktok} className={styles.icon} />
+        </a>
       </div>
+      {/* ICONS END */}
+
       {/* SECTION LINKS */}
       <div
         ref={sectionsRef}
-        className={`flex flex-col ${
-          sectionsRefIsVisible ? 'showIconBottom' : 'hideIconBottom'
+        className={`${styles.sectionLinksContaner} ${
+          sectionsRefIsVisible ? styles.showIconBottom : styles.hideIconBottom
         }`}
       >
         <ul className='flex flex-row gap-5'>
@@ -98,7 +86,6 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      {/* SECTIONS LINKS END */}
     </footer>
   );
 }
