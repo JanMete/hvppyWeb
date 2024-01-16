@@ -1,6 +1,6 @@
 import styles from './aftercare.module.css';
 import { useEffect, useRef, useState } from 'react';
-import aftercare1 from '../../assets/aftercare1.jpg';
+import aftercare1 from '../../../assets/aftercare1.jpg';
 
 type AftercareProp = {
   isMobile: boolean;

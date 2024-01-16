@@ -1,12 +1,24 @@
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import Layout from './Layout/Layout.tsx';
+import MainPage from './Components/MainPage/MainPage.tsx';
+import Contact from './Components/Contact/Contact.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Layout />,
+    children: [
+      {
+        path: '',
+        element: <MainPage />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+    ],
   },
 ]);
 

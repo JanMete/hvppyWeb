@@ -6,9 +6,8 @@
   position: relative;
   z-index: 2;
   padding: 4rem 0;
-  background-image: url('../../assets/atributesSection2.svg');
-  background-attachment: fixed;
-  background-position: center;
+  background-image: url('../../../assets/atributesSection2.svg');
+  background-position: center top -56px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -39,5 +38,8 @@
   .atributesContainer {
     flex-direction: column;
     gap: 3rem;
+    background-image: url('../../../assets/atributesSectionMobile.svg');
+    background-position: center bottom;
+    padding-bottom: 7rem;
   }
 }

@@ -1,7 +1,7 @@
 .footerContainer {
   position: relative;
   padding: 2.5rem 0;
-  background-color: black;
+  background-color: var(--hvppyPurple);
   display: flex;
   flex-direction: column;
   justify-content: center;

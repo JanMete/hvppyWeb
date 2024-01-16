@@ -1,6 +1,6 @@
 import styles from './atributes.module.css';
-import ATRIBUTEICON1 from '../../assets/atributeIcon1.png';
-import ATRIBUTEICON2 from '../../assets/atributeIcon2.png';
+import ATRIBUTEICON1 from '../../../assets/atributeIcon1.png';
+import ATRIBUTEICON2 from '../../../assets/atributeIcon2.png';
 
 export default function Atributes() {
   return (
