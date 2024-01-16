@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Aftercare from './Components/Aftercare/Aftercare';
 import Hero from './Components/Hero/Hero';
 import Layout from './Layout/Layout';
+import Atributes from './Components/Atributes/Atributes';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -34,6 +35,7 @@ function App() {
   return (
     <Layout scrollPosition={scrollPosition} isMobile={isMobile}>
       <Hero />
+      <Atributes />
       <Aftercare isMobile={isMobile} />
     </Layout>
   );

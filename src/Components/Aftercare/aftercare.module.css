@@ -6,6 +6,7 @@
   background-size: cover;
   overflow: hidden;
   padding-bottom: 2rem;
+  position: relative;
 }
 .aftercareHeading {
   text-align: center;
