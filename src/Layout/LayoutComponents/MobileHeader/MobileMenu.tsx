@@ -48,21 +48,21 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
           rel='noopener noreferrer'
           href='https://www.facebook.com/hvppytattoo'
         >
-          <FontAwesomeIcon icon={faFacebook} style={{ color: '#FFF' }} />
+          <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a
           target='_blank'
           rel='noopener noreferrer'
           href='https://www.instagram.com/hvppy_tattoo/'
         >
-          <FontAwesomeIcon icon={faInstagram} style={{ color: '#FFF' }} />
+          <FontAwesomeIcon icon={faInstagram} />
         </a>
         <a
           target='_blank'
           rel='noopener noreferrer'
           href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
         >
-          <FontAwesomeIcon icon={faTiktok} style={{ color: '#FFF' }} />
+          <FontAwesomeIcon icon={faTiktok} />
         </a>
       </div>
 

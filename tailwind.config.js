@@ -8,15 +8,6 @@ export default {
         hvppyPurple: 'rgb(104, 33, 164)',
         hvppyYellow: 'rgb(255, 184, 0)',
       },
-      transformOrigin: {
-        'left-center': 'left center',
-      },
-      width: {
-        1.5: '2.9rem',
-      },
-      spacing: {
-        '-full': '-100%',
-      },
     },
   },
   plugins: [],

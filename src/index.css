@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+  --hvppyGreen: rgb(26, 196, 51);
+  --hvppyPurple: rgb(104, 33, 164);
+  --hvppyYellow: rgb(255, 184, 0);
+}
 * {
   margin: 0;
   padding: 0;
