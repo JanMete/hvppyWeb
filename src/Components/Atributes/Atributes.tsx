@@ -21,7 +21,7 @@ export default function Atributes() {
       </section>
       <section className={styles.spanSection}>
         <span>GREAT</span>
-        <span>Quality</span>
+        <span>QUALITY</span>
       </section>
     </article>
   );
