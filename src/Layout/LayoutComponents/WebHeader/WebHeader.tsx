@@ -54,7 +54,9 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
 
         {/* SECOND PART OF NAVIGATION */}
         <div>
-          <NavLink to='/'>{sections[2].sectionName.toUpperCase()}</NavLink>
+          <NavLink to='/contact'>
+            {sections[2].sectionName.toUpperCase()}
+          </NavLink>
         </div>
         {/* SOCIAL LINKS */}
         <div>

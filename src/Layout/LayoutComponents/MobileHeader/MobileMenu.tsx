@@ -9,9 +9,13 @@ import styles from './mobileHeader.module.css';
 
 type MobileMenuProps = {
   isMobileMenuOpen: boolean;
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
+export default function MobileMenu({
+  isMobileMenuOpen,
+  setIsMobileMenuOpen,
+}: MobileMenuProps) {
   return (
     <div
       className={`${styles.mobileMenuContainer} ${
@@ -21,7 +25,7 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
       {/* LOGO */}
 
       <div className={`${styles.logoContainer}`}>
-        <Link to='/'>
+        <Link onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} to='/'>
           <img src={LOGO} alt='Logo portrait of artist' />
         </Link>
       </div>
@@ -30,13 +34,22 @@ export default function MobileMenu({ isMobileMenuOpen }: MobileMenuProps) {
 
       <ul>
         <li className={styles.link}>
-          <Link to='/'>{sections[0].sectionName.toUpperCase()}</Link>
+          <Link onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} to='/'>
+            {sections[0].sectionName.toUpperCase()}
+          </Link>
         </li>
         <li className={styles.link}>
-          <Link to='/'>{sections[1].sectionName.toUpperCase()}</Link>
+          <Link onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} to='/'>
+            {sections[1].sectionName.toUpperCase()}
+          </Link>
         </li>
         <li className={styles.link}>
-          <Link to='/'>{sections[2].sectionName.toUpperCase()}</Link>
+          <Link
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            to='/contact'
+          >
+            {sections[2].sectionName.toUpperCase()}
+          </Link>
         </li>
       </ul>
 

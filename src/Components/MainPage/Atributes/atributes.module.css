@@ -1,20 +1,29 @@
 .atributesContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8rem;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   padding: 4rem 0;
   background-image: url('../../../assets/atributesSection2.svg');
   background-position: center top -56px;
   background-size: cover;
   background-repeat: no-repeat;
 }
+.atributesContentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+.show {
+  opacity: 1;
+}
+.hide {
+  opacity: 0;
+}
 .image {
   height: 10rem;
 }
 .spanSection {
+  transition: all 1s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,10 +45,12 @@
 
 @media screen and (max-width: 640px) {
   .atributesContainer {
+    background-image: url('../../../assets/atributesSectionMobile2.svg');
+    background-position: center bottom;
+  }
+  .atributesContentContainer {
+    padding-bottom: 7rem;
     flex-direction: column;
     gap: 3rem;
-    background-image: url('../../../assets/atributesSectionMobile.svg');
-    background-position: center bottom;
-    padding-bottom: 7rem;
   }
 }

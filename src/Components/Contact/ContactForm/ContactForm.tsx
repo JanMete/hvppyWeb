@@ -27,14 +27,36 @@ export default function ContactForm() {
 
   return (
     <div className={styles.contactFormMainContainer}>
+      <div className={styles.formHeading}>
+        <div className={styles.formHeadingBottomContainer}>
+          <h1>Text me!</h1>
+          <p>
+            <a href='mailto:someone@example.com'>TATTOOHVPPY@GMAIL.COM</a>
+          </p>
+        </div>
+      </div>
       <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type='text' name='user_name' />
-        <label>Email</label>
-        <input type='email' name='user_email' />
-        <label>Message</label>
-        <textarea name='message' />
-        <input type='submit' value='Send' />
+        <div className={styles.topFormContainer}>
+          <input
+            className={styles.textInput}
+            type='text'
+            name='user_name'
+            placeholder='NAME'
+          />
+          <input
+            className={styles.textInput}
+            type='email'
+            name='user_email'
+            placeholder='EMAIL'
+          />
+        </div>
+        <div className={styles.textSubmit}>
+          <textarea
+            name='message'
+            placeholder='What kind of tattoo would you like?'
+          />
+          <input className={styles.submitInput} type='submit' value='Send' />
+        </div>
       </form>
     </div>
   );

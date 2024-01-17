@@ -4,6 +4,7 @@ import MobileMenu from './MobileMenu';
 
 export default function MobileHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  console.log(isMobileMenuOpen);
 
   return (
     <header>
@@ -36,7 +37,10 @@ export default function MobileHeader() {
         </div>
         {/* MENU BUTTON END */}
 
-        <MobileMenu isMobileMenuOpen={isMobileMenuOpen} />
+        <MobileMenu
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+          isMobileMenuOpen={isMobileMenuOpen}
+        />
       </nav>
     </header>
   );

@@ -1,28 +1,111 @@
+import { useRef, useState, useEffect } from 'react';
 import styles from './atributes.module.css';
 import ATRIBUTEICON1 from '../../../assets/atributeIcon1.png';
 import ATRIBUTEICON2 from '../../../assets/atributeIcon2.png';
 
 export default function Atributes() {
+  const [isSection1Visible, setIsSection1Visible] = useState(false);
+  const [isSection2Visible, setIsSection2Visible] = useState(false);
+  const [isSection3Visible, setIsSection3Visible] = useState(false);
+  const [isSection4Visible, setIsSection4Visible] = useState(false);
+  const [isSection5Visible, setIsSection5Visible] = useState(false);
+  const section1 = useRef(null);
+  const section2 = useRef(null);
+  const section3 = useRef(null);
+  const section4 = useRef(null);
+  const section5 = useRef(null);
+
+  useEffect(() => {
+    const observer1 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsSection1Visible(entry.isIntersecting);
+    });
+    observer1.observe(section1.current!);
+
+    const observer2 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsSection2Visible(entry.isIntersecting);
+    });
+    observer2.observe(section2.current!);
+
+    const observer3 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsSection3Visible(entry.isIntersecting);
+    });
+    observer3.observe(section3.current!);
+
+    const observer4 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsSection4Visible(entry.isIntersecting);
+    });
+    observer4.observe(section4.current!);
+
+    const observer5 = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsSection5Visible(entry.isIntersecting);
+    });
+    observer5.observe(section5.current!);
+
+    return () => {
+      observer1.disconnect();
+      observer2.disconnect();
+      observer3.disconnect();
+      observer4.disconnect();
+      observer5.disconnect();
+    };
+  }, []);
+
   return (
     <article className={styles.atributesContainer}>
-      <section className={styles.spanSection}>
-        <span>HAPPY</span>
-        <span>VIBES</span>
-      </section>
-      <section>
-        <img className={styles.image} src={ATRIBUTEICON1} alt='' />
-      </section>
-      <section className={styles.spanSection}>
-        <span>UNIQUE</span>
-        <span>DESIGNS</span>
-      </section>
-      <section>
-        <img className={styles.image} src={ATRIBUTEICON2} alt='' />
-      </section>
-      <section className={styles.spanSection}>
-        <span>GREAT</span>
-        <span>QUALITY</span>
-      </section>
+      <div className={`${styles.atributesContentContainer}`}>
+        <section
+          ref={section1}
+          className={`${styles.spanSection} ${
+            isSection1Visible ? styles.show : styles.hide
+          }`}
+        >
+          <span>HAPPY</span>
+          <span>VIBES</span>
+        </section>
+
+        <section
+          ref={section2}
+          className={`${styles.spanSection} ${
+            isSection2Visible ? styles.show : styles.hide
+          }`}
+        >
+          <img className={styles.image} src={ATRIBUTEICON1} alt='' />
+        </section>
+
+        <section
+          ref={section3}
+          className={`${styles.spanSection} ${
+            isSection3Visible ? styles.show : styles.hide
+          }`}
+        >
+          <span>UNIQUE</span>
+          <span>DESIGNS</span>
+        </section>
+
+        <section
+          ref={section4}
+          className={`${styles.spanSection} ${
+            isSection4Visible ? styles.show : styles.hide
+          }`}
+        >
+          <img className={styles.image} src={ATRIBUTEICON2} alt='' />
+        </section>
+
+        <section
+          ref={section5}
+          className={`${styles.spanSection} ${
+            isSection5Visible ? styles.show : styles.hide
+          }`}
+        >
+          <span>GREAT</span>
+          <span>QUALITY</span>
+        </section>
+      </div>
     </article>
   );
 }
