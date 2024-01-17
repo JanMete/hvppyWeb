@@ -60,7 +60,9 @@ export default function Aftercare({ isMobile }: AftercareProp) {
               section1RefIsVisible ? styles.show : styles.hide
             }`}
           >
-            <h2>Lorem ipsum dolor sit.</h2>
+            <h2 className={styles.sectionSecondaryHeading}>
+              Lorem ipsum dolor sit.
+            </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
@@ -91,7 +93,7 @@ export default function Aftercare({ isMobile }: AftercareProp) {
               }`}
             >
               <h2>Lorem ipsum dolor sit.</h2>
-              <p>
+              <p className={styles.sectionSecondaryHeading}>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
                 perspiciatis, odio, iusto tenetur quia a! Minus, reiciendis a!
@@ -110,7 +112,9 @@ export default function Aftercare({ isMobile }: AftercareProp) {
                 section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
-              <h2>Lorem ipsum dolor sit.</h2>
+              <h2 className={styles.sectionSecondaryHeading}>
+                Lorem ipsum dolor sit.
+              </h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
@@ -147,7 +151,9 @@ export default function Aftercare({ isMobile }: AftercareProp) {
               section3RefIsVisible ? styles.show : styles.hide
             }`}
           >
-            <h2>Lorem ipsum dolor sit.</h2>
+            <h2 className={styles.sectionSecondaryHeading}>
+              Lorem ipsum dolor sit.
+            </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis

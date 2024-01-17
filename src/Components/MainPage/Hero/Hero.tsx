@@ -21,10 +21,8 @@ export default function Hero() {
           isHeroTextRefVisible ? 'opacity-1' : 'opacity-0'
         }`}
       >
-        <h2 className='text-5xl mb-4 max-sm:text-3xl'>
-          Lorem ipsum dolor sit.
-        </h2>
-        <p className='text-md max-sm:text-md'>
+        <h2 className={styles.heroHeader}>Lorem ipsum dolor sit.</h2>
+        <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, at
           amet. Atque labore veniam cupiditate beatae quibusdam? Quos maiores
           suscipit provident illum possimus, debitis veritatis voluptates veniam

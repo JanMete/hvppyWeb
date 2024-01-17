@@ -23,7 +23,7 @@
   height: 10rem;
 }
 .spanSection {
-  transition: all 1s;
+  transition: all 2s;
   display: flex;
   align-items: center;
   justify-content: center;

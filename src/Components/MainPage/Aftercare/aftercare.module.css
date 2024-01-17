@@ -19,6 +19,9 @@
   padding: 0 10rem;
   padding-bottom: 2.5rem;
 }
+.sectionSecondaryHeading {
+  margin-bottom: 1rem;
+}
 .imageContainer {
   width: 50%;
   transition: all 1s;

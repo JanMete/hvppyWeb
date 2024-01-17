@@ -74,7 +74,7 @@ export default function Footer() {
           sectionsRefIsVisible ? styles.showIconBottom : styles.hideIconBottom
         }`}
       >
-        <ul className='flex flex-row gap-5'>
+        <ul className={styles.linksList}>
           <li>
             <Link to='/'>{sections[0].sectionName}</Link>
           </li>

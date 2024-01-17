@@ -21,6 +21,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 6.5rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 }
 .formHeading h1 {
   font-size: 6.25rem;
@@ -37,6 +38,9 @@
   justify-content: center;
   align-items: center;
   line-height: 4.5rem;
+}
+.mailLink {
+  line-height: 4rem;
 }
 form {
   display: flex;
@@ -81,8 +85,17 @@ input[type='submit'] {
   justify-content: center;
 }
 .submitInput {
+  /* background-image: linear-gradient(to right top, #3d076b, #7a3dae); */
+  background-image: radial-gradient(#7a3dae, #4f0e88);
+  font-size: 1.3rem;
   position: absolute;
   top: 10.25rem;
+  right: 1.2rem;
+  border-radius: 59% 41% 56% 44% / 40% 58% 42% 60%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+.disabled {
+  background-color: grey;
 }
 @media screen and (max-width: 640px) {
   .formHeading {
