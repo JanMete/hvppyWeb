@@ -1,4 +1,3 @@
-import ContactInfo from './ContactInfo/ContactInfo';
 import styles from './location.module.css';
 
 export default function Location() {
@@ -10,9 +9,8 @@ export default function Location() {
           width='600'
           height='450'
           style={{ border: 0 }}
-          allowfullscreen=''
           loading='lazy'
-          referrerpolicy='no-referrer-when-downgrade'
+          referrerPolicy='no-referrer-when-downgrade'
         ></iframe>
       </div>
       <div className={styles.infoContainer}>INFO</div>
