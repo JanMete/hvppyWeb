@@ -1,6 +1,20 @@
 import styles from './location.module.css';
+import { useState } from 'react';
+import jsonp from 'jsonp';
 
 export default function Location() {
+  const [email, setEmail] = useState('');
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const url = import.meta.env.VITE_MAILCHIMPURL;
+    jsonp(`${url}&EMAIL=${email}`, { param: 'c' }, (_, data) => {
+      const { msg, result } = data;
+      // do something with response
+      alert(msg);
+    });
+  };
+
   return (
     <div className={styles.locationContainer}>
       <div className={styles.googleMapsContainer}>
@@ -13,7 +27,18 @@ export default function Location() {
           referrerPolicy='no-referrer-when-downgrade'
         ></iframe>
       </div>
-      <div className={styles.infoContainer}>INFO</div>
+      <div className={styles.infoContainer}>
+        <form onSubmit={onSubmit}>
+          <input
+            type='email'
+            name='email'
+            value={email}
+            placeholder='Enter your email'
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input type='submit' />
+        </form>
+      </div>
     </div>
   );
 }
