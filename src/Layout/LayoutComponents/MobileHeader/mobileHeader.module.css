@@ -7,6 +7,7 @@
   z-index: 50;
 }
 .menuButtonContainer {
+  outline: none;
   display: flex;
   justify-content: flex-end;
 }
@@ -69,6 +70,10 @@
   width: 5rem;
   border-radius: 50%;
   overflow: hidden;
+  background-color: var(--hvppyYellow);
+}
+.logoContainer img {
+  transform: scale(2);
 }
 .link {
   padding: 0.8rem;

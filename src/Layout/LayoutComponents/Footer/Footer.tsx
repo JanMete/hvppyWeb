@@ -48,21 +48,30 @@ export default function Footer() {
           rel='noopener noreferrer'
           href='https://www.facebook.com/hvppytattoo'
         >
-          <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
+          <FontAwesomeIcon
+            icon={faFacebook}
+            className={`${styles.icon} ${window.innerWidth < 800 ? '' : ''}`}
+          />
         </a>
         <a
           target='_blank'
           rel='noopener noreferrer'
           href='https://www.instagram.com/hvppy_tattoo/'
         >
-          <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+          <FontAwesomeIcon
+            icon={faInstagram}
+            className={`${styles.icon} ${window.innerWidth < 800 ? '' : ''}`}
+          />
         </a>
         <a
           target='_blank'
           rel='noopener noreferrer'
           href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
         >
-          <FontAwesomeIcon icon={faTiktok} className={styles.icon} />
+          <FontAwesomeIcon
+            icon={faTiktok}
+            className={`${window.innerWidth < 800 ? styles.icon : ''}`}
+          />
         </a>
       </div>
       {/* ICONS END */}
@@ -74,7 +83,7 @@ export default function Footer() {
           sectionsRefIsVisible ? styles.showIconBottom : styles.hideIconBottom
         }`}
       >
-        <ul className={styles.linksList}>
+        <ul className={`${styles.linksList}`}>
           <li>
             <Link to='/'>{sections[0].sectionName}</Link>
           </li>
