@@ -2,11 +2,7 @@ import styles from './aftercare.module.css';
 import { useEffect, useRef, useState } from 'react';
 import aftercare1 from '../../../assets/aftercare1.jpg';
 
-type AftercareProp = {
-  isMobile: boolean;
-};
-
-export default function Aftercare({ isMobile }: AftercareProp) {
+export default function Aftercare() {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
@@ -78,7 +74,7 @@ export default function Aftercare({ isMobile }: AftercareProp) {
 
         {/* SECTION 2 */}
 
-        {isMobile ? (
+        {window.innerWidth < 1200 ? (
           <section ref={section2Ref} className={styles.section}>
             <div
               className={`${styles.imageContainer} ${

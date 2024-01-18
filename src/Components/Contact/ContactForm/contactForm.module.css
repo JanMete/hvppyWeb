@@ -43,7 +43,7 @@
 .mailLink {
   line-height: 4rem;
 }
-form {
+.mailForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,17 +98,26 @@ input[type='submit'] {
 .disabled {
   background-color: grey;
 }
+@media screen and (max-width: 945px) {
+  .formHeading {
+    width: 70%;
+  }
+  .mailForm {
+    width: 70%;
+  }
+}
 @media screen and (max-width: 640px) {
   .formHeading {
     width: 100%;
     /* padding-left: 1rem; */
   }
-  form {
+  .mailForm {
     width: 100%;
   }
   .contactFormMainContainer {
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 6rem;
   }
   .formHeading h1 {
     font-size: 5rem;

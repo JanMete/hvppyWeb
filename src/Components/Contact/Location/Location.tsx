@@ -38,7 +38,7 @@ export default function Location() {
       setResponseBoxIsVisible(false);
     }, 4000);
 
-    return () => clearTimeout(timeoutId); // Cleanup on component unmount or re-render
+    return () => clearTimeout(timeoutId);
   }, [responseBoxIsVisible]);
 
   return (
@@ -56,28 +56,51 @@ export default function Location() {
           {responseMessage}
         </div>
       }
-      <div className={styles.googleMapsContainer}>
-        <iframe
-          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d640.2209756295504!2d19.927753369678012!3d50.06973585901462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b008149a3c5%3A0x2f0523177ae265b!2sBlack%20mood%20Tattoo%20Studio!5e0!3m2!1spl!2spl!4v1705498982989!5m2!1spl!2spl'
-          width='600'
-          height='450'
-          style={{ border: 0 }}
-          loading='lazy'
-          referrerPolicy='no-referrer-when-downgrade'
-        ></iframe>
-      </div>
-      <div className={styles.infoContainer}>
-        <form onSubmit={onSubmit}>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            placeholder='Enter your email'
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input type='submit' />
-        </form>
-      </div>
+      <section className={styles.sectionContainer}>
+        <div className={styles.iframeContainer}>
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d640.2209756295504!2d19.927753369678012!3d50.06973585901462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b008149a3c5%3A0x2f0523177ae265b!2sBlack%20mood%20Tattoo%20Studio!5e0!3m2!1spl!2spl!4v1705498982989!5m2!1spl!2spl'
+            frameBorder='0'
+            width='600'
+            height='450'
+            style={{ border: 0 }}
+            loading='lazy'
+            referrerPolicy='no-referrer-when-downgrade'
+          ></iframe>
+        </div>
+      </section>
+      <section className={styles.sectionContainer}>
+        <div className={styles.topRightSection}>
+          <div className={styles.subsectionContainer}>
+            <h2 className={styles.subsectionHeading}>Location</h2>
+            <div>
+              <p>Teofila Lenartowicza 7/7</p>
+              <p>31-148 Kraków</p>
+            </div>
+          </div>
+          <div className={styles.subsectionContainer}>
+            <h2 className={styles.subsectionHeading}>Contact</h2>
+            <p>TATTOOHVPPY@GMAIL.COM</p>
+          </div>
+        </div>
+        <div>
+          <h2 className={styles.subsectionHeading}>Sign up for NewsLetter</h2>
+          <form className={styles.newsletterForm} onSubmit={onSubmit}>
+            <input
+              type='email'
+              name='email'
+              value={email}
+              placeholder='Enter your email'
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type='submit'
+              className={styles.newsLetterSendButton}
+              value='Send'
+            />
+          </form>
+        </div>
+      </section>
     </div>
   );
 }

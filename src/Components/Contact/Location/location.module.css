@@ -6,19 +6,15 @@
   justify-content: space-around;
   gap: 5rem;
   background-color: var(--hvppyYellow);
-  padding: 5rem;
+  padding: 5rem 15rem;
 }
-.googleMapsContainer {
+.sectionContainer {
   width: 50%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-}
-.infoContainer {
-  width: 50%;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 5rem;
 }
 .responseMessageContainer {
   position: fixed;
@@ -40,4 +36,56 @@
   opacity: 1;
   background-color: red;
   transform: translate(0);
+}
+.topRightSection {
+  display: flex;
+  gap: 4rem;
+}
+.newsLetterSendButton {
+  margin-left: 1rem;
+}
+.newsletterForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.subsectionContainer {
+  text-align: center;
+}
+.newsletterForm input {
+  padding: 0.8rem 1rem;
+}
+.newsletterForm input[type='submit'] {
+  border-radius: 5rem;
+  padding: 0.8rem 1.5rem;
+}
+.subsectionHeading {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 640px) {
+  .sectionContainer {
+    width: 100%;
+    gap: 4rem;
+  }
+  .locationContainer {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  .topRightSection {
+    flex-direction: column;
+  }
+  .iframeContainer {
+    width: 100%;
+  }
+  iframe {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .locationContainer {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
 }

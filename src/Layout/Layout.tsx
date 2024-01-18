@@ -3,7 +3,6 @@ import MobileHeader from './LayoutComponents/MobileHeader/MobileHeader';
 import Footer from './LayoutComponents/Footer/Footer';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { IsMobileContext } from '../utils/IsMobileContext';
 
 export default function Layout() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -32,7 +31,7 @@ export default function Layout() {
     };
   }, []);
 
-  const isMobile = windowSize[0] < 640;
+  const isMobile = windowSize[0] < 800;
 
   return (
     <>
@@ -42,9 +41,7 @@ export default function Layout() {
         ) : (
           <WebHeader scrollPosition={scrollPosition} />
         )}
-        <IsMobileContext.Provider value={isMobile}>
-          <Outlet />
-        </IsMobileContext.Provider>
+        <Outlet />
         <Footer />
       </div>
     </>

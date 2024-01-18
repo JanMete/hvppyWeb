@@ -3,7 +3,7 @@
   background-position: center;
   background-attachment: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -42,7 +42,7 @@
 @media screen and (max-width: 640px) {
   .heroContainer {
     position: fixed;
-    top: 10rem;
+    top: 13rem;
     left: -4rem;
     width: 90%;
     /* padding: 2rem 1.25rem; */

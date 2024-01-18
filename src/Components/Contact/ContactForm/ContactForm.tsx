@@ -104,7 +104,7 @@ export default function ContactForm() {
           </p>
         </div>
       </div>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={form} className={styles.mailForm} onSubmit={sendEmail}>
         <div className={styles.topFormContainer}>
           <input
             value={name}

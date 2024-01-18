@@ -24,6 +24,7 @@
 }
 .imageContainer {
   width: 50%;
+  height: fit-content;
   transition: all 1s;
   border-radius: 1.5rem;
   overflow: hidden;
@@ -56,7 +57,7 @@
   transform: translate(50%);
   opacity: 0;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1200px) {
   .section {
     width: 100%;
     display: flex;
