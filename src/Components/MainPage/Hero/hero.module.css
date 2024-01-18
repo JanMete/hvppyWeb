@@ -42,7 +42,7 @@
 @media screen and (max-width: 640px) {
   .heroContainer {
     position: fixed;
-    top: 13rem;
+    top: 6rem;
     left: -4rem;
     width: 90%;
     /* padding: 2rem 1.25rem; */
