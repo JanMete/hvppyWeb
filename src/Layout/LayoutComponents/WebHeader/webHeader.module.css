@@ -3,6 +3,11 @@
   border-radius: 50%;
   overflow: hidden;
   transition: width 0.3s;
+  background-color: var(--hvppyYellow);
+}
+.logoContainer img {
+  transform: scale(1.9);
+  padding-right: 1px;
 }
 .smallerLogo {
   width: 4rem;

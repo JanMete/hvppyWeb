@@ -4,7 +4,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { sections } from '../../../utils/sections';
-import LOGO from '../../../assets/homeLogo.jpg';
+import LOGO from '../../../assets/homeLogo.png';
 import styles from './mobileHeader.module.css';
 
 type MobileMenuProps = {

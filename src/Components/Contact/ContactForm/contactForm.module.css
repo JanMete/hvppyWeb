@@ -98,6 +98,29 @@ input[type='submit'] {
 .disabled {
   background-color: grey;
 }
+.inputContainer {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+.inputContainer input {
+  width: 100%;
+}
+.inputContainer p {
+  color: red;
+}
+.errorMessage {
+  opacity: 0;
+  display: none;
+}
+.showErrorMessage {
+  opacity: 1;
+  display: block;
+}
+.errorBorder {
+  border: 2px solid red;
+}
 @media screen and (max-width: 945px) {
   .formHeading {
     width: 70%;

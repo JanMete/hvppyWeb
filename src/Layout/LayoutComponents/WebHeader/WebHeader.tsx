@@ -3,7 +3,7 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { NavLink, Link } from 'react-router-dom';
-import LOGO from '../../../assets/homeLogo.jpg';
+import LOGO from '../../../assets/homeLogo.png';
 import { sections } from '../../../utils/sections';
 import { useEffect, useRef, useState } from 'react';
 import styles from './webHeader.module.css';

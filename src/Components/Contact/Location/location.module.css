@@ -62,7 +62,9 @@
 .subsectionHeading {
   margin-bottom: 1rem;
 }
-
+.errorBorder {
+  border: 2px solid red;
+}
 @media screen and (max-width: 640px) {
   .sectionContainer {
     width: 100%;

@@ -1,6 +1,11 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from './contactForm.module.css';
+
+const validateEmail = (email: string) => {
+  const isValidEmail = /^\S+@\S+\.\S+$/.test(email);
+  return isValidEmail ? [] : ['Please enter a valid Email address'];
+};
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -8,8 +13,27 @@ export default function ContactForm() {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
+  const [keepCheckingEmail, setKeepCheckingEmail] = useState(false);
 
   const form = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (keepCheckingEmail) {
+      const emailErrors = validateEmail(email);
+
+      setErrors((prevErrors) =>
+        prevErrors.filter(
+          (error) =>
+            ![
+              'Please enter a valid Email address',
+              'Please enter your Email',
+            ].includes(error)
+        )
+      );
+
+      setErrors((prevErrors) => [...prevErrors, ...emailErrors]);
+    }
+  }, [email, keepCheckingEmail]);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +47,7 @@ export default function ContactForm() {
     }
 
     if (email.length <= 0) {
+      setKeepCheckingEmail(true);
       validationErrors.push('Please enter your Email');
     } else if (!/^\S+@\S+\.\S+$/.test(email)) {
       validationErrors.push('Please enter a valid Email address');
@@ -53,6 +78,7 @@ export default function ContactForm() {
           setName('');
           setEmail('');
           setMessage('');
+          setKeepCheckingEmail(false);
         },
         () => {
           console.log('There was an error sending the message.');
@@ -60,37 +86,44 @@ export default function ContactForm() {
         }
       );
   };
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-    setErrors(errors.filter((error) => error !== 'Please enter your Name'));
-  };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newEmailValue = e.target.value;
     setEmail(newEmailValue);
 
-    const isValidEmail = /^\S+@\S+\.\S+$/.test(newEmailValue);
+    if (isSubmitting || keepCheckingEmail) {
+      const emailErrors = validateEmail(newEmailValue);
 
-    if (!isValidEmail && newEmailValue.length > 0) {
-      setErrors((prevErrors) => [
-        ...prevErrors,
-        'Please enter a valid Email address',
-      ]);
-    } else {
       setErrors((prevErrors) =>
         prevErrors.filter(
-          (error) => error !== 'Please enter a valid Email address'
+          (error) =>
+            ![
+              'Please enter a valid Email address',
+              'Please enter your Email',
+            ].includes(error)
         )
       );
+
+      setErrors((prevErrors) => [...prevErrors, ...emailErrors]);
     }
-    setErrors((prevErrors) =>
-      prevErrors.filter((error) => error !== 'Please enter your Email')
-    );
   };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+    setErrors(errors.filter((error) => error !== 'Please enter your Name'));
+  };
+
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
     setErrors(errors.filter((error) => error !== 'Please enter a Message'));
   };
+
+  const nameError = errors.includes('Please enter your Name');
+  const emailError = errors.includes('Please enter your Email');
+  const invalidEmailError = errors.includes(
+    'Please enter a valid Email address'
+  );
+  const messageError = errors.includes('Please enter a Message');
 
   return (
     <div className={styles.contactFormMainContainer}>
@@ -106,42 +139,72 @@ export default function ContactForm() {
       </div>
       <form ref={form} className={styles.mailForm} onSubmit={sendEmail}>
         <div className={styles.topFormContainer}>
-          <input
-            value={name}
-            onChange={handleNameChange}
-            className={styles.textInput}
-            type='text'
-            name='user_name'
-            placeholder='Name'
-          />
-          {errors.includes('Please enter your Name') && (
-            <p className={styles.error}>Please enter your Name</p>
-          )}
-          <input
-            value={email}
-            onChange={handleEmailChange}
-            className={styles.textInput}
-            type='email'
-            name='user_email'
-            placeholder='Email'
-          />
-          {errors.includes('Please enter your Email') && (
-            <p className={styles.error}>Please enter your Email</p>
-          )}
-          {errors.includes('Please enter a valid Email address') && (
-            <p className={styles.error}>Please enter a valid Email address</p>
-          )}
+          <div className={styles.inputContainer}>
+            <input
+              value={name}
+              onChange={handleNameChange}
+              className={`${styles.textInput} ${
+                nameError ? styles.errorBorder : ''
+              }`}
+              type='text'
+              name='user_name'
+              placeholder='Name'
+            />
+            <p
+              className={`${styles.errorMessage} ${
+                nameError ? styles.showErrorMessage : ''
+              }`}
+            >
+              Please enter your Name
+            </p>
+          </div>
+          <div className={styles.inputContainer}>
+            <input
+              value={email}
+              onChange={handleEmailChange}
+              className={`${styles.textInput} 
+               ${emailError ? styles.errorBorder : ''}  ${
+                invalidEmailError ? styles.errorBorder : ''
+              }`}
+              type='email'
+              name='user_email'
+              placeholder='Email'
+            />
+            <p
+              className={`${styles.errorMessage} ${
+                emailError ? styles.showErrorMessage : ''
+              }`}
+            >
+              Please enter your Email
+            </p>
+
+            <p
+              className={`${styles.errorMessage} ${
+                invalidEmailError ? styles.showErrorMessage : ''
+              }`}
+            >
+              Please enter a valid Email
+            </p>
+          </div>
         </div>
         <div className={styles.textSubmit}>
-          <textarea
-            value={message}
-            onChange={handleMessageChange}
-            name='message'
-            placeholder='What kind of tattoo would you like?'
-          />
-          {errors.includes('Please enter a Message') && (
-            <p className={styles.error}>Please enter a Message</p>
-          )}
+          <div className={styles.inputContainer}>
+            <textarea
+              value={message}
+              onChange={handleMessageChange}
+              style={{ resize: 'none' }}
+              name='message'
+              className={`${messageError ? styles.errorBorder : ''}`}
+              placeholder='What kind of tattoo would you like?'
+            />
+            <p
+              className={`${styles.errorMessage} ${
+                messageError ? styles.showErrorMessage : ''
+              }`}
+            >
+              Please enter a Message
+            </p>
+          </div>
           <input
             className={`${styles.submitInput} ${
               isSubmitting ? styles.disabled : ''
