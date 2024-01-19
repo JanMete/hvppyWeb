@@ -1,5 +1,7 @@
 .contactFormMainContainer {
-  background-color: var(--hvppyGreen);
+  background-image: url('../../../assets/contactFormBackground.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
