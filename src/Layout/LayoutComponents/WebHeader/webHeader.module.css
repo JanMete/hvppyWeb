@@ -1,16 +1,32 @@
 .logoContainer {
   width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   overflow: hidden;
-  transition: width 0.3s;
-  /* background-color: var(--hvppyYellow); */
+  transition: all 0.3s;
+  background-color: var(--hvppyYellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logoContainer img {
-  transform: scale(2);
-  padding-right: 1px;
+  transform: scale(1.8);
+  padding-right: 0.1rem;
 }
 .smallerLogo {
   width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s;
+  background-color: var(--hvppyYellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.smallerLogo img {
+  transform: scale(1.8);
+  padding-right: 0.1rem;
 }
 .navContainer {
   display: flex;

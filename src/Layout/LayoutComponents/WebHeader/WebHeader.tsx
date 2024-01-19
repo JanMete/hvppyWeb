@@ -43,8 +43,10 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
         </div>
         {/* LOGO */}
         <div
-          className={`${styles.logoContainer}${
-            scrollExceededHeader ? ` ${styles.smallerLogo}` : ''
+          className={`${
+            scrollExceededHeader
+              ? ` ${styles.smallerLogo}`
+              : styles.logoContainer
           }`}
         >
           <Link to='/'>
