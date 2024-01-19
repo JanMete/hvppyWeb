@@ -1,0 +1,20 @@
+.menuContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--hvppyGreen);
+  flex-grow: 1;
+  padding-top: 6.5rem;
+  flex: 1;
+}
+.categoryContainer {
+  width: 20%;
+  height: auto;
+  /* flex-grow: 1; */
+}
+.categoryContainer img {
+  width: 100%;
+  z-index: 2;
+}

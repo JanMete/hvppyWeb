@@ -4,6 +4,7 @@ import './index.css';
 import Layout from './Layout/Layout.tsx';
 import MainPage from './Components/MainPage/MainPage.tsx';
 import Contact from './Components/Contact/Contact.tsx';
+import Artwork from './Components/Artwork/Artwork.tsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/artwork',
+        element: <Artwork />,
       },
     ],
   },

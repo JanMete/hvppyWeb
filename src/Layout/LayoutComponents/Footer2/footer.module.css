@@ -1,0 +1,11 @@
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--hvppyPurple);
+  padding: 0.4rem 0;
+}
+.footerContainer a {
+  /* text-decoration: underline; */
+  font-weight: bold;
+}

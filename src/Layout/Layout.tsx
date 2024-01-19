@@ -1,8 +1,9 @@
 import WebHeader from './LayoutComponents/WebHeader/WebHeader';
 import MobileHeader from './LayoutComponents/MobileHeader/MobileHeader';
-import Footer from './LayoutComponents/Footer/Footer';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import styles from './layout.module.css';
+import Footer2 from './LayoutComponents/Footer2/Footer2';
 
 export default function Layout() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -35,14 +36,14 @@ export default function Layout() {
 
   return (
     <>
-      <div>
+      <div className={styles.layout}>
         {isMobile ? (
           <MobileHeader />
         ) : (
           <WebHeader scrollPosition={scrollPosition} />
         )}
         <Outlet />
-        <Footer />
+        <Footer2 />
       </div>
     </>
   );
