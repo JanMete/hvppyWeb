@@ -145,7 +145,7 @@ export default function Location() {
           width='960'
           height='540'
           xmlns='http://www.w3.org/2000/svg'
-          xmlns:xlink='http://www.w3.org/1999/xlink'
+          xmlnsXlink='http://www.w3.org/1999/xlink'
           version='1.1'
         >
           <g transform='translate(450.7256843113689 283.4942824330989)'>
