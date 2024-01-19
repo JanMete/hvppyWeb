@@ -12,9 +12,26 @@
 .categoryContainer {
   width: 20%;
   height: auto;
-  /* flex-grow: 1; */
+  position: relative;
+  transition: all 1s;
 }
 .categoryContainer img {
   width: 100%;
-  z-index: 2;
+}
+.categoryContainerModal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 1s;
+}
+.categoryContainerModal:hover {
+  opacity: 1;
+}
+.categoryContainer:hover {
+  transform: scale(1.03);
 }

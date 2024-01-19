@@ -28,6 +28,7 @@
   transition: all 2s;
   opacity: 0;
   transform: translate(50%);
+  z-index: 50;
 }
 .showCorrecResponseMessageContainer {
   opacity: 1;
@@ -70,7 +71,7 @@
 .blobMotion {
   position: absolute;
   transform: translate(-48rem, -18rem);
-  z-index: 1;
+  /* z-index: 1; */
 }
 .bolbContainer {
   transform: scale(1.3);

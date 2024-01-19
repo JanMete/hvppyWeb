@@ -39,7 +39,9 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
           <NavLink to='/'>{sections[0].sectionName.toUpperCase()}</NavLink>
         </div>
         <div>
-          <NavLink to='/'>{sections[1].sectionName.toUpperCase()}</NavLink>
+          <NavLink to='/artwork'>
+            {sections[1].sectionName.toUpperCase()}
+          </NavLink>
         </div>
         {/* LOGO */}
         <div

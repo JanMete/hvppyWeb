@@ -47,7 +47,6 @@ export default function Location() {
       }
     });
   };
-
   useEffect(() => {
     const tween = KUTE.fromTo(
       '#blob1',
@@ -56,7 +55,9 @@ export default function Location() {
       { repeat: 999, duration: 3000, yoyo: true }
     );
     tween.start();
+  }, []);
 
+  useEffect(() => {
     const timeoutId = setTimeout(() => {
       setResponseBoxIsVisible(false);
     }, 4000);
