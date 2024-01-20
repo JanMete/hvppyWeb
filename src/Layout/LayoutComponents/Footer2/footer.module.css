@@ -9,8 +9,8 @@
   font-size: 0.8rem;
 }
 .footerContainer a {
-  /* text-decoration: underline; */
   font-weight: bold;
+  transition: all 1s;
 }
 .footerContainer p {
   opacity: 0;

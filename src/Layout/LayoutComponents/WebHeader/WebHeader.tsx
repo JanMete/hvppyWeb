@@ -26,6 +26,10 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
     }
   }, [scrollPosition]);
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <header className={styles.headerContainer}>
       <nav
@@ -36,12 +40,12 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
       >
         {/* FIRST PART OF NAVIGATION */}
         <div>
-          <NavLink to={sections[0].path}>
+          <NavLink onClick={scrollToTop} to={sections[0].path}>
             {sections[0].sectionName.toUpperCase()}
           </NavLink>
         </div>
         <div>
-          <NavLink to={sections[1].path}>
+          <NavLink onClick={scrollToTop} to={sections[1].path}>
             {sections[1].sectionName.toUpperCase()}
           </NavLink>
         </div>
@@ -53,14 +57,14 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
               : styles.logoContainer
           }`}
         >
-          <Link to='/'>
+          <Link onClick={scrollToTop} to='/'>
             <img src={LOGO} alt='Logo portrait of artist' />
           </Link>
         </div>
 
         {/* SECOND PART OF NAVIGATION */}
         <div>
-          <NavLink to={sections[2].path}>
+          <NavLink onClick={scrollToTop} to={sections[2].path}>
             {sections[2].sectionName.toUpperCase()}
           </NavLink>
         </div>

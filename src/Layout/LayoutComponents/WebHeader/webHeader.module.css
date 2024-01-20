@@ -1,3 +1,22 @@
+.navContainer {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding-top: 0.5rem;
+  transition: all 0.3s;
+}
+.darkenNav {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 0;
+}
 .logoContainer {
   width: 6rem;
   height: 6rem;
@@ -28,24 +47,6 @@
 .smallerLogo img {
   transform: scale(1.8);
   padding-right: 0.1rem;
-}
-.navContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 2.2rem;
-  font-weight: bold;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  padding-top: 0.5rem;
-  transition: all 0.3s;
-}
-.darkenNav {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding-top: 0;
 }
 .iconsList {
   display: flex;
