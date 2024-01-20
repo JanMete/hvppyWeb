@@ -36,10 +36,12 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
       >
         {/* FIRST PART OF NAVIGATION */}
         <div>
-          <NavLink to='/'>{sections[0].sectionName.toUpperCase()}</NavLink>
+          <NavLink to={sections[0].path}>
+            {sections[0].sectionName.toUpperCase()}
+          </NavLink>
         </div>
         <div>
-          <NavLink to='/artwork'>
+          <NavLink to={sections[1].path}>
             {sections[1].sectionName.toUpperCase()}
           </NavLink>
         </div>
@@ -58,7 +60,7 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
 
         {/* SECOND PART OF NAVIGATION */}
         <div>
-          <NavLink to='/contact'>
+          <NavLink to={sections[2].path}>
             {sections[2].sectionName.toUpperCase()}
           </NavLink>
         </div>

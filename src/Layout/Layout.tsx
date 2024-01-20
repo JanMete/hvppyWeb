@@ -35,16 +35,14 @@ export default function Layout() {
   const isMobile = windowSize[0] < 800;
 
   return (
-    <>
-      <div className={styles.layout}>
-        {isMobile ? (
-          <MobileHeader />
-        ) : (
-          <WebHeader scrollPosition={scrollPosition} />
-        )}
-        <Outlet />
-        <Footer2 />
-      </div>
-    </>
+    <div className={styles.layout}>
+      {isMobile ? (
+        <MobileHeader />
+      ) : (
+        <WebHeader scrollPosition={scrollPosition} />
+      )}
+      <Outlet />
+      <Footer2 />
+    </div>
   );
 }

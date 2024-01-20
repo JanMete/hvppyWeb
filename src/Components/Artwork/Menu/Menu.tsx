@@ -1,37 +1,26 @@
 import styles from './menu.module.css';
-import CATEGORY from '../../../assets/category.jpg';
+import { categories } from '../../../utils/categories';
 
 export default function Menu() {
   return (
     <>
       <div className={`${styles.menuContainer} ${styles.pink}`}>
-        <div className={styles.categoryContainer}>
-          <a href=''>
-            <div className={styles.categoryContainerModal}>Test</div>
-            <img className={styles.categoryImage} src={CATEGORY} alt='' />
-          </a>
-        </div>
-
-        <div className={styles.categoryContainer}>
-          <a href=''>
-            <div className={styles.categoryContainerModal}>Test</div>
-            <img src={CATEGORY} alt='' />
-          </a>
-        </div>
-
-        <div className={styles.categoryContainer}>
-          <a href=''>
-            <div className={styles.categoryContainerModal}>Test</div>
-            <img src={CATEGORY} alt='' />
-          </a>
-        </div>
-
-        <div className={styles.categoryContainer}>
-          <a href=''>
-            <div className={styles.categoryContainerModal}>Test</div>
-            <img src={CATEGORY} alt='' />
-          </a>
-        </div>
+        {categories.map((category, index) => {
+          return (
+            <div key={index} className={styles.categoryContainer}>
+              <a href={category.patch}>
+                <div className={styles.categoryContainerModal}>
+                  {category.categoryName}
+                </div>
+                <img
+                  className={styles.categoryImage}
+                  src={category.img}
+                  alt={category.img}
+                />
+              </a>
+            </div>
+          );
+        })}
       </div>
     </>
   );

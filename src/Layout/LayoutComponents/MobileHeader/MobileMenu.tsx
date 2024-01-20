@@ -34,19 +34,25 @@ export default function MobileMenu({
 
       <ul>
         <li className={styles.link}>
-          <Link onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} to='/'>
+          <Link
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            to={sections[0].path}
+          >
             {sections[0].sectionName.toUpperCase()}
           </Link>
         </li>
         <li className={styles.link}>
-          <Link onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} to='/'>
+          <Link
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            to={sections[1].path}
+          >
             {sections[1].sectionName.toUpperCase()}
           </Link>
         </li>
         <li className={styles.link}>
           <Link
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            to='/contact'
+            to={sections[2].path}
           >
             {sections[2].sectionName.toUpperCase()}
           </Link>

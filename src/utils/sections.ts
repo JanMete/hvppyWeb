@@ -1,14 +1,14 @@
 export const sections = [
   {
     sectionName: 'About',
-    path: 'about',
+    path: '/about',
   },
   {
     sectionName: 'Artwork',
-    path: 'artwork',
+    path: '/artwork',
   },
   {
     sectionName: 'Contact',
-    path: 'contact',
+    path: '/contact',
   },
 ];

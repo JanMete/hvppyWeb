@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from './contactForm.module.css';
+import PORTRAIT from '../../../assets/portrait.jpg';
 
 const validateEmail = (email: string) => {
   const isValidEmail = /^\S+@\S+\.\S+$/.test(email);
@@ -14,6 +15,39 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
   const [keepCheckingEmail, setKeepCheckingEmail] = useState(false);
+
+  const [isImageVisible, setIsImageVisible] = useState(false);
+  const [isImageBottomVisible, setIsImageBottomVisible] = useState(false);
+
+  const imageRef = useRef<HTMLImageElement>(null);
+  const imageBottom = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const imgObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsImageVisible(entry.isIntersecting);
+    });
+    const imageBottomObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsImageBottomVisible(entry.isIntersecting);
+    });
+
+    if (imageRef.current) {
+      imgObserver.observe(imageRef.current);
+    }
+    if (imageBottom.current) {
+      imageBottomObserver.observe(imageBottom.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        imgObserver.unobserve(imageRef.current);
+      }
+      if (imageBottom.current) {
+        imageBottomObserver.unobserve(imageBottom.current);
+      }
+    };
+  }, []);
 
   const form = useRef<HTMLFormElement>(null);
 
@@ -128,9 +162,17 @@ export default function ContactForm() {
   return (
     <div className={styles.contactFormMainContainer}>
       <div className={styles.formHeading}>
-        <div className={styles.formHeadingBottomContainer}>
-          <h1>Text me!</h1>
-          <p>
+        <img
+          ref={imageRef}
+          src={PORTRAIT}
+          alt=''
+          className={`${isImageVisible ? styles.showImage : ''}`}
+        />
+        <div ref={imageBottom} className={styles.formHeadingBottomContainer}>
+          <h1 className={`${isImageBottomVisible ? styles.showElement : ''}`}>
+            Text me!
+          </h1>
+          <p className={`${isImageBottomVisible ? styles.showElement : ''}`}>
             <a className={styles.mailLink} href='mailto:someone@example.com'>
               TATTOOHVPPY@GMAIL.COM
             </a>
