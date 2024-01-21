@@ -39,19 +39,19 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
         }`}
       >
         {/* FIRST PART OF NAVIGATION */}
-        <div>
+        <div className={styles.linkContainer}>
           <NavLink onClick={scrollToTop} to={sections[0].path}>
             {sections[0].sectionName.toUpperCase()}
           </NavLink>
         </div>
-        <div>
+        <div className={styles.linkContainer}>
           <NavLink onClick={scrollToTop} to={sections[1].path}>
             {sections[1].sectionName.toUpperCase()}
           </NavLink>
         </div>
         {/* LOGO */}
         <div
-          className={`${
+          className={`${styles.linkContainer} ${
             scrollExceededHeader
               ? ` ${styles.smallerLogo}`
               : styles.logoContainer
@@ -63,7 +63,7 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
         </div>
 
         {/* SECOND PART OF NAVIGATION */}
-        <div>
+        <div className={styles.linkContainer}>
           <NavLink onClick={scrollToTop} to={sections[2].path}>
             {sections[2].sectionName.toUpperCase()}
           </NavLink>

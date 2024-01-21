@@ -35,6 +35,10 @@
   border-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
+  transition: all 0.3s;
+}
+.topButton:hover {
+  transform: scale(1.05);
 }
 .scrollButtonContaier {
   filter: blur(1);
@@ -50,6 +54,14 @@
   transform: translateY(0) !important;
   opacity: 1 !important;
 }
+.categoriesListItem {
+  transition: all 0.3s;
+  display: inline-block;
+}
+.categoriesListItem:hover {
+  transform: scale(1.05);
+}
+
 @media screen and (max-width: 1100px) {
   .photosColumn {
     width: 100%;
@@ -72,5 +84,8 @@
   }
   .galleryContainer {
     padding-top: 3rem;
+  }
+  .topButton:hover {
+    transform: scale(1);
   }
 }
