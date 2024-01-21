@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { Link, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import {
   tattoos1,
   tattoos2,
@@ -59,9 +59,12 @@ export default function Gallery() {
           {categories.map((category, index) => {
             return (
               <li key={index}>
-                <Link className={styles.categoriesListItem} to={category.patch}>
+                <NavLink
+                  className={styles.categoriesListItem}
+                  to={category.patch}
+                >
                   {category.categoryName}
-                </Link>
+                </NavLink>
               </li>
             );
           })}

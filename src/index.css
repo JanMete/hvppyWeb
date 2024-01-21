@@ -62,3 +62,7 @@ a:active {
 a {
   -webkit-tap-highlight-color: transparent;
 }
+.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
