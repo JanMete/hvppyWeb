@@ -66,18 +66,22 @@ export default function Location() {
 
     return () => {
       if (mapRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         mapObserver.unobserve(mapRef.current);
       }
 
       if (locationRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         locationObserver.unobserve(locationRef.current);
       }
 
       if (contactRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         contactObserver.unobserve(contactRef.current);
       }
 
       if (newsletterRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         newsletterObserver.unobserve(newsletterRef.current);
       }
     };
