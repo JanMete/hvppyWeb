@@ -26,11 +26,13 @@ export default function Menu() {
 
   return (
     <>
-      <div className={`${styles.menuContainer} ${styles.pink}`}>
+      <div
+        ref={categoryRef}
+        className={`${styles.menuContainer} ${styles.pink}`}
+      >
         {categories.map((category, index) => {
           return (
             <div
-              ref={categoryRef}
               key={index}
               className={`${styles.categoryContainer} ${
                 isCategoryVisible ? styles.showElement : ''
