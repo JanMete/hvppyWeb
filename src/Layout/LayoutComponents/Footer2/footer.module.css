@@ -7,7 +7,6 @@
   transition: all 1s;
   overflow: hidden;
   font-size: 0.8rem;
-  /* z-index: 100; */
 }
 .footerContainer a {
   font-weight: bold;
@@ -17,6 +16,9 @@
   opacity: 0;
   filter: blur(5px);
   transform: translateY(50%);
+}
+.footerContainer a {
+  text-decoration: underline;
 }
 .showFooter {
   opacity: 1 !important;
