@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
+import { scrollPositionContext } from '../../../contexts/scrollPositionContext';
 import styles from './hero.module.css';
 
 export default function Hero() {
@@ -13,13 +14,16 @@ export default function Hero() {
     observer.observe(heroTextRef.current!);
   });
 
+  const scrollPosotion = useContext(scrollPositionContext);
+  const hideHeroContainer = scrollPosotion > 800;
+
   return (
     <div className={styles.mainContainer}>
       <div
         ref={heroTextRef}
         className={`${styles.heroContainer} ${
           isHeroTextRefVisible ? 'opacity-1' : 'opacity-0'
-        }`}
+        } ${hideHeroContainer ? styles.hideHeroContainer : ''}`}
       >
         <h2 className={styles.heroHeader}>Lorem ipsum dolor sit.</h2>
         <p>

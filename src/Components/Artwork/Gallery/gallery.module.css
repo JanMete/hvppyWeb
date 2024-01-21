@@ -36,6 +36,7 @@
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   transition: all 0.3s;
+  z-index: 220;
 }
 .topButton:hover {
   transform: scale(1.05);

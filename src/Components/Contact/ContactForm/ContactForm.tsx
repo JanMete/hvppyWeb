@@ -18,6 +18,7 @@ export default function ContactForm() {
 
   const [isImageVisible, setIsImageVisible] = useState(false);
   const [isImageBottomVisible, setIsImageBottomVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const imageRef = useRef<HTMLImageElement>(null);
   const imageBottom = useRef<HTMLDivElement>(null);
@@ -31,12 +32,19 @@ export default function ContactForm() {
       const entry = entries[0];
       setIsImageBottomVisible(entry.isIntersecting);
     });
+    const formObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsFormVisible(entry.isIntersecting);
+    });
 
     if (imageRef.current) {
       imgObserver.observe(imageRef.current);
     }
     if (imageBottom.current) {
       imageBottomObserver.observe(imageBottom.current);
+    }
+    if (form.current) {
+      formObserver.observe(form.current);
     }
 
     return () => {
@@ -45,6 +53,9 @@ export default function ContactForm() {
       }
       if (imageBottom.current) {
         imageBottomObserver.unobserve(imageBottom.current);
+      }
+      if (form.current) {
+        formObserver.unobserve(form.current);
       }
     };
   }, []);
@@ -179,7 +190,13 @@ export default function ContactForm() {
           </p>
         </div>
       </div>
-      <form ref={form} className={styles.mailForm} onSubmit={sendEmail}>
+      <form
+        ref={form}
+        className={`${styles.mailForm} ${
+          isFormVisible ? styles.showElement : ''
+        }`}
+        onSubmit={sendEmail}
+      >
         <div className={styles.topFormContainer}>
           <div className={styles.inputContainer}>
             <input

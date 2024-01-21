@@ -7,6 +7,7 @@
   transition: all 1s;
   overflow: hidden;
   font-size: 0.8rem;
+  /* z-index: 100; */
 }
 .footerContainer a {
   font-weight: bold;

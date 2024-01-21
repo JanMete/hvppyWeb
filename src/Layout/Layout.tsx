@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import styles from './layout.module.css';
 import Footer2 from './LayoutComponents/Footer2/Footer2';
+import { scrollPositionContext } from '../contexts/scrollPositionContext';
 
 export default function Layout() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -41,7 +42,9 @@ export default function Layout() {
       ) : (
         <WebHeader scrollPosition={scrollPosition} />
       )}
-      <Outlet />
+      <scrollPositionContext.Provider value={scrollPosition}>
+        <Outlet />
+      </scrollPositionContext.Provider>
       <Footer2 />
     </div>
   );

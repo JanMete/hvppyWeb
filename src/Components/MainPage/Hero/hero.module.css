@@ -26,7 +26,9 @@
 .heroHeader {
   margin-bottom: 1rem;
 }
-
+.hideHeroContainer {
+  display: none;
+}
 @media screen and (max-width: 1024px) {
   .heroContainer {
     position: fixed;

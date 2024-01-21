@@ -1,5 +1,5 @@
 import styles from './location.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import jsonp from 'jsonp';
 import KUTE from 'kute.js';
 
@@ -15,6 +15,74 @@ export default function Location() {
   const [isMailCorrect, setIsMailCorrect] = useState(false);
   const [keepCheckingEmail, setKeepCheckingEmail] = useState(false);
   const [emailErrors, setEmailErrors] = useState<string[]>([]);
+
+  // INTERSECTION OBSERVER
+
+  const mapRef = useRef<HTMLDivElement>(null);
+  const locationRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const newsletterRef = useRef<HTMLDivElement>(null);
+  const [isMapVisible, setIsMapVisible] = useState(false);
+  const [isLocationVisible, setIsLocationVisible] = useState(false);
+  const [isContactVisible, setIsContactVisible] = useState(false);
+  const [isNewsletterVisible, setIsNewsletterVisible] = useState(false);
+
+  useEffect(() => {
+    const mapObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsMapVisible(entry.isIntersecting);
+    });
+
+    const locationObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsLocationVisible(entry.isIntersecting);
+    });
+
+    const contactObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsContactVisible(entry.isIntersecting);
+    });
+
+    const newsletterObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsNewsletterVisible(entry.isIntersecting);
+    });
+
+    if (mapRef.current) {
+      mapObserver.observe(mapRef.current);
+    }
+
+    if (locationRef.current) {
+      locationObserver.observe(locationRef.current);
+    }
+
+    if (contactRef.current) {
+      contactObserver.observe(contactRef.current);
+    }
+
+    if (newsletterRef.current) {
+      newsletterObserver.observe(newsletterRef.current);
+    }
+
+    return () => {
+      if (mapRef.current) {
+        mapObserver.unobserve(mapRef.current);
+      }
+
+      if (locationRef.current) {
+        locationObserver.unobserve(locationRef.current);
+      }
+
+      if (contactRef.current) {
+        contactObserver.unobserve(contactRef.current);
+      }
+
+      if (newsletterRef.current) {
+        newsletterObserver.unobserve(newsletterRef.current);
+      }
+    };
+  }, []);
+  // INTERSECTION OBSERVER END
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -89,7 +157,12 @@ export default function Location() {
         {responseMessage}
       </div>
       <section className={styles.sectionContainer}>
-        <div className={styles.iframeContainer}>
+        <div
+          ref={mapRef}
+          className={`${isMapVisible ? styles.showElement : ''} ${
+            styles.iframeContainer
+          }`}
+        >
           <iframe
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d640.2209756295504!2d19.927753369678012!3d50.06973585901462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b008149a3c5%3A0x2f0523177ae265b!2sBlack%20mood%20Tattoo%20Studio!5e0!3m2!1spl!2spl!4v1705498982989!5m2!1spl!2spl'
             frameBorder='0'
@@ -103,19 +176,34 @@ export default function Location() {
       </section>
       <section className={styles.sectionContainer}>
         <div className={styles.topRightSection}>
-          <div className={styles.subsectionContainer}>
+          <div
+            ref={locationRef}
+            className={`${isLocationVisible ? styles.showElement : ''} ${
+              styles.subsectionContainerLocation
+            }`}
+          >
             <h2 className={styles.subsectionHeading}>Location</h2>
             <div>
               <p>Teofila Lenartowicza 7/7</p>
               <p>31-148 Kraków</p>
             </div>
           </div>
-          <div className={styles.subsectionContainer}>
+          <div
+            ref={contactRef}
+            className={`${isContactVisible ? styles.showElement : ''} ${
+              styles.subsectionContainerContact
+            }`}
+          >
             <h2 className={styles.subsectionHeading}>Contact</h2>
             <p>TATTOOHVPPY@GMAIL.COM</p>
           </div>
         </div>
-        <div>
+        <div
+          ref={newsletterRef}
+          className={`${styles.newsletterContaier} ${
+            isNewsletterVisible ? styles.showElement : ''
+          }`}
+        >
           <h2 className={styles.subsectionHeading}>Sign up for NewsLetter</h2>
           <form className={styles.newsletterForm} onSubmit={onSubmit}>
             <input
