@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { sections } from '../../../utils/sections';
 import LOGO from '../../../assets/homeLogo.png';
 import styles from './mobileHeader.module.css';
@@ -16,6 +16,11 @@ export default function MobileMenu({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
 }: MobileMenuProps) {
+  const scrollToTopCloseMenu = () => {
+    window.scrollTo(0, 0);
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div
       className={`${styles.mobileMenuContainer} ${
@@ -25,7 +30,7 @@ export default function MobileMenu({
       {/* LOGO */}
 
       <div className={`${styles.logoContainer}`}>
-        <Link onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} to='/'>
+        <Link onClick={scrollToTopCloseMenu} to='/'>
           <img src={LOGO} alt='Logo portrait of artist' />
         </Link>
       </div>
@@ -34,28 +39,19 @@ export default function MobileMenu({
 
       <ul>
         <li className={styles.link}>
-          <Link
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            to={sections[0].path}
-          >
+          <NavLink onClick={scrollToTopCloseMenu} to={sections[0].path}>
             {sections[0].sectionName.toUpperCase()}
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.link}>
-          <Link
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            to={sections[1].path}
-          >
+          <NavLink onClick={scrollToTopCloseMenu} to={sections[1].path}>
             {sections[1].sectionName.toUpperCase()}
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.link}>
-          <Link
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            to={sections[2].path}
-          >
+          <NavLink onClick={scrollToTopCloseMenu} to={sections[2].path}>
             {sections[2].sectionName.toUpperCase()}
-          </Link>
+          </NavLink>
         </li>
       </ul>
 
