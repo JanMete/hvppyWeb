@@ -22,7 +22,7 @@ import tattoosPhoto6 from '../assets/Artwork Images/Tattoos/6.jpeg';
 import tattoosPhoto7 from '../assets/Artwork Images/Tattoos/7.jpeg';
 import tattoosPhoto8 from '../assets/Artwork Images/Tattoos/8.jpeg';
 
-export const designes1 = [
+export const designes = [
   {
     img: designesPhoto1,
   },
@@ -44,8 +44,6 @@ export const designes1 = [
   {
     img: designesPhoto7,
   },
-];
-export const designes2 = [
   {
     img: designesPhoto8,
   },
@@ -68,7 +66,7 @@ export const designes2 = [
     img: designesPhoto14,
   },
 ];
-export const tattoos1 = [
+export const tattoos = [
   {
     img: tattoosPhoto1,
   },
@@ -81,8 +79,6 @@ export const tattoos1 = [
   {
     img: tattoosPhoto4,
   },
-];
-export const tattoos2 = [
   {
     img: tattoosPhoto5,
   },

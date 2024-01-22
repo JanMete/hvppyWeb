@@ -6,6 +6,7 @@ import MainPage from './Components/MainPage/MainPage.tsx';
 import Contact from './Components/Contact/Contact.tsx';
 import Menu from './Components/Artwork/Menu/Menu.tsx';
 import Gallery from './Components/Artwork/Gallery/Gallery.tsx';
+import About from './Components/About/About.tsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/artwork/:category',
         element: <Gallery />,
+      },
+      {
+        path: '/about',
+        element: <About />,
       },
     ],
   },

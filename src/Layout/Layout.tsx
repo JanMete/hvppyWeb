@@ -3,7 +3,7 @@ import MobileHeader from './LayoutComponents/MobileHeader/MobileHeader';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import styles from './layout.module.css';
-import Footer2 from './LayoutComponents/Footer2/Footer2';
+import Footer from './LayoutComponents/Footer/Footer';
 import { scrollPositionContext } from '../contexts/scrollPositionContext';
 
 export default function Layout() {
@@ -45,7 +45,7 @@ export default function Layout() {
       <scrollPositionContext.Provider value={scrollPosition}>
         <Outlet />
       </scrollPositionContext.Provider>
-      <Footer2 />
+      <Footer />
     </div>
   );
 }

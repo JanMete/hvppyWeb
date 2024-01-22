@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from './contactForm.module.css';
-import PORTRAIT from '../../../assets/portrait.jpg';
+import PORTRAIT from '../../../assets/portrait.jpeg';
 
 const validateEmail = (email: string) => {
   const isValidEmail = /^\S+@\S+\.\S+$/.test(email);

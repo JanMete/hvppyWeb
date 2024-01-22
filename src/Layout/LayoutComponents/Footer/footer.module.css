@@ -1,52 +1,28 @@
 .footerContainer {
-  position: relative;
-  padding: 1rem 0;
-  background-color: var(--hvppyPurple);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  background-color: var(--hvppyPurple);
+  padding: 0.2rem 0;
+  transition: all 1s;
+  overflow: hidden;
+  font-size: 0.8rem;
 }
-.iconsContainer {
-  display: flex;
-  gap: 1.25rem;
-  font-size: 2.5rem;
-}
-.icon {
-  transition: transform 0.2s ease-in-out;
-}
-.icon:hover {
-  transform: scale(1.2);
-}
-.showIconTop {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
+.footerContainer a {
+  font-weight: bold;
   transition: all 1s;
 }
-.hideIconTop {
-  filter: blur(5px);
-  transform: translateY(-50%);
+.footerContainer p {
   opacity: 0;
-}
-.sectionLinksContaner {
-  display: flex;
-  flex-direction: column;
-}
-.showIconBottom {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-  transition: all 1s;
-}
-.hideIconBottom {
   filter: blur(5px);
   transform: translateY(50%);
-  opacity: 0;
 }
-.linksList {
-  display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
+.footerContainer a {
+  text-decoration: underline;
+}
+.showFooter {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+  transform: translateY(0) !important;
+  transition: all 1s;
 }
