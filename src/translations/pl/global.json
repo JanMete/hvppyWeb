@@ -1,0 +1,44 @@
+{
+  "webHeader": {
+    "category1": "O MNIE",
+    "category2": "ARTWORK",
+    "category3": "KONTAKT"
+  },
+  "contact": {
+    "formHeader": "Napisz!",
+    "formName": "Imię",
+    "formEmail": "Email",
+    "formMessage": "Jaki tatuaż chciałbyś mieć?",
+    "send": "Wyślij",
+    "enterName": "Wprowadź Imię",
+    "enterEmail": "Wprowadź Email",
+    "validEmail": "Wprowadź prawidłowy Email",
+    "enterMessage": "Wprowadź wiadomość"
+  },
+  "location": {
+    "location": "Lokalizacja",
+    "cracow": "Kraków",
+    "contact": "Kontakt",
+    "newsLetter": "Zapisz się do NewsLettera",
+    "send": "Wyślij"
+  },
+  "main": {
+    "attributes": {
+      "happy": "HAPPY",
+      "vibes": "VIBES",
+      "unique": "UNIKALNE",
+      "designes": "PROJEKTY",
+      "great": "ŚWIETNA",
+      "quality": "JAKOŚĆ"
+    },
+    "aftercare": {
+      "aftercare": "Jak dbać o tatuaż",
+      "header1": "Zaraz po zrobieniu nowej dziarki",
+      "text1": "Pod koniec naszej wizyty, przykleję na twoją świeżą dziarkę second skina (opatrunek). Pamiętaj, że nie powinieneś go nosić dłużej niż 2 dni; inaczej tatuaż może się zaparzyć, czego zdecydowanie nie chcemy! Zwróć uwagę też, że jeżeli masz tatuaż kolorowy, to powinieneś zdjąć opatrunek pod wieczór tego samego dnia, najlepiej zaraz przed prysznicem!Przez kilka pierwszych dni",
+      "header2": "Pielęgnacja",
+      "text2": "Następnie najważniejsza część, a mianowicie smarowanie tatuażu kremem. Skóra w tym miejscu musi być cały czas nawilżona, i powinieneś aplikować krem 2-3 razy dziennie. Możesz go kupić u nas podczas wizyty albo zaopatrzyć się w Bepanthen w aptece. Z reguły proces gojenia tatuażu trwa około miesiąca czasu, oczywiście wszystko zależy od wielkości tatuażu, miejsca i dbania o niego. Pamiętaj że w tym czasie nie powinieneś: chodzić na plaże, opalać się, pływać w morzu albo na basenie i raczej unikaj saun. Nie powinieneś też uprawiać sportów i chodzić na siłkę… w skrócie, idealny moment żeby nadrobić seriale, książki albo giereczki! Pytacie mnie też często czy możecie pić alkohol, moim zdaniem jedno piwko jeszcze nikogo nie zabiło, ale nie przesadzajcie przez pierwsze tygodnie bo może to prowadzić do rozlania tatuażu w szczególości przy małych detalach.",
+      "header3": "Po zagojeniu",
+      "text3": "Twój tatuaż nareszcie się zagoił. Brawo! Udało ci się dbać o niego przez cały ten czas, i nareszcie, możesz wreszcie go zaniedbywać... BUM! ŹLE! Tutaj niestety droga się nie kończy. Nasza skóra jest cały czas narażona na różne czynniki zewnętrzne, takie jak słońce czy na przykład słona woda. Co więcej, skóra naturalnie się złuszcza, i jest to normalne, że tusz pod skórą z czasem zanika. Aby tego uniknąć, pamiętaj o dalszym smarowaniu dziarki kremem nawilżającym. Gdy wychodzisz na słońce, koniecznie smaruj się kremem z filtrem."
+    }
+  }
+}

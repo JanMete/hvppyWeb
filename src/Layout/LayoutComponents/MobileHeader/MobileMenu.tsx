@@ -1,23 +1,39 @@
+import { useTranslation } from 'react-i18next';
+import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { Link, NavLink } from 'react-router-dom';
+import {
+  faFacebook,
+  faInstagram,
+  faTiktok,
+} from '@fortawesome/free-brands-svg-icons';
+import LOGO from '../../../assets/MainPage/homeLogo.png';
 import { sections } from '../../../utils/sections';
-import LOGO from '../../../assets/homeLogo.png';
 import styles from './mobileHeader.module.css';
+import { useContext } from 'react';
+import { activeLanguageContext } from '../../../contexts/activeLanguageContext';
+import { setActiveLanguageContext } from '../../../contexts/setActiveLanguageContext';
 
 type MobileMenuProps = {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function MobileMenu({
+const MobileMenu: React.FC<MobileMenuProps> = ({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
-}: MobileMenuProps) {
+}: MobileMenuProps) => {
+  const activeLanguage = useContext(activeLanguageContext);
+  const setActiveLanguage = useContext(setActiveLanguageContext);
+
   const scrollToTopCloseMenu = () => {
     window.scrollTo(0, 0);
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const [, i18n] = useTranslation('global');
+  const handleChangeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setActiveLanguage(lang);
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
@@ -56,32 +72,49 @@ export default function MobileMenu({
       </ul>
 
       {/* ICONS */}
-
-      <div className={styles.iconsContainer}>
-        <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://www.facebook.com/hvppytattoo'
-        >
-          <FontAwesomeIcon icon={faFacebook} />
-        </a>
-        <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://www.instagram.com/hvppy_tattoo/'
-        >
-          <FontAwesomeIcon icon={faInstagram} />
-        </a>
-        <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
-        >
-          <FontAwesomeIcon icon={faTiktok} />
-        </a>
+      <div className={styles.iconsLangContainer}>
+        <div className={styles.iconsContainer}>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.facebook.com/hvppytattoo'
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.instagram.com/hvppy_tattoo/'
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
+          >
+            <FontAwesomeIcon icon={faTiktok} />
+          </a>
+        </div>
+        <div className={styles.langButtons}>
+          <button
+            className={`${activeLanguage === 'pl' ? styles.activeLang : ''}`}
+            onClick={() => handleChangeLanguage('pl')}
+          >
+            PL
+          </button>
+          <button
+            className={`${activeLanguage === 'en' ? styles.activeLang : ''}`}
+            onClick={() => handleChangeLanguage('en')}
+          >
+            EN
+          </button>
+        </div>
       </div>
 
       {/* ICONS END */}
     </div>
   );
-}
+};
+
+export default MobileMenu;

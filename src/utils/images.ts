@@ -22,6 +22,18 @@ import tattoosPhoto6 from '../assets/Artwork Images/Tattoos/6.jpeg';
 import tattoosPhoto7 from '../assets/Artwork Images/Tattoos/7.jpeg';
 import tattoosPhoto8 from '../assets/Artwork Images/Tattoos/8.jpeg';
 
+import clothesPhoto1 from '../assets/Artwork Images/Clothes/1.jpeg';
+import clothesPhoto2 from '../assets/Artwork Images/Clothes/2.jpeg';
+import clothesPhoto3 from '../assets/Artwork Images/Clothes/3.jpeg';
+import clothesPhoto4 from '../assets/Artwork Images/Clothes/4.jpeg';
+
+import otherPhoto1 from '../assets/Artwork Images/Other/1.jpeg';
+import otherPhoto2 from '../assets/Artwork Images/Other/2.jpeg';
+import otherPhoto3 from '../assets/Artwork Images/Other/3.jpeg';
+import otherPhoto4 from '../assets/Artwork Images/Other/4.jpeg';
+import otherPhoto5 from '../assets/Artwork Images/Other/5.jpeg';
+import otherPhoto6 from '../assets/Artwork Images/Other/6.jpeg';
+
 export const designes = [
   {
     img: designesPhoto1,
@@ -90,5 +102,39 @@ export const tattoos = [
   },
   {
     img: tattoosPhoto8,
+  },
+];
+export const clothes = [
+  {
+    img: clothesPhoto1,
+  },
+  {
+    img: clothesPhoto2,
+  },
+  {
+    img: clothesPhoto3,
+  },
+  {
+    img: clothesPhoto4,
+  },
+];
+export const other = [
+  {
+    img: otherPhoto1,
+  },
+  {
+    img: otherPhoto2,
+  },
+  {
+    img: otherPhoto3,
+  },
+  {
+    img: otherPhoto4,
+  },
+  {
+    img: otherPhoto5,
+  },
+  {
+    img: otherPhoto6,
   },
 ];

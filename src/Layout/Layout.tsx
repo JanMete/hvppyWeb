@@ -5,8 +5,11 @@ import { Outlet } from 'react-router-dom';
 import styles from './layout.module.css';
 import Footer from './LayoutComponents/Footer/Footer';
 import { scrollPositionContext } from '../contexts/scrollPositionContext';
+import { setActiveLanguageContext } from '../contexts/setActiveLanguageContext';
+import { activeLanguageContext } from '../contexts/activeLanguageContext';
 
 export default function Layout() {
+  const [activeLanguage, setActiveLanguage] = useState('pl');
   const [scrollPosition, setScrollPosition] = useState(0);
   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
@@ -37,11 +40,15 @@ export default function Layout() {
 
   return (
     <div className={styles.layout}>
-      {isMobile ? (
-        <MobileHeader />
-      ) : (
-        <WebHeader scrollPosition={scrollPosition} />
-      )}
+      <setActiveLanguageContext.Provider value={setActiveLanguage}>
+        <activeLanguageContext.Provider value={activeLanguage}>
+          {isMobile ? (
+            <MobileHeader />
+          ) : (
+            <WebHeader scrollPosition={scrollPosition} />
+          )}
+        </activeLanguageContext.Provider>
+      </setActiveLanguageContext.Provider>
       <scrollPositionContext.Provider value={scrollPosition}>
         <Outlet />
       </scrollPositionContext.Provider>

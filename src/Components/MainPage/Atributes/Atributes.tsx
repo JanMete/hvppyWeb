@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 import styles from './atributes.module.css';
-import ATRIBUTEICON1 from '../../../assets/atributeIcon1.png';
-import ATRIBUTEICON2 from '../../../assets/atributeIcon2.png';
+import ATRIBUTEICON1 from '../../../assets/MainPage/atributeIcon1.png';
+import ATRIBUTEICON2 from '../../../assets/MainPage/atributeIcon2.png';
+import { useTranslation } from 'react-i18next';
 
 export default function Atributes() {
+  const [t] = useTranslation('global');
   const [isSection1Visible, setIsSection1Visible] = useState(false);
   const [isSection2Visible, setIsSection2Visible] = useState(false);
   const [isSection3Visible, setIsSection3Visible] = useState(false);
@@ -64,8 +66,8 @@ export default function Atributes() {
             isSection1Visible ? styles.show : styles.hide
           }`}
         >
-          <span>HAPPY</span>
-          <span>VIBES</span>
+          <span>{t('main.attributes.happy')}</span>
+          <span>{t('main.attributes.vibes')}</span>
         </section>
 
         <section
@@ -83,8 +85,8 @@ export default function Atributes() {
             isSection3Visible ? styles.show : styles.hide
           }`}
         >
-          <span>UNIQUE</span>
-          <span>DESIGNS</span>
+          <span>{t('main.attributes.unique')}</span>
+          <span>{t('main.attributes.designes')}</span>
         </section>
 
         <section
@@ -102,8 +104,8 @@ export default function Atributes() {
             isSection5Visible ? styles.show : styles.hide
           }`}
         >
-          <span>GREAT</span>
-          <span>QUALITY</span>
+          <span>{t('main.attributes.great')}</span>
+          <span>{t('main.attributes.quality')}</span>
         </section>
       </div>
     </article>

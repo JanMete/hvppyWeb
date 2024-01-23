@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { NavLink, useParams } from 'react-router-dom';
-import { tattoos, designes } from '../../../utils/images';
+import { tattoos, designes, clothes, other } from '../../../utils/images';
 import styles from './gallery.module.css';
 import { categories } from '../../../utils/categories';
 import { useEffect, useState } from 'react';
@@ -17,6 +17,10 @@ export default function Gallery() {
     imagesToDisplay = [...tattoos];
   } else if (category === 'designes') {
     imagesToDisplay = [...designes];
+  } else if (category === 'clothes') {
+    imagesToDisplay = [...clothes];
+  } else if (category === 'other') {
+    imagesToDisplay = [...other];
   }
 
   useEffect(() => {

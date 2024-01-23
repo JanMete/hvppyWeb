@@ -1,45 +1,29 @@
 import styles from './aftercare.module.css';
-import { useEffect, useRef, useState } from 'react';
-import aftercare1 from '../../../assets/aftercare1.jpg';
+import { useRef } from 'react';
+import aftercare1 from '../../../assets/MainPage/aftercare1.jpeg';
+import aftercare2 from '../../../assets/MainPage/aftercare2.jpg';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 
 export default function Aftercare() {
+  const [t] = useTranslation('global');
+  // INTERSECTION OBSERVER
+
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
 
-  const [section1RefIsVisible, setSection1RefIsVisible] = useState(false);
-  const [section2RefIsVisible, setSection2RefIsVisible] = useState(false);
-  const [section3RefIsVisible, setSection3RefIsVisible] = useState(false);
+  const section1RefIsVisible = useIntersectionObserver(section1Ref);
+  const section2RefIsVisible = useIntersectionObserver(section2Ref);
+  const section3RefIsVisible = useIntersectionObserver(section3Ref);
 
-  useEffect(() => {
-    const observer1 = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setSection1RefIsVisible(entry.isIntersecting);
-    });
-    observer1.observe(section1Ref.current!);
-
-    const observer2 = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setSection2RefIsVisible(entry.isIntersecting);
-    });
-    observer2.observe(section2Ref.current!);
-
-    const observer3 = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setSection3RefIsVisible(entry.isIntersecting);
-    });
-    observer3.observe(section3Ref.current!);
-
-    return () => {
-      observer1.disconnect();
-      observer2.disconnect();
-      observer3.disconnect();
-    };
-  }, []);
+  // INTERSECTION OBSERVER END
 
   return (
     <div className={styles.aftercareContainer}>
-      <h1 className={styles.aftercareHeading}>AFTERCARE</h1>
+      <h1 className={styles.aftercareHeading}>
+        {t('main.aftercare.aftercare')}
+      </h1>
       <div>
         {/* SECTION 1 */}
 
@@ -57,18 +41,9 @@ export default function Aftercare() {
             }`}
           >
             <h2 className={styles.sectionSecondaryHeading}>
-              Lorem ipsum dolor sit.
+              {t('main.aftercare.header1')}
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
-              perspiciatis, odio, iusto tenetur quia a! Minus, reiciendis a!
-              Fuga tempore quam iste? Iusto ad eaque libero error
-              necessitatibus? Impedit modi est, totam excepturi laudantium odit
-              facere rem, adipisci, veritatis ipsum vero doloribus deleniti sit
-              voluptatem commodi incidunt! Vero consequuntur et excepturi
-              numquam.
-            </p>
+            <p>{t('main.aftercare.text1')}</p>
           </div>
         </section>
 
@@ -81,23 +56,16 @@ export default function Aftercare() {
                 section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
-              <img src={aftercare1} alt='' />
+              <img src={aftercare2} alt='' />
             </div>
             <div
               className={`${styles.txtContainer} ${
                 section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
-              <h2>Lorem ipsum dolor sit.</h2>
+              <h2>{t('main.aftercare.header2')}</h2>
               <p className={styles.sectionSecondaryHeading}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
-                perspiciatis, odio, iusto tenetur quia a! Minus, reiciendis a!
-                Fuga tempore quam iste? Iusto ad eaque libero error
-                necessitatibus? Impedit modi est, totam excepturi laudantium
-                odit facere rem, adipisci, veritatis ipsum vero doloribus
-                deleniti sit voluptatem commodi incidunt! Vero consequuntur et
-                excepturi numquam.
+                {t('main.aftercare.text2')}
               </p>
             </div>
           </section>
@@ -109,25 +77,16 @@ export default function Aftercare() {
               }`}
             >
               <h2 className={styles.sectionSecondaryHeading}>
-                Lorem ipsum dolor sit.
+                {t('main.aftercare.header2')}
               </h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
-                perspiciatis, odio, iusto tenetur quia a! Minus, reiciendis a!
-                Fuga tempore quam iste? Iusto ad eaque libero error
-                necessitatibus? Impedit modi est, totam excepturi laudantium
-                odit facere rem, adipisci, veritatis ipsum vero doloribus
-                deleniti sit voluptatem commodi incidunt! Vero consequuntur et
-                excepturi numquam.
-              </p>
+              <p>{t('main.aftercare.text2')}</p>
             </div>
             <div
               className={`${styles.imageContainer} ${
                 section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
-              <img src={aftercare1} alt='' />
+              <img src={aftercare2} alt='' />
             </div>
           </section>
         )}
@@ -148,18 +107,9 @@ export default function Aftercare() {
             }`}
           >
             <h2 className={styles.sectionSecondaryHeading}>
-              Lorem ipsum dolor sit.
+              {t('main.aftercare.header3')}
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam ipsa quam, corrupti modi dolor aliquam unde facilis
-              perspiciatis, odio, iusto tenetur quia a! Minus, reiciendis a!
-              Fuga tempore quam iste? Iusto ad eaque libero error
-              necessitatibus? Impedit modi est, totam excepturi laudantium odit
-              facere rem, adipisci, veritatis ipsum vero doloribus deleniti sit
-              voluptatem commodi incidunt! Vero consequuntur et excepturi
-              numquam.
-            </p>
+            <p>{t('main.aftercare.text3')}</p>
           </div>
         </section>
       </div>

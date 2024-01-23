@@ -1,5 +1,5 @@
-import designesThumbnail from '../assets/designesThumbnail.jpg';
-import tattooThumbnail from '../assets/tattooThumbnail.jpeg';
+import designesThumbnail from '../assets/Artwork Images/Thumbnails/designesThumbnail.jpg';
+import tattooThumbnail from '../assets/Artwork Images/Thumbnails/tattooThumbnail.jpeg';
 
 export const categories = [
   {

@@ -1,20 +1,30 @@
 import styles from './location.module.css';
-import { useEffect, useRef, useState } from 'react';
-import jsonp from 'jsonp';
-import KUTE from 'kute.js';
+import { useRef } from 'react';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import useLocationHook from '../../../hooks/useLocation';
+import { useTranslation } from 'react-i18next';
 
-const validateEmail = (email: string) => {
-  const isValidEmail = /^\S+@\S+\.\S+$/.test(email);
-  return isValidEmail ? [] : ['Please enter a valid Email address'];
+type useLocationType = {
+  email: string;
+  responseMessage: string;
+  responseBoxIsVisible: boolean;
+  isMailCorrect: boolean;
+  emailErrors: string[];
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function Location() {
-  const [email, setEmail] = useState('');
-  const [responseMessage, setResponseMessage] = useState('');
-  const [responseBoxIsVisible, setResponseBoxIsVisible] = useState(false);
-  const [isMailCorrect, setIsMailCorrect] = useState(false);
-  const [keepCheckingEmail, setKeepCheckingEmail] = useState(false);
-  const [emailErrors, setEmailErrors] = useState<string[]>([]);
+  const [t] = useTranslation('global');
+  const {
+    email,
+    responseMessage,
+    responseBoxIsVisible,
+    isMailCorrect,
+    emailErrors,
+    onSubmit,
+    handleEmailChange,
+  }: useLocationType = useLocationHook();
 
   // INTERSECTION OBSERVER
 
@@ -22,133 +32,18 @@ export default function Location() {
   const locationRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const newsletterRef = useRef<HTMLDivElement>(null);
-  const [isMapVisible, setIsMapVisible] = useState(false);
-  const [isLocationVisible, setIsLocationVisible] = useState(false);
-  const [isContactVisible, setIsContactVisible] = useState(false);
-  const [isNewsletterVisible, setIsNewsletterVisible] = useState(false);
 
-  useEffect(() => {
-    const mapObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsMapVisible(entry.isIntersecting);
-    });
+  const isMapVisible = useIntersectionObserver(mapRef);
+  const isLocationVisible = useIntersectionObserver(locationRef);
+  const isContactVisible = useIntersectionObserver(contactRef);
+  const isNewsletterVisible = useIntersectionObserver(newsletterRef);
 
-    const locationObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsLocationVisible(entry.isIntersecting);
-    });
-
-    const contactObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsContactVisible(entry.isIntersecting);
-    });
-
-    const newsletterObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsNewsletterVisible(entry.isIntersecting);
-    });
-
-    if (mapRef.current) {
-      mapObserver.observe(mapRef.current);
-    }
-
-    if (locationRef.current) {
-      locationObserver.observe(locationRef.current);
-    }
-
-    if (contactRef.current) {
-      contactObserver.observe(contactRef.current);
-    }
-
-    if (newsletterRef.current) {
-      newsletterObserver.observe(newsletterRef.current);
-    }
-
-    return () => {
-      if (mapRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        mapObserver.unobserve(mapRef.current);
-      }
-
-      if (locationRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        locationObserver.unobserve(locationRef.current);
-      }
-
-      if (contactRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        contactObserver.unobserve(contactRef.current);
-      }
-
-      if (newsletterRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        newsletterObserver.unobserve(newsletterRef.current);
-      }
-    };
-  }, []);
   // INTERSECTION OBSERVER END
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    setKeepCheckingEmail(true);
-
-    const emailErrors = validateEmail(email);
-    setEmailErrors(emailErrors);
-
-    if (emailErrors.length > 0) {
-      setResponseMessage('Please enter valid Email');
-      setResponseBoxIsVisible(true);
-      setIsMailCorrect(false);
-      return;
-    }
-
-    const url = import.meta.env.VITE_MAILCHIMPURL;
-    jsonp(`${url}&EMAIL=${email}`, { param: 'c' }, (_, data) => {
-      const { msg }: { msg: string } = data;
-
-      if (msg.includes('Please enter a value')) {
-        setResponseMessage('Please enter your Email');
-        setResponseBoxIsVisible(true);
-        setIsMailCorrect(false);
-      } else {
-        setResponseMessage(msg);
-        setResponseBoxIsVisible(true);
-        setIsMailCorrect(true);
-        setEmail('');
-      }
-    });
-  };
-  useEffect(() => {
-    const tween = KUTE.fromTo(
-      '#blob1',
-      { path: '#blob1' },
-      { path: '#blob2' },
-      { repeat: 999, duration: 3000, yoyo: true }
-    );
-    tween.start();
-  }, []);
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setResponseBoxIsVisible(false);
-    }, 4000);
-
-    return () => clearTimeout(timeoutId);
-  }, [responseBoxIsVisible]);
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newEmailValue = e.target.value;
-    setEmail(newEmailValue);
-
-    if (keepCheckingEmail) {
-      const emailErrors = validateEmail(newEmailValue);
-      setEmailErrors(emailErrors);
-    }
-  };
 
   return (
     <div className={styles.locationContainer}>
+      {/* NEWSLETTER POP-UP */}
+
       <div
         className={`${styles.responseMessageContainer} ${
           responseBoxIsVisible
@@ -160,11 +55,16 @@ export default function Location() {
       >
         {responseMessage}
       </div>
+
+      {/* NEWSLETTER POP-UP END */}
+
+      {/* GOOGLE MAPS */}
+
       <section className={styles.sectionContainer}>
         <div
           ref={mapRef}
-          className={`${isMapVisible ? styles.showElement : ''} ${
-            styles.iframeContainer
+          className={` ${styles.iframeContainer}${
+            isMapVisible ? styles.showElement : ''
           }`}
         >
           <iframe
@@ -178,28 +78,37 @@ export default function Location() {
           ></iframe>
         </div>
       </section>
+
+      {/* GOOGLE MAPS END */}
+
+      {/* LOCATION, CONTACT, NEWSLETTER */}
+
       <section className={styles.sectionContainer}>
         <div className={styles.topRightSection}>
           <div
             ref={locationRef}
             className={`${isLocationVisible ? styles.showElement : ''} ${
-              styles.subsectionContainerLocation
+              styles.locationSubsectionContainer
             }`}
           >
-            <h2 className={styles.subsectionHeading}>Location</h2>
+            <h2 className={styles.subsectionHeading}>
+              {t('location.location')}
+            </h2>
             <div>
               <p>Teofila Lenartowicza 7/7</p>
-              <p>31-148 Kraków</p>
+              <p>31-148 {t('location.cracow')}</p>
             </div>
           </div>
           <div
             ref={contactRef}
-            className={`${isContactVisible ? styles.showElement : ''} ${
-              styles.subsectionContainerContact
+            className={`${styles.contactSubsectionContainer} ${
+              isContactVisible ? styles.showElement : ''
             }`}
           >
-            <h2 className={styles.subsectionHeading}>Contact</h2>
-            <p>TATTOOHVPPY@GMAIL.COM</p>
+            <h2 className={styles.subsectionHeading}>
+              {t('location.contact')}
+            </h2>
+            <a href='mailto:someone@example.com'>TATTOOHVPPY@GMAIL.COM</a>
           </div>
         </div>
         <div
@@ -208,7 +117,9 @@ export default function Location() {
             isNewsletterVisible ? styles.showElement : ''
           }`}
         >
-          <h2 className={styles.subsectionHeading}>Sign up for NewsLetter</h2>
+          <h2 className={styles.subsectionHeading}>
+            {t('location.newsLetter')}
+          </h2>
           <form className={styles.newsletterForm} onSubmit={onSubmit}>
             <input
               type='email'
@@ -225,11 +136,16 @@ export default function Location() {
             <input
               type='submit'
               className={styles.newsLetterSendButton}
-              value='Send'
+              value={t('location.send')}
             />
           </form>
         </div>
       </section>
+
+      {/* LOCATION, CONTACT, NEWSLETTER */}
+
+      {/* BULB ANIMATION */}
+
       <article className={styles.bolbContainer}>
         <svg
           className={styles.blobMotion}
@@ -260,6 +176,8 @@ export default function Location() {
           </g>
         </svg>
       </article>
+
+      {/* BULB ANIMATION END */}
     </div>
   );
 }

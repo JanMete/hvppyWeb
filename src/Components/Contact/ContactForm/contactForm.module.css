@@ -1,5 +1,5 @@
 .contactFormMainContainer {
-  background-image: url('../../../assets/contactFormBackground.svg');
+  background-image: url('../../../assets/Contact/contactFormBackground.svg');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -26,28 +26,6 @@
   opacity: 0;
   transition: all 1s;
 }
-.showImage {
-  opacity: 1 !important;
-}
-.formHeading h1 {
-  font-size: 6.25rem;
-  filter: blur(5px);
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: all 1s;
-}
-.showElement {
-  filter: blur(0) !important;
-  transform: translateX(0) !important;
-  opacity: 1 !important;
-}
-.formHeading p {
-  font-size: 1.25rem;
-  filter: blur(5px);
-  transform: translateX(50%);
-  opacity: 0;
-  transition: all 1s;
-}
 .formHeadingBottomContainer {
   position: relative;
   width: 100%;
@@ -58,8 +36,12 @@
   align-items: center;
   line-height: 4.5rem;
 }
-.mailLink {
-  line-height: 4rem;
+.formHeadingBottomContainer h1 {
+  font-size: 6.25rem;
+  filter: blur(5px);
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 1s;
 }
 .mailForm {
   display: flex;
@@ -75,53 +57,12 @@
   transition: all 1s;
   padding-top: 3rem;
   position: relative;
-  top: 0;
-}
-label,
-input:not([type='submit']),
-textarea {
-  padding: 0.5rem 0.5rem;
-  outline: none;
-  border-radius: 0.5rem;
-}
-textarea {
-  width: 100%;
-  min-height: 200px;
-}
-input[type='submit'] {
-  padding: 1.5rem;
-  background-color: var(--hvppyPurple);
-  color: white;
-  cursor: pointer;
+  top: -1rem;
 }
 .topFormContainer {
   display: flex;
   gap: 1rem;
   width: 100%;
-}
-.textInput {
-  width: 50%;
-}
-.textSubmit {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.submitInput {
-  /* background-image: linear-gradient(to right top, #3d076b, #7a3dae); */
-  background-image: radial-gradient(#7a3dae, #4f0e88);
-  font-size: 1.3rem;
-  position: absolute;
-  top: 10.25rem;
-  right: 1.2rem;
-  border-radius: 59% 41% 56% 44% / 40% 58% 42% 60%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-}
-.disabled {
-  background-color: grey;
 }
 .inputContainer {
   width: 100%;
@@ -135,6 +76,40 @@ input[type='submit'] {
 .inputContainer p {
   color: red;
 }
+label,
+input:not([type='submit']),
+textarea {
+  padding: 0.5rem 0.5rem;
+  outline: none;
+  border-radius: 0.5rem;
+}
+input[type='submit'] {
+  padding: 1.5rem;
+  background-color: var(--hvppyPurple);
+  color: white;
+  cursor: pointer;
+}
+textarea {
+  width: 100%;
+  min-height: 200px;
+}
+.textSubmit {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.submitInput {
+  background-image: radial-gradient(#7a3dae, #4f0e88);
+  font-size: 1.3rem;
+  position: absolute;
+  top: 10.25rem;
+  right: 1.2rem;
+  border-radius: 59% 41% 56% 44% / 40% 58% 42% 60%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
 .errorMessage {
   opacity: 0;
   display: none;
@@ -146,9 +121,17 @@ input[type='submit'] {
 .errorBorder {
   border: 2px solid red;
 }
+.showElement {
+  filter: blur(0) !important;
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+.disabled {
+  background-color: grey;
+}
 @media screen and (max-width: 1700px) {
   .mailForm {
-    top: -2.5rem;
+    top: -3rem;
   }
   .contactFormMainContainer {
     padding-top: 11rem;
@@ -156,7 +139,7 @@ input[type='submit'] {
 }
 @media screen and (max-width: 1500px) {
   .mailForm {
-    top: -1rem;
+    top: -1.5rem;
     width: 50%;
   }
   .formHeading {
@@ -168,7 +151,7 @@ input[type='submit'] {
 }
 @media screen and (max-width: 1300px) {
   .mailForm {
-    top: 1rem;
+    top: 0;
     width: 65%;
   }
   .formHeading {
@@ -180,7 +163,7 @@ input[type='submit'] {
 }
 @media screen and (max-width: 1200px) {
   .mailForm {
-    top: -1rem;
+    top: -1.5rem;
   }
   .contactFormMainContainer {
     padding-top: 13rem;
@@ -218,7 +201,7 @@ input[type='submit'] {
 }
 @media screen and (max-width: 600px) {
   .mailForm {
-    top: -5rem;
+    top: -6rem;
     width: 100%;
   }
   .contactFormMainContainer {
@@ -235,7 +218,7 @@ input[type='submit'] {
 }
 @media screen and (max-width: 500px) {
   .mailForm {
-    top: -7rem;
+    top: -8rem;
   }
   .contactFormMainContainer {
     padding-top: 5rem;
@@ -243,7 +226,7 @@ input[type='submit'] {
 }
 @media screen and (max-width: 400px) {
   .mailForm {
-    top: -9rem;
+    top: -10rem;
   }
   .contactFormMainContainer {
     padding-top: 3rem;

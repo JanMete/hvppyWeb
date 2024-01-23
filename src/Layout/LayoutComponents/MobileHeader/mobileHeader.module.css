@@ -87,8 +87,24 @@
 }
 .iconsContainer {
   display: flex;
-  margin-top: auto;
   gap: 1.25rem;
   margin-left: 1rem;
   font-size: 3rem;
+}
+.iconsLangContainer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.langButtons {
+  margin-right: 2rem;
+  font-size: 4rem;
+  display: flex;
+  gap: 1rem;
+}
+.langButtons button {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
 }

@@ -3,18 +3,30 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { NavLink, Link } from 'react-router-dom';
-import LOGO from '../../../assets/homeLogo.png';
+import LOGO from '../../../assets/MainPage/homeLogo.png';
 import { sections } from '../../../utils/sections';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import styles from './webHeader.module.css';
+import { useTranslation } from 'react-i18next';
+import { activeLanguageContext } from '../../../contexts/activeLanguageContext';
+import { setActiveLanguageContext } from '../../../contexts/setActiveLanguageContext';
 
 type WebHeaderProps = {
   scrollPosition: number;
 };
 
 export default function WebHeader({ scrollPosition }: WebHeaderProps) {
+  const activeLanguage = useContext(activeLanguageContext);
+  const setActiveLanguage = useContext(setActiveLanguageContext);
   const headerRef = useRef<HTMLDivElement>(null);
   const [scrollExceededHeader, setScrollExceededHeader] = useState(false);
+
+  const [t, i18n] = useTranslation('global');
+
+  const chandleChangeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setActiveLanguage(lang);
+  };
 
   useEffect(() => {
     if (headerRef.current) {
@@ -41,12 +53,12 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
         {/* FIRST PART OF NAVIGATION */}
         <div className={styles.linkContainer}>
           <NavLink onClick={scrollToTop} to={sections[0].path}>
-            {sections[0].sectionName.toUpperCase()}
+            {t('webHeader.category1')}
           </NavLink>
         </div>
         <div className={styles.linkContainer}>
           <NavLink onClick={scrollToTop} to={sections[1].path}>
-            {sections[1].sectionName.toUpperCase()}
+            {t('webHeader.category2')}
           </NavLink>
         </div>
         {/* LOGO */}
@@ -65,11 +77,12 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
         {/* SECOND PART OF NAVIGATION */}
         <div className={styles.linkContainer}>
           <NavLink onClick={scrollToTop} to={sections[2].path}>
-            {sections[2].sectionName.toUpperCase()}
+            {t('webHeader.category3')}
           </NavLink>
         </div>
-        {/* SOCIAL LINKS */}
-        <div>
+
+        <div className={styles.socialLangButtons}>
+          {/* SOCIAL LINKS */}
           <ul className={styles.iconsList}>
             <li className={styles.icon}>
               <a
@@ -99,6 +112,22 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
               </a>
             </li>
           </ul>
+
+          {/* LANGUAGE BUTTON */}
+          <div className={styles.langButtons}>
+            <button
+              className={`${activeLanguage === 'pl' ? styles.activeLang : ''}`}
+              onClick={() => chandleChangeLanguage('pl')}
+            >
+              PL
+            </button>
+            <button
+              className={`${activeLanguage === 'en' ? styles.activeLang : ''}`}
+              onClick={() => chandleChangeLanguage('en')}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </nav>
     </header>

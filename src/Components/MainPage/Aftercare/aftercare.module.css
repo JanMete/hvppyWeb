@@ -1,6 +1,6 @@
 .aftercareContainer {
   width: 100%;
-  background-image: url('../../../assets/aftercareSection.svg');
+  background-image: url('../../../assets/MainPage/aftercareSection.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -29,8 +29,6 @@
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-  /* box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px; */
 }
 .txtContainer {
   width: 50%;
@@ -82,9 +80,3 @@
     padding-top: 0;
   }
 }
-
-/* @media screen and (max-width: 1024px) {
-section {
-
-}
-} */

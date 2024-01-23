@@ -48,6 +48,26 @@
   transform: scale(1.8);
   padding-right: 0.1rem;
 }
+.socialLangButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 0.2rem;
+}
+.langButtons {
+  display: flex;
+  gap: 1rem;
+}
+.langButtons button {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+.activeLang {
+  text-decoration: underline;
+}
 .iconsList {
   display: flex;
   gap: 1rem;

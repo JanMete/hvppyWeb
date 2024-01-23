@@ -1,0 +1,44 @@
+{
+  "webHeader": {
+    "category1": "ABOUT",
+    "category2": "ARTWORK",
+    "category3": "CONTACT"
+  },
+  "contact": {
+    "formHeader": "Text me!",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "What kind of tattoo would you like?",
+    "send": "Send",
+    "enterName": "Please enter your Name",
+    "enterEmail": "Please enter your Email",
+    "validEmail": "Please enter a valid Email",
+    "enterMessage": "Please enter a Message"
+  },
+  "location": {
+    "location": "Location",
+    "cracow": "Cracow",
+    "contact": "Contact",
+    "newsLetter": "Sign up for NewsLetter",
+    "send": "Send"
+  },
+  "main": {
+    "attributes": {
+      "happy": "HAPPY",
+      "vibes": "VIBES",
+      "unique": "UNIQUE",
+      "designes": "DESIGNES",
+      "great": "GREAT",
+      "quality": "QUALITY"
+    },
+    "aftercare": {
+      "aftercare": "Aftercare",
+      "header1": "After getting tattoo",
+      "text1": "At the end of our visit, I will apply a second skin (bandage) to your fresh tattoo. Remember that you shouldn't wear it for more than 2 days; otherwise, the tattoo may steam, and we definitely don't want that! Also, please note that if you have a colored tattoo, you should remove the bandage in the evening of the same day, preferably just before taking a shower!",
+      "header2": "Care",
+      "text2": "Then the most important part, namely applying cream to the tattoo. The skin in this area must be constantly moisturized, and you should apply the cream 2-3 times a day. You can buy it from us during your visit or get Bepanthen at the pharmacy. Generally, the tattoo healing process takes about a month; of course, everything depends on the size of the tattoo, its location, and how well you take care of it. Remember that during this time, you shouldn't: go to the beach, sunbathe, swim in the sea or pool, and it's better to avoid saunas. You should also refrain from engaging in sports and going to the gym... in short, it's the perfect time to catch up on TV series, books, or games! Many of you also ask if you can drink alcohol. In my opinion, one beer hasn't killed anyone, but don't overdo it in the first few weeks because it can lead to smudging the tattoo, especially in small details.",
+      "header3": "After the tattoo has healed",
+      "text3": "Your tattoo has finally healed. Bravo! You managed to take care of it all this time, and finally, you can neglect it... BAM! WRONG! Unfortunately, the journey doesn't end here. Our skin is constantly exposed to various external factors, such as the sun or salty water. Moreover, the skin naturally peels, and it's normal for the ink under the skin to fade over time. To avoid this, remember to continue moisturizing your tattoo with cream. When you go out in the sun, make sure to use sunscreen."
+    }
+  }
+}
