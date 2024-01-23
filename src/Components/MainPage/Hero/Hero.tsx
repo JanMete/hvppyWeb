@@ -25,15 +25,14 @@ export default function Hero() {
           isHeroTextRefVisible ? 'opacity-1' : 'opacity-0'
         } ${hideHeroContainer ? styles.hideHeroContainer : ''}`}
       >
-        <h2 className={styles.heroHeader}>Lorem ipsum dolor sit.</h2>
+        <h2 className={styles.heroHeader}>
+          Hi! My name is <span className={styles.hvppyHeader}>H∀PPY</span>
+        </h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, at
           amet. Atque labore veniam cupiditate beatae quibusdam? Quos maiores
           suscipit provident illum possimus, debitis veritatis voluptates veniam
           perspiciatis doloribus inventore. Eaque alias soluta impedit
-          architecto quam ullam iste ipsum quisquam consequatur! Nesciunt
-          explicabo illo mollitia, eius cum praesentium, inventore dolores,
-          autem voluptatibus incidunt aperiam excepturi ut fugit nam natus sunt?
         </p>
       </div>
     </div>

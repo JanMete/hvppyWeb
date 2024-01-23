@@ -3,11 +3,6 @@ import emailjs from '@emailjs/browser';
 import styles from './contactForm.module.css';
 import PORTRAIT from '../../../assets/portrait.jpeg';
 
-const validateEmail = (email: string) => {
-  const isValidEmail = /^\S+@\S+\.\S+$/.test(email);
-  return isValidEmail ? [] : ['Please enter a valid Email address'];
-};
-
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,51 +11,10 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<string[]>([]);
   const [keepCheckingEmail, setKeepCheckingEmail] = useState(false);
 
-  const [isImageVisible, setIsImageVisible] = useState(false);
-  const [isImageBottomVisible, setIsImageBottomVisible] = useState(false);
-  const [isFormVisible, setIsFormVisible] = useState(false);
-
-  const imageRef = useRef<HTMLImageElement>(null);
-  const imageBottom = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const imgObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsImageVisible(entry.isIntersecting);
-    });
-    const imageBottomObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsImageBottomVisible(entry.isIntersecting);
-    });
-    const formObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsFormVisible(entry.isIntersecting);
-    });
-
-    if (imageRef.current) {
-      imgObserver.observe(imageRef.current);
-    }
-    if (imageBottom.current) {
-      imageBottomObserver.observe(imageBottom.current);
-    }
-    if (form.current) {
-      formObserver.observe(form.current);
-    }
-
-    return () => {
-      if (imageRef.current) {
-        imgObserver.unobserve(imageRef.current);
-      }
-      if (imageBottom.current) {
-        imageBottomObserver.unobserve(imageBottom.current);
-      }
-      if (form.current) {
-        formObserver.unobserve(form.current);
-      }
-    };
-  }, []);
-
-  const form = useRef<HTMLFormElement>(null);
+  const validateEmail = (email: string) => {
+    const isValidEmail = /^\S+@\S+\.\S+$/.test(email);
+    return isValidEmail ? [] : ['Please enter a valid Email address'];
+  };
 
   useEffect(() => {
     if (keepCheckingEmail) {
@@ -79,6 +33,27 @@ export default function ContactForm() {
       setErrors((prevErrors) => [...prevErrors, ...emailErrors]);
     }
   }, [email, keepCheckingEmail]);
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmailValue = e.target.value;
+    setEmail(newEmailValue);
+
+    if (isSubmitting || keepCheckingEmail) {
+      const emailErrors = validateEmail(newEmailValue);
+
+      setErrors((prevErrors) =>
+        prevErrors.filter(
+          (error) =>
+            ![
+              'Please enter a valid Email address',
+              'Please enter your Email',
+            ].includes(error)
+        )
+      );
+
+      setErrors((prevErrors) => [...prevErrors, ...emailErrors]);
+    }
+  };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -132,27 +107,6 @@ export default function ContactForm() {
       );
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newEmailValue = e.target.value;
-    setEmail(newEmailValue);
-
-    if (isSubmitting || keepCheckingEmail) {
-      const emailErrors = validateEmail(newEmailValue);
-
-      setErrors((prevErrors) =>
-        prevErrors.filter(
-          (error) =>
-            ![
-              'Please enter a valid Email address',
-              'Please enter your Email',
-            ].includes(error)
-        )
-      );
-
-      setErrors((prevErrors) => [...prevErrors, ...emailErrors]);
-    }
-  };
-
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
     setErrors(errors.filter((error) => error !== 'Please enter your Name'));
@@ -169,6 +123,55 @@ export default function ContactForm() {
     'Please enter a valid Email address'
   );
   const messageError = errors.includes('Please enter a Message');
+
+  // INTERSECTION OBSERVER
+
+  const [isImageVisible, setIsImageVisible] = useState(false);
+  const [isImageBottomVisible, setIsImageBottomVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  const imageRef = useRef<HTMLImageElement>(null);
+  const imageBottom = useRef<HTMLDivElement>(null);
+  const form = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const imgObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsImageVisible(entry.isIntersecting);
+    });
+    const imageBottomObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsImageBottomVisible(entry.isIntersecting);
+    });
+    const formObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsFormVisible(entry.isIntersecting);
+    });
+
+    if (imageRef.current) {
+      imgObserver.observe(imageRef.current);
+    }
+    if (imageBottom.current) {
+      imageBottomObserver.observe(imageBottom.current);
+    }
+    if (form.current) {
+      formObserver.observe(form.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        imgObserver.unobserve(imageRef.current);
+      }
+      if (imageBottom.current) {
+        imageBottomObserver.unobserve(imageBottom.current);
+      }
+      if (form.current) {
+        formObserver.unobserve(form.current);
+      }
+    };
+  }, []);
+
+  // INTERSECTION OBSERVER END
 
   return (
     <div className={styles.contactFormMainContainer}>

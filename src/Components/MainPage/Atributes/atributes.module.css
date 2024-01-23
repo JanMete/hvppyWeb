@@ -2,10 +2,16 @@
   position: relative;
   z-index: 5;
   padding: 4rem 0;
-  background-image: url('../../../assets/atributesSection.svg');
+  background-image: url('../../../assets/atributesSection3.svg');
+  /* aspect-ratio: 3/2; */
   background-position: center top -56px;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
 }
 .atributesContentContainer {
   display: flex;
@@ -31,7 +37,11 @@
   font-weight: bold;
   font-size: 2rem;
 }
-
+@media screen and (max-width: 1340px) {
+  .atributesContainer {
+    /* background-image: url('../../../assets/atributesSection2.svg'); */
+  }
+}
 @media screen and (max-width: 1200px) {
   .atributesContainer {
     background-image: url('../../../assets/atributesSectionMobile.svg');
