@@ -130,7 +130,7 @@ export default function Location() {
                   ? styles.errorBorder
                   : ''
               }`}
-              placeholder='Enter your email'
+              placeholder={t('location.enterEmail')}
               onChange={handleEmailChange}
             />
             <input

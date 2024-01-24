@@ -34,7 +34,7 @@ import otherPhoto4 from '../assets/Artwork Images/Other/4.jpeg';
 import otherPhoto5 from '../assets/Artwork Images/Other/5.jpeg';
 import otherPhoto6 from '../assets/Artwork Images/Other/6.jpeg';
 
-export const designes = [
+export const designes1 = [
   {
     img: designesPhoto1,
   },
@@ -56,6 +56,9 @@ export const designes = [
   {
     img: designesPhoto7,
   },
+];
+
+export const designes2 = [
   {
     img: designesPhoto8,
   },
@@ -78,7 +81,8 @@ export const designes = [
     img: designesPhoto14,
   },
 ];
-export const tattoos = [
+
+export const tattoos1 = [
   {
     img: tattoosPhoto1,
   },
@@ -91,6 +95,9 @@ export const tattoos = [
   {
     img: tattoosPhoto4,
   },
+];
+
+export const tattoos2 = [
   {
     img: tattoosPhoto5,
   },
@@ -104,13 +111,17 @@ export const tattoos = [
     img: tattoosPhoto8,
   },
 ];
-export const clothes = [
+
+export const clothes1 = [
   {
     img: clothesPhoto1,
   },
   {
     img: clothesPhoto2,
   },
+];
+
+export const clothes2 = [
   {
     img: clothesPhoto3,
   },
@@ -118,7 +129,8 @@ export const clothes = [
     img: clothesPhoto4,
   },
 ];
-export const other = [
+
+export const other1 = [
   {
     img: otherPhoto1,
   },
@@ -128,6 +140,9 @@ export const other = [
   {
     img: otherPhoto3,
   },
+];
+
+export const other2 = [
   {
     img: otherPhoto4,
   },

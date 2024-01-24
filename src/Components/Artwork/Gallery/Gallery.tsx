@@ -1,7 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { NavLink, useParams } from 'react-router-dom';
-import { tattoos, designes, clothes, other } from '../../../utils/images';
+import {
+  tattoos1,
+  tattoos2,
+  designes1,
+  designes2,
+  clothes1,
+  clothes2,
+  other1,
+  other2,
+} from '../../../utils/images';
 import styles from './gallery.module.css';
 import { categories } from '../../../utils/categories';
 import { useEffect, useState } from 'react';
@@ -11,16 +20,21 @@ export default function Gallery() {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const { category } = useParams();
 
-  let imagesToDisplay: { img: string }[] = [];
+  let imagesToDisplay1: { img: string }[] = [];
+  let imagesToDisplay2: { img: string }[] = [];
 
   if (category === 'tattoos') {
-    imagesToDisplay = [...tattoos];
+    imagesToDisplay1 = [...tattoos1];
+    imagesToDisplay2 = [...tattoos2];
   } else if (category === 'designes') {
-    imagesToDisplay = [...designes];
+    imagesToDisplay1 = [...designes1];
+    imagesToDisplay2 = [...designes2];
   } else if (category === 'clothes') {
-    imagesToDisplay = [...clothes];
+    imagesToDisplay1 = [...clothes1];
+    imagesToDisplay2 = [...clothes2];
   } else if (category === 'other') {
-    imagesToDisplay = [...other];
+    imagesToDisplay1 = [...other1];
+    imagesToDisplay2 = [...other2];
   }
 
   useEffect(() => {
@@ -68,7 +82,16 @@ export default function Gallery() {
       </div>
       <div className={styles.photosContainer}>
         <div className={styles.photosColumn}>
-          {imagesToDisplay.map((image, index) => {
+          {imagesToDisplay1.map((image, index) => {
+            return (
+              <div key={index}>
+                <img src={image.img} alt='' />
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.photosColumn}>
+          {imagesToDisplay2.map((image, index) => {
             return (
               <div key={index}>
                 <img src={image.img} alt='' />
