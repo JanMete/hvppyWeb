@@ -40,26 +40,27 @@
   transition-delay: 600ms;
 }
 .categoryContainer img {
-  width: auto;
+  width: 100%;
   height: 100%;
+  max-height: fit-content;
   border-radius: 1rem;
 }
 .categoryContainerModal {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   transition: all 1s;
   font-weight: bold;
   font-size: 1.5rem;
 }
 .categoryContainerModal:hover {
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
 }
 .showElement {
   filter: blur(0);
