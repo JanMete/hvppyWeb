@@ -36,14 +36,16 @@ export default function ContactForm() {
   // INTERSECTION OBSERVER
 
   const imageRef = useRef<HTMLImageElement>(null);
-  const imageBottom = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
+  const formHeader = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLTextAreaElement>(null);
 
   const isImageVisible = useIntersectionObserver(imageRef);
-  const isImageBottomVisible = useIntersectionObserver(imageBottom);
+  const isImageBottomVisible = useIntersectionObserver(formHeader);
   const isFormVisible = useIntersectionObserver(formRef);
 
   // INTERSECTION OBSERVER END
+
+  const isThereAnyErrors = errors.length > 0;
 
   const nameError = errors.includes('Please enter your Name');
   const emailError = errors.includes('Please enter your Email');
@@ -61,8 +63,15 @@ export default function ContactForm() {
           alt=''
           className={`${isImageVisible ? styles.showElement : ''}`}
         />
-        <div ref={imageBottom} className={styles.formHeadingBottomContainer}>
-          <h1 className={`${isImageBottomVisible ? styles.showElement : ''}`}>
+        <div
+          className={`${styles.formHeadingBottomContainer} ${
+            isThereAnyErrors ? styles.moveFormHeadingBottomContainer : ''
+          }`}
+        >
+          <h1
+            ref={formHeader}
+            className={`${isImageBottomVisible ? styles.showElement : ''}`}
+          >
             {t('contact.formHeader')}
           </h1>
           <form
@@ -119,9 +128,10 @@ export default function ContactForm() {
                 </p>
               </div>
             </div>
-            <div ref={formRef} className={styles.textSubmit}>
+            <div className={styles.textSubmit}>
               <div className={styles.inputContainer}>
                 <textarea
+                  ref={formRef}
                   value={message}
                   onChange={handleMessageChange}
                   style={{ resize: 'none' }}

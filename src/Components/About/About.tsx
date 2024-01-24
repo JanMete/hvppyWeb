@@ -1,5 +1,5 @@
 import styles from './about.module.css';
-import aboutPortrait1 from '../../assets/About/aboutPortrait1.jpeg';
+import aboutPortrait1 from '../../assets/About/aboutPortrait1.jpg';
 import aboutPortrait2 from '../../assets/About/aboutPortrait2.jpeg';
 
 export default function About() {

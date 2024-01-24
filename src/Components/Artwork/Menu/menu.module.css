@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  /* background-image: url('../../../assets/Artwork Images/artworkBackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover; */
   background-color: var(--hvppyGreen);
   flex-grow: 1;
   padding-top: 6.5rem;

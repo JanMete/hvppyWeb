@@ -6,31 +6,34 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 30rem;
-  padding-top: 11rem;
+  padding-bottom: 24rem;
+  padding-top: 9rem;
   overflow: hidden;
 }
 .contentContainer {
   position: relative;
+  max-width: 40%;
 }
 .contactFormMainContainer img {
   border-radius: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
   opacity: 0;
   transition: all 1s;
-  /* max-width: 40%; */
 }
 .formHeadingBottomContainer {
   position: absolute;
-  /* max-width: 100%; */
-  bottom: -18.5rem;
+  min-width: 100%;
+  bottom: -18.645rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.moveFormHeadingBottomContainer {
+  bottom: -22.813rem;
+}
 .formHeadingBottomContainer h1 {
-  font-size: 6.25rem;
+  font-size: 5rem;
   filter: blur(5px);
   transform: translateX(-50%);
   opacity: 0;
@@ -41,7 +44,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 1.5rem;
+  padding-top: 0.8rem;
   gap: 1rem;
   color: black;
   min-width: 100%;
@@ -99,7 +102,7 @@ textarea {
   top: 10.25rem;
   right: 1.2rem;
   border-radius: 59% 41% 56% 44% / 40% 58% 42% 60%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 20px;
 }
 .errorMessage {
   opacity: 0;
@@ -120,106 +123,40 @@ textarea {
 .disabled {
   background-color: grey;
 }
-/* @media screen and (max-width: 1700px) {
-  .mailForm {
-    top: -3rem;
-  }
-  .contactFormMainContainer {
-    padding-top: 11rem;
+@media screen and (max-width: 1400px) {
+  .contentContainer {
+    max-width: 60%;
   }
 }
-@media screen and (max-width: 1500px) {
-  .mailForm {
-    top: -1.5rem;
-    width: 50%;
-  }
-  .formHeading {
-    width: 50%;
-  }
-  .contactFormMainContainer {
-    padding-top: 12rem;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .mailForm {
-    top: 0;
-    width: 65%;
-  }
-  .formHeading {
-    width: 65%;
-  }
-  .contactFormMainContainer {
-    padding-top: 14rem;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .mailForm {
-    top: -1.5rem;
-  }
-  .contactFormMainContainer {
-    padding-top: 13rem;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .mailForm {
-    top: -3rem;
-  }
-  .contactFormMainContainer {
-    padding-top: 11rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .mailForm {
-    top: -5rem;
-  }
-  .contactFormMainContainer {
-    padding-top: 8rem;
+@media screen and (max-width: 950px) {
+  .contentContainer {
+    max-width: 80%;
   }
 }
 @media screen and (max-width: 800px) {
-  .mailForm {
-    top: -4rem;
-    width: 80%;
-  }
-  .formHeading {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 700px) {
-  .mailForm {
-    top: -6rem;
-  }
-}
-@media screen and (max-width: 600px) {
-  .mailForm {
-    top: -6rem;
-    width: 100%;
-  }
   .contactFormMainContainer {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .formHeading h1 {
-    font-size: 5rem;
-  }
-  .formHeading {
-    width: 100%;
+    padding-top: 7rem;
   }
 }
-@media screen and (max-width: 500px) {
-  .mailForm {
-    top: -8rem;
+@media screen and (max-width: 710px) {
+  .contentContainer {
+    max-width: 90%;
   }
-  .contactFormMainContainer {
-    padding-top: 5rem;
+  .formHeadingBottomContainer h1 {
+    font-size: 4rem;
+  }
+  .formHeadingBottomContainer {
+    bottom: -18.29rem;
+  }
+  .moveFormHeadingBottomContainer {
+    bottom: -22.488rem;
   }
 }
-@media screen and (max-width: 400px) {
-  .mailForm {
-    top: -10rem;
+@media screen and (max-width: 510px) {
+  .formHeadingBottomContainer h1 {
+    font-size: 3rem;
   }
-  .contactFormMainContainer {
-    padding-top: 3rem;
+  .formHeadingBottomContainer {
+    bottom: -17.688rem;
   }
-} */
+}
