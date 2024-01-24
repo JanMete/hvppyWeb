@@ -6,35 +6,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0;
-  padding-top: 15rem;
+  padding-bottom: 30rem;
+  padding-top: 11rem;
   overflow: hidden;
 }
-.formHeading {
-  border-radius: 1.5rem;
-  width: 40%;
-  height: 30rem;
+.contentContainer {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-.formHeading img {
+.contactFormMainContainer img {
   border-radius: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
   opacity: 0;
   transition: all 1s;
+  /* max-width: 40%; */
 }
 .formHeadingBottomContainer {
-  position: relative;
-  width: 100%;
-  top: -2.75rem;
+  position: absolute;
+  /* max-width: 100%; */
+  bottom: -18.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 4.5rem;
 }
 .formHeadingBottomContainer h1 {
   font-size: 6.25rem;
@@ -48,16 +41,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 1.5rem;
   gap: 1rem;
   color: black;
-  width: 40%;
+  min-width: 100%;
   filter: blur(1);
   transform: translateY(50%);
   opacity: 0;
   transition: all 1s;
-  padding-top: 3rem;
-  position: relative;
-  top: -1rem;
 }
 .topFormContainer {
   display: flex;
@@ -129,7 +120,7 @@ textarea {
 .disabled {
   background-color: grey;
 }
-@media screen and (max-width: 1700px) {
+/* @media screen and (max-width: 1700px) {
   .mailForm {
     top: -3rem;
   }
@@ -231,4 +222,4 @@ textarea {
   .contactFormMainContainer {
     padding-top: 3rem;
   }
-}
+} */

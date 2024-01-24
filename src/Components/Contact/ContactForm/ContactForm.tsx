@@ -54,7 +54,7 @@ export default function ContactForm() {
 
   return (
     <div className={styles.contactFormMainContainer}>
-      <div className={styles.formHeading}>
+      <div className={styles.contentContainer}>
         <img
           ref={imageRef}
           src={PORTRAIT}
@@ -65,90 +65,90 @@ export default function ContactForm() {
           <h1 className={`${isImageBottomVisible ? styles.showElement : ''}`}>
             {t('contact.formHeader')}
           </h1>
+          <form
+            ref={form}
+            className={`${styles.mailForm} ${
+              isFormVisible ? styles.showElement : ''
+            }`}
+            onSubmit={sendEmail}
+          >
+            <div className={styles.topFormContainer}>
+              <div className={styles.inputContainer}>
+                <input
+                  value={name}
+                  onChange={handleNameChange}
+                  className={`${nameError ? styles.errorBorder : ''}`}
+                  type='text'
+                  name='user_name'
+                  placeholder={t('contact.formName')}
+                />
+                <p
+                  className={`${styles.errorMessage} ${
+                    nameError ? styles.showErrorMessage : ''
+                  }`}
+                >
+                  {t('contact.enterName')}
+                </p>
+              </div>
+              <div className={styles.inputContainer}>
+                <input
+                  value={email}
+                  onChange={handleEmailChange}
+                  className={`${styles.textInput} 
+               ${emailError ? styles.errorBorder : ''}  ${
+                    invalidEmailError ? styles.errorBorder : ''
+                  }`}
+                  type='email'
+                  name='user_email'
+                  placeholder={t('contact.formEmail')}
+                />
+                <p
+                  className={`${styles.errorMessage} ${
+                    emailError ? styles.showErrorMessage : ''
+                  }`}
+                >
+                  {t('contact.enterEmail')}
+                </p>
+
+                <p
+                  className={`${styles.errorMessage} ${
+                    invalidEmailError ? styles.showErrorMessage : ''
+                  }`}
+                >
+                  {t('contact.validEmail')}
+                </p>
+              </div>
+            </div>
+            <div ref={formRef} className={styles.textSubmit}>
+              <div className={styles.inputContainer}>
+                <textarea
+                  value={message}
+                  onChange={handleMessageChange}
+                  style={{ resize: 'none' }}
+                  name='message'
+                  className={`${messageError ? styles.errorBorder : ''}`}
+                  placeholder={t('contact.formMessage')}
+                />
+                <p
+                  className={`${styles.errorMessage} ${
+                    messageError ? styles.showErrorMessage : ''
+                  }`}
+                >
+                  {t('contact.enterMessage')}
+                </p>
+              </div>
+              <input
+                className={`${styles.submitInput} ${
+                  isSubmitting ? styles.disabled : ''
+                }`}
+                disabled={isSubmitting}
+                type='submit'
+                value={t('contact.send')}
+              />
+            </div>
+          </form>
         </div>
       </div>
-      <form
-        ref={form}
-        className={`${styles.mailForm} ${
-          isFormVisible ? styles.showElement : ''
-        }`}
-        onSubmit={sendEmail}
-      >
-        <div className={styles.topFormContainer}>
-          <div className={styles.inputContainer}>
-            <input
-              value={name}
-              onChange={handleNameChange}
-              className={`${nameError ? styles.errorBorder : ''}`}
-              type='text'
-              name='user_name'
-              placeholder={t('contact.formName')}
-            />
-            <p
-              className={`${styles.errorMessage} ${
-                nameError ? styles.showErrorMessage : ''
-              }`}
-            >
-              {t('contact.enterName')}
-            </p>
-          </div>
-          <div className={styles.inputContainer}>
-            <input
-              value={email}
-              onChange={handleEmailChange}
-              className={`${styles.textInput} 
-               ${emailError ? styles.errorBorder : ''}  ${
-                invalidEmailError ? styles.errorBorder : ''
-              }`}
-              type='email'
-              name='user_email'
-              placeholder={t('contact.formEmail')}
-            />
-            <p
-              className={`${styles.errorMessage} ${
-                emailError ? styles.showErrorMessage : ''
-              }`}
-            >
-              {t('contact.enterEmail')}
-            </p>
-
-            <p
-              className={`${styles.errorMessage} ${
-                invalidEmailError ? styles.showErrorMessage : ''
-              }`}
-            >
-              {t('contact.validEmail')}
-            </p>
-          </div>
-        </div>
-        <div ref={formRef} className={styles.textSubmit}>
-          <div className={styles.inputContainer}>
-            <textarea
-              value={message}
-              onChange={handleMessageChange}
-              style={{ resize: 'none' }}
-              name='message'
-              className={`${messageError ? styles.errorBorder : ''}`}
-              placeholder={t('contact.formMessage')}
-            />
-            <p
-              className={`${styles.errorMessage} ${
-                messageError ? styles.showErrorMessage : ''
-              }`}
-            >
-              {t('contact.enterMessage')}
-            </p>
-          </div>
-          <input
-            className={`${styles.submitInput} ${
-              isSubmitting ? styles.disabled : ''
-            }`}
-            disabled={isSubmitting}
-            type='submit'
-            value={t('contact.send')}
-          />
-        </div>
-      </form>
     </div>
   );
 }
