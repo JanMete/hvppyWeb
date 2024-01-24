@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import { scrollPositionContext } from '../../../contexts/scrollPositionContext';
 import styles from './hero.module.css';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
   const heroTextRef = useRef<HTMLDivElement>(null);
@@ -17,6 +18,8 @@ export default function Hero() {
   const scrollPosotion = useContext(scrollPositionContext);
   const hideHeroContainer = scrollPosotion > 800;
 
+  const [t] = useTranslation('global');
+
   return (
     <div className={styles.mainContainer}>
       <div
@@ -25,15 +28,8 @@ export default function Hero() {
           isHeroTextRefVisible ? 'opacity-1' : 'opacity-0'
         } ${hideHeroContainer ? styles.hideHeroContainer : ''}`}
       >
-        <h2 className={styles.heroHeader}>
-          Hi! My name is <span className={styles.hvppyHeader}>H∀PPY</span>
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, at
-          amet. Atque labore veniam cupiditate beatae quibusdam? Quos maiores
-          suscipit provident illum possimus, debitis veritatis voluptates veniam
-          perspiciatis doloribus inventore. Eaque alias soluta impedit
-        </p>
+        <h1 className={styles.heroHeader}>{t('main.hero.hello1')}</h1>
+        <h3 className={styles.heroHeader}>{t('main.hero.hello2')}</h3>
       </div>
     </div>
   );

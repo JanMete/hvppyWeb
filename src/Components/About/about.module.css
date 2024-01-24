@@ -1,20 +1,20 @@
 .mainContainer {
-  min-height: 100vh;
   background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
-.topSectionContainer {
-  width: 65%;
+.sectionContainer {
+  max-width: 60%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 10rem;
-  text-align: center;
+  /* text-align: center; */
   padding: 7rem 0;
-  padding-top: 11rem;
+  padding-top: 9rem;
   position: relative;
 }
 .imagesContainer {
@@ -28,14 +28,82 @@
   border: 1rem solid green;
 }
 .imageArticleContainer {
-  width: 40%;
+  min-width: 35%;
 }
 .tekstArticleContainer {
-  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  /* justify-content: center; */
+  min-width: 75%;
 }
-.bottomSectionContainer {
-  width: 100%;
-  padding: 6rem 0;
-  background-color: red;
-  text-align: center;
+@media screen and (max-width: 1350px) {
+  .sectionContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 7rem;
+    padding-bottom: 3rem;
+  }
+  .imageArticleContainer {
+    max-width: 50%;
+  }
+  .tekstArticleContainer {
+    min-width: 50%;
+  }
+  .sectionContainer {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .imageArticleContainer {
+    max-width: 50%;
+  }
+  .tekstArticleContainer {
+    min-width: 50%;
+  }
+}
+@media screen and (max-width: 825px) {
+  .imageArticleContainer {
+    max-width: 70%;
+  }
+  .tekstArticleContainer {
+    min-width: 50%;
+  }
+  .aboutPortrait2 {
+    bottom: -5rem;
+    right: -5rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sectionContainer {
+    padding-top: 6rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .imageArticleContainer {
+    max-width: 80%;
+  }
+  .tekstArticleContainer {
+    min-width: 50%;
+  }
+  .aboutPortrait2 {
+    bottom: -4rem;
+    right: -4rem;
+  }
+  .sectionContainer {
+    gap: 4rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .imageArticleContainer {
+    max-width: 90%;
+  }
+  .tekstArticleContainer {
+    min-width: 50%;
+  }
+  .aboutPortrait2 {
+    bottom: -2rem;
+    right: -2rem;
+  }
 }

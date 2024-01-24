@@ -5,7 +5,7 @@ import aboutPortrait2 from '../../assets/About/aboutPortrait2.jpeg';
 export default function About() {
   return (
     <div className={styles.mainContainer}>
-      <section className={styles.topSectionContainer}>
+      <section className={styles.sectionContainer}>
         <article className={styles.imageArticleContainer}>
           <div className={styles.imagesContainer}>
             <img src={aboutPortrait1} alt='' />
@@ -16,37 +16,26 @@ export default function About() {
         </article>
         <article className={styles.tekstArticleContainer}>
           <h1>
-            Yoo witam cię na stronie hvppy tattoo! Tu znajdziesz wszystko co
-            powinieneś wiedzień o mnie jak i o mojej sztuce!
+            Pewnie zastanawiasz się czemu „Hvppy” i skąd się wzięło to „v”.
           </h1>
-          <h2>
-            Jeśli już tu trafiłeś pewnie zastanawiasz się czemu „Hvppy” a nie
-            zwykłe „happy”. Jak wszyscy wiemy happy oznacza radość, szczęście, i
-            dokładnie z tym jest to wszystko co robie związane. Mianowicie „v”
-            które ma symbolizować odwróconą litere „A”, a ona ma być metaforą
-            dla znanej nam wszystkim uśmiechniętej emotikonki „🙂”.{' '}
-          </h2>
+          <h3>
+            Jak wszyscy doskonale wiemy happy oznacza szczęście i właśnie to
+            staram się przekazać we wszystkim co robię. Mianowicie „v”
+            symbolizuje odwrócone „A”, które natomiast nawiązuje do dobrze nam
+            wszystkim znanej uśmiechniętej emotikonki. 😊
+          </h3>
           <p>
-            Ale dla czego jest odwrócone do góry nogami? Dla czego jedna litera?
-            Gdy odwrócimy radosną minkę jest ona smutna. Nawet najweselszy
-            człowiek czasem jest smutny. „Hvppy” ma być przypomnieniem dla ludzi
-            jak i dla samej siebie, że każdemu zdarza się gorszy moment w życiu.
-            Ta chwila może nawet wracać lub dłużej trwać, ale pamiętajmy, że to
-            szczęście gdzieś tam jest i jeśli zawalczymy o nie to zawsze do nas
-            wróci. Ważne abyśmy nie poddali się własnym demonom i patrzyli na
-            wszystko co nas otacza za coś dobrego nawet jeśli wydaję się nam, że
-            jest inaczej. „Don’t worry be happy”
+            Gdy odwrócimy taką uśmiechniętą minkę jest ona wtedy smutna. Nawet
+            najweselszy człowiek na świecie jest czasem smutny. „Hvppy” ma być
+            przypomnieniem dla wszystkich jak i dla mnie, że każdemu zdarza się
+            gorszy moment w życiu. Często jest tak że te gorsze chwile do nas
+            wracają lub po prostu trwają dłużej, ale musimy pamiętać że to
+            szczęście gdzieś tam jest i jeżeli o nie zawalczymy to zawsze do nas
+            wróci. Najważniejsze to nie dać się swoim demonom i skupiać się na
+            tych małych pozytywnych rzeczy w otaczającym nas świecie. „Don’t
+            worry be hvppy”
           </p>
         </article>
-      </section>
-      <section className={styles.bottomSectionContainer}>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur
-          obcaecati, quia nam maiores qui culpa sit cum illo dolore, quibusdam
-          incidunt totam odio provident, consectetur sed quasi atque dignissimos
-          vitae.
-        </p>
       </section>
     </div>
   );

@@ -24,6 +24,10 @@
     "send": "Wyślij"
   },
   "main": {
+    "hero": {
+      "hello1": "Yoo witam cię na stronie Hvppy Tattoo!",
+      "hello2": "Znajdziesz tu wszysto co powinieneś wiedzieć o mnie i o mojej sztuce!"
+    },
     "attributes": {
       "happy": "HAPPY",
       "vibes": "VIBES",
