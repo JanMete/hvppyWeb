@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './footer.module.css';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const [t] = useTranslation('global');
   const footerRef = useRef<HTMLDivElement>(null);
   const [isFootRefVisible, setIsFootRefVisible] = useState(false);
 
@@ -22,7 +24,7 @@ export default function Footer() {
           isFootRefVisible ? styles.showFooter : styles.hideFooter
         }`}
       >
-        © Website created by{' '}
+        © {t('footer.author')}{' '}
         <a target='_blank' href='https://portfolio-janmete.netlify.app/'>
           Jan Metelański
         </a>

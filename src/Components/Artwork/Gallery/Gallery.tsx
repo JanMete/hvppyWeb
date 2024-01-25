@@ -12,8 +12,8 @@ import {
   other2,
 } from '../../../utils/images';
 import styles from './gallery.module.css';
-import { categories } from '../../../utils/categories';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Gallery() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -61,6 +61,27 @@ export default function Gallery() {
       behavior: 'smooth',
     });
   }
+
+  const [t] = useTranslation('global');
+
+  const categories = [
+    {
+      categoryName: t('categories.tattoos'),
+      patch: '/artwork/tattoos',
+    },
+    {
+      categoryName: t('categories.designes'),
+      patch: '/artwork/designes',
+    },
+    {
+      categoryName: t('categories.clothes'),
+      patch: '/artwork/clothes',
+    },
+    {
+      categoryName: t('categories.other'),
+      patch: '/artwork/other',
+    },
+  ];
 
   return (
     <div className={styles.galleryContainer}>

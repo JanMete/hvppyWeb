@@ -28,7 +28,15 @@ export default function Hero() {
           isHeroTextRefVisible ? 'opacity-1' : 'opacity-0'
         } ${hideHeroContainer ? styles.hideHeroContainer : ''}`}
       >
-        <h1 className={styles.heroHeader}>{t('main.hero.hello1')}</h1>
+        <h1 className={styles.heroHeader}>
+          {t('main.hero.hello1')}
+          <span style={{ color: 'var(--hvppyYellow)' }}>
+            {' '}
+            {t('main.hero.hvppyTattoo')}
+            {t('main.hero.website')}
+          </span>
+          {'!'}
+        </h1>
         <h3 className={styles.heroHeader}>{t('main.hero.hello2')}</h3>
       </div>
     </div>

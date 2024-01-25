@@ -1,7 +1,8 @@
 import styles from './aftercare.module.css';
 import { useRef } from 'react';
 import aftercare1 from '../../../assets/MainPage/aftercare1.jpeg';
-import aftercare2 from '../../../assets/MainPage/aftercare2.jpg';
+import aftercare2 from '../../../assets/MainPage/aftercare2.jpeg';
+import aftercare3 from '../../../assets/MainPage/aftercare3.jpeg';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { useTranslation } from 'react-i18next';
 
@@ -99,7 +100,7 @@ export default function Aftercare() {
               section3RefIsVisible ? styles.show : styles.hide
             }`}
           >
-            <img src={aftercare1} alt='' />
+            <img src={aftercare3} alt='' />
           </div>
           <div
             className={`${styles.txtContainer} ${

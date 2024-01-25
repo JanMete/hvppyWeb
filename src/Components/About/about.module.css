@@ -1,10 +1,14 @@
 .mainContainer {
-  background-color: green;
+  background-image: url('../../assets/About/aboutBackground.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1;
+  z-index: -2;
 }
 .sectionContainer {
   max-width: 60%;
@@ -12,7 +16,6 @@
   align-items: flex-start;
   justify-content: center;
   gap: 10rem;
-  /* text-align: center; */
   padding: 7rem 0;
   padding-top: 9rem;
   position: relative;
@@ -25,30 +28,42 @@
   width: 55%;
   bottom: -7rem;
   right: -7rem;
-  border: 1rem solid green;
 }
 .imageArticleContainer {
   min-width: 35%;
 }
-.tekstArticleContainer {
+.textArticleContainer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  /* justify-content: center; */
   min-width: 75%;
+  padding: 2rem 3rem;
+  position: relative;
+}
+.textArticleContainer::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  position: absolute;
+  top: 0;
+  border-radius: 1rem;
+  z-index: -1;
 }
 @media screen and (max-width: 1350px) {
   .sectionContainer {
     flex-direction: column;
     align-items: center;
-    gap: 7rem;
+    gap: 9rem;
     padding-bottom: 3rem;
   }
   .imageArticleContainer {
     max-width: 50%;
   }
-  .tekstArticleContainer {
+  .textArticleContainer {
     min-width: 50%;
   }
   .sectionContainer {
@@ -59,7 +74,7 @@
   .imageArticleContainer {
     max-width: 50%;
   }
-  .tekstArticleContainer {
+  .textArticleContainer {
     min-width: 50%;
   }
 }
@@ -67,12 +82,15 @@
   .imageArticleContainer {
     max-width: 70%;
   }
-  .tekstArticleContainer {
+  .textArticleContainer {
     min-width: 50%;
   }
   .aboutPortrait2 {
     bottom: -5rem;
     right: -5rem;
+  }
+  .sectionContainer {
+    gap: 7rem;
   }
 }
 @media screen and (max-width: 800px) {
@@ -84,7 +102,7 @@
   .imageArticleContainer {
     max-width: 80%;
   }
-  .tekstArticleContainer {
+  .textArticleContainer {
     min-width: 50%;
   }
   .aboutPortrait2 {
@@ -92,18 +110,21 @@
     right: -4rem;
   }
   .sectionContainer {
-    gap: 4rem;
+    gap: 6rem;
   }
 }
 @media screen and (max-width: 450px) {
   .imageArticleContainer {
     max-width: 90%;
   }
-  .tekstArticleContainer {
+  .textArticleContainer {
     min-width: 50%;
   }
   .aboutPortrait2 {
     bottom: -2rem;
     right: -2rem;
+  }
+  .sectionContainer {
+    gap: 4rem;
   }
 }

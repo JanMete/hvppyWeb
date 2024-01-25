@@ -1,6 +1,7 @@
 import styles from './menu.module.css';
-import { categories } from '../../../utils/categories';
 import { useEffect, useRef, useState } from 'react';
+import hvppyThumbnail from '../../../assets/Artwork Images/Thumbnails/hvppyThumbnail.jpeg';
+import { useTranslation } from 'react-i18next';
 
 export default function Menu() {
   const categoryRef = useRef<HTMLDivElement>(null);
@@ -23,6 +24,34 @@ export default function Menu() {
       }
     };
   }, []);
+
+  const [t] = useTranslation('global');
+  const categories = [
+    {
+      categoryName: t('categories.tattoos'),
+      patch: '/artwork/tattoos',
+      img: hvppyThumbnail,
+      imgAlt: '',
+    },
+    {
+      categoryName: t('categories.designes'),
+      patch: '/artwork/designes',
+      img: hvppyThumbnail,
+      imgAlt: '',
+    },
+    {
+      categoryName: t('categories.clothes'),
+      patch: '/artwork/clothes',
+      img: hvppyThumbnail,
+      imgAlt: '',
+    },
+    {
+      categoryName: t('categories.other'),
+      patch: '/artwork/other',
+      img: hvppyThumbnail,
+      imgAlt: '',
+    },
+  ];
 
   return (
     <>

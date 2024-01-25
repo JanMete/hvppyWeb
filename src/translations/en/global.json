@@ -25,7 +25,9 @@
   },
   "main": {
     "hero": {
-      "hello1": "Hello, welcome to the Hvppy Tattoo website!",
+      "hello1": "Hello there, welcome to the ",
+      "hvppyTattoo": "Hvppy Tattoo",
+      "website": "website",
       "hello2": "Here you will find everything you need to know about me and my art!"
     },
     "attributes": {
@@ -45,5 +47,19 @@
       "header3": "3. After the tattoo has healed",
       "text3": "Your tattoo has finally healed. Bravo! You managed to take care of it all this time, and finally, you can neglect it... BAM! WRONG! Unfortunately, the journey doesn't end here. Our skin is constantly exposed to various external factors, such as the sun or salty water. Moreover, the skin naturally peels, and it's normal for the ink under the skin to fade over time. To avoid this, remember to continue moisturizing your tattoo with cream. When you go out in the sun, make sure to use sunscreen."
     }
+  },
+  "about": {
+    "youre probably wondering...": "You're probably wondering why 'Hvppy' and where did the 'v' come from.",
+    "as we all know, happy...": "As we all know, 'happy' means happiness, and that's exactly what I try to convey in everything I do. Specifically, the 'v' symbolizes an inverted 'A' which in turn refers to the well-known smiling emoticon we all are familiar with. 😊",
+    "when we turn such a smiling face...": "When we turn such a smiling face upside down, it becomes sad. Even the happiest person in the world is sometimes sad. 'Hvppy' is meant to be a reminder for everyone, including myself, that everyone experiences tough moments in life. Often, these difficult times come back to us or simply last longer, but we must remember that happiness is somewhere there, and if we fight for it, it will always come back to us. The most important thing is not to succumb to our demons and focus on the small positive things in the world around us. 'Don’t worry, be happy.'"
+  },
+  "categories": {
+    "tattoos": "Tattoos",
+    "designes": "Designes",
+    "clothes": "Clothes",
+    "other": "Other"
+  },
+  "footer": {
+    "author": "Website created by"
   }
 }

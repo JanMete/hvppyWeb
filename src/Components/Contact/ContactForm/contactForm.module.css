@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 24rem;
+  padding-bottom: 26rem;
   padding-top: 9rem;
   overflow: hidden;
 }
@@ -23,20 +23,21 @@
 .formHeadingBottomContainer {
   position: absolute;
   min-width: 100%;
-  bottom: -18.645rem;
+  bottom: -18.478rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .moveFormHeadingBottomContainer {
-  bottom: -22.813rem;
+  bottom: -23.113rem;
 }
 .formHeadingBottomContainer h1 {
   font-size: 5rem;
   filter: blur(5px);
   transform: translateX(-50%);
   opacity: 0;
+  padding: 1rem 0;
   transition: all 1s;
 }
 .mailForm {
@@ -149,7 +150,7 @@ textarea {
     bottom: -18.29rem;
   }
   .moveFormHeadingBottomContainer {
-    bottom: -22.488rem;
+    bottom: -23.281rem;
   }
 }
 @media screen and (max-width: 510px) {
@@ -158,5 +159,11 @@ textarea {
   }
   .formHeadingBottomContainer {
     bottom: -17.688rem;
+  }
+  .moveFormHeadingBottomContainer {
+    bottom: -24.018rem;
+  }
+  .formHeadingBottomContainer h1 {
+    padding: 0;
   }
 }

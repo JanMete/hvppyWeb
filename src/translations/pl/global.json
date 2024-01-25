@@ -1,7 +1,7 @@
 {
   "webHeader": {
     "category1": "O MNIE",
-    "category2": "ARTWORK",
+    "category2": "PRACE",
     "category3": "KONTAKT"
   },
   "contact": {
@@ -25,12 +25,14 @@
   },
   "main": {
     "hero": {
-      "hello1": "Yoo witam cię na stronie Hvppy Tattoo!",
+      "hello1": "Yoo witam cię na stronie ",
+      "hvppyTattoo": "Hvppy Tattoo",
+      "website": "",
       "hello2": "Znajdziesz tu wszysto co powinieneś wiedzieć o mnie i o mojej sztuce!"
     },
     "attributes": {
-      "happy": "HAPPY",
-      "vibes": "VIBES",
+      "happy": "POZYTYWNY",
+      "vibes": "NASTRÓJ",
       "unique": "UNIKALNE",
       "designes": "PROJEKTY",
       "great": "ŚWIETNA",
@@ -45,5 +47,19 @@
       "header3": "3. Po zagojeniu",
       "text3": "Twój tatuaż nareszcie się zagoił. Brawo! Udało ci się dbać o niego przez cały ten czas, i nareszcie, możesz wreszcie go zaniedbywać... BUM! ŹLE! Tutaj niestety droga się nie kończy. Nasza skóra jest cały czas narażona na różne czynniki zewnętrzne, takie jak słońce czy na przykład słona woda. Co więcej, skóra naturalnie się złuszcza, i jest to normalne, że tusz pod skórą z czasem zanika. Aby tego uniknąć, pamiętaj o dalszym smarowaniu dziarki kremem nawilżającym. Gdy wychodzisz na słońce, koniecznie smaruj się kremem z filtrem."
     }
+  },
+  "about": {
+    "youre probably wondering...": "Pewnie zastanawiasz się, dlaczego 'Hvppy' i skąd wzięło się to 'v'.",
+    "as we all know, happy...": "Jak wszyscy doskonale wiemy, 'happy' oznacza szczęście, i właśnie to staram się przekazać we wszystkim, co robię. Mianowicie, 'v' symbolizuje odwrócone 'A', które z kolei nawiązuje do dobrze nam wszystkim znanej uśmiechniętej emotikonki. 😊",
+    "when we turn such a smiling face...": "Gdy odwrócimy taką uśmiechniętą minkę, jest ona wtedy smutna. Nawet najweselsza osoba na świecie jest czasem smutna. 'Hvppy' ma być przypomnieniem dla wszystkich, także dla mnie, że każdemu zdarza się gorszy moment w życiu. Często zdarza się, że te gorsze chwile do nas wracają lub po prostu trwają dłużej, ale musimy pamiętać, że szczęście gdzieś tam jest, i jeżeli o nie zawalczymy, to zawsze do nas wróci. Najważniejsze to nie dać się swoim demonom i skupiać się na tych małych pozytywnych rzeczach w otaczającym nas świecie. 'Don’t worry, be happy.'"
+  },
+  "categories": {
+    "tattoos": "Tatuaże",
+    "designes": "Projekty",
+    "clothes": "Ciuchy",
+    "other": "Inne"
+  },
+  "footer": {
+    "author": "Stronę stworzył"
   }
 }

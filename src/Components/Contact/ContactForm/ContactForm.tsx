@@ -45,14 +45,14 @@ export default function ContactForm() {
 
   // INTERSECTION OBSERVER END
 
-  const isThereAnyErrors = errors.length > 0;
-
   const nameError = errors.includes('Please enter your Name');
   const emailError = errors.includes('Please enter your Email');
   const invalidEmailError = errors.includes(
     'Please enter a valid Email address'
   );
   const messageError = errors.includes('Please enter a Message');
+
+  const isThereAnyErrors = errors.length > 0;
 
   return (
     <div className={styles.contactFormMainContainer}>

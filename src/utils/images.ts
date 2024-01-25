@@ -1,12 +1,12 @@
 import designesPhoto1 from '../assets/Artwork Images/Designes/1.jpg';
-import designesPhoto2 from '../assets/Artwork Images/Designes/2.jpg';
-import designesPhoto3 from '../assets/Artwork Images/Designes/3.jpg';
-import designesPhoto4 from '../assets/Artwork Images/Designes/4.jpg';
+import designesPhoto2 from '../assets/Artwork Images/Designes/3.jpg';
+import designesPhoto3 from '../assets/Artwork Images/Designes/8.jpg';
+import designesPhoto4 from '../assets/Artwork Images/Designes/9.jpg';
 import designesPhoto5 from '../assets/Artwork Images/Designes/5.jpg';
 import designesPhoto6 from '../assets/Artwork Images/Designes/6.jpg';
 import designesPhoto7 from '../assets/Artwork Images/Designes/7.jpg';
-import designesPhoto8 from '../assets/Artwork Images/Designes/8.jpg';
-import designesPhoto9 from '../assets/Artwork Images/Designes/9.jpg';
+import designesPhoto8 from '../assets/Artwork Images/Designes/2.jpg';
+import designesPhoto9 from '../assets/Artwork Images/Designes/4.jpg';
 import designesPhoto10 from '../assets/Artwork Images/Designes/10.jpg';
 import designesPhoto11 from '../assets/Artwork Images/Designes/11.jpg';
 import designesPhoto12 from '../assets/Artwork Images/Designes/12.jpg';

@@ -3,10 +3,9 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  /* background-image: url('../../../assets/Artwork Images/artworkBackground.jpeg');
+  background-image: url('../../../assets/Artwork Images/menuBackground.svg');
   background-repeat: no-repeat;
-  background-size: cover; */
-  background-color: var(--hvppyGreen);
+  background-size: cover;
   flex-grow: 1;
   padding-top: 6.5rem;
   flex: 1;
@@ -60,7 +59,7 @@
 }
 .categoryContainerModal:hover {
   background-color: rgba(0, 0, 0, 0.5);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .showElement {
   filter: blur(0);
