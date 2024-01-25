@@ -1,7 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { NavLink, Link } from 'react-router-dom';
 import LOGO from '../../../assets/MainPage/homeLogo.png';
 import { sections } from '../../../utils/sections';
@@ -10,6 +7,7 @@ import styles from './webHeader.module.css';
 import { useTranslation } from 'react-i18next';
 import { activeLanguageContext } from '../../../contexts/activeLanguageContext';
 import { setActiveLanguageContext } from '../../../contexts/setActiveLanguageContext';
+import { socialMediaLinks } from '../../../utils/socialMedia';
 
 type WebHeaderProps = {
   scrollPosition: number;
@@ -84,33 +82,15 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
         <div className={styles.socialLangButtons}>
           {/* SOCIAL LINKS */}
           <ul className={styles.iconsList}>
-            <li className={styles.icon}>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.facebook.com/hvppytattoo'
-              >
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
-            </li>
-            <li className={styles.icon}>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.instagram.com/hvppy_tattoo/'
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </li>
-            <li className={styles.icon}>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.tiktok.com/@hvppy_art?lang=pl-PL'
-              >
-                <FontAwesomeIcon icon={faTiktok} />
-              </a>
-            </li>
+            {socialMediaLinks.map(({ icon, link }, index) => {
+              return (
+                <li key={index} className={styles.icon}>
+                  <a target='_blank' rel='noopener noreferrer' href={link}>
+                    <FontAwesomeIcon icon={icon} />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           {/* LANGUAGE BUTTON */}

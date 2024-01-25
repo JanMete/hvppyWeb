@@ -20,16 +20,16 @@ const useContactForm = () => {
       const emailErrors = validateEmail(email);
 
       setErrors((prevErrors) =>
-        prevErrors.filter(
-          (error) =>
-            ![
-              'Please enter a valid Email address',
-              'Please enter your Email',
-            ].includes(error)
-        )
+        prevErrors
+          .filter(
+            (error) =>
+              ![
+                'Please enter a valid Email address',
+                'Please enter your Email',
+              ].includes(error)
+          )
+          .concat(emailErrors)
       );
-
-      setErrors((prevErrors) => [...prevErrors, ...emailErrors]);
     }
   }, [email, keepCheckingEmail]);
 
@@ -121,7 +121,6 @@ const useContactForm = () => {
     message,
     isSubmitting,
     errors,
-    keepCheckingEmail,
     form,
     handleEmailChange,
     sendEmail,

@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 26rem;
+  padding-bottom: 24.5rem;
   padding-top: 9rem;
   overflow: hidden;
 }
@@ -104,6 +104,10 @@ textarea {
   right: 1.2rem;
   border-radius: 59% 41% 56% 44% / 40% 58% 42% 60%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 20px;
+  transition: all 0.1s;
+}
+.submitInput:active {
+  filter: brightness(1.1);
 }
 .errorMessage {
   opacity: 0;
@@ -161,7 +165,7 @@ textarea {
     bottom: -17.688rem;
   }
   .moveFormHeadingBottomContainer {
-    bottom: -24.018rem;
+    bottom: -24.023rem;
   }
   .formHeadingBottomContainer h1 {
     padding: 0;

@@ -44,11 +44,9 @@ export default function Gallery() {
 
     window.addEventListener('scroll', handleScroll);
 
-    if (scrollPosition > 600) {
-      setShowScrollButton(true);
-    } else {
-      setShowScrollButton(false);
-    }
+    scrollPosition > 600
+      ? setShowScrollButton(true)
+      : setShowScrollButton(false);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -65,36 +63,21 @@ export default function Gallery() {
   const [t] = useTranslation('global');
 
   const categories = [
-    {
-      categoryName: t('categories.tattoos'),
-      patch: '/artwork/tattoos',
-    },
-    {
-      categoryName: t('categories.designes'),
-      patch: '/artwork/designes',
-    },
-    {
-      categoryName: t('categories.clothes'),
-      patch: '/artwork/clothes',
-    },
-    {
-      categoryName: t('categories.other'),
-      patch: '/artwork/other',
-    },
+    { categoryName: t('categories.tattoos'), path: '/artwork/tattoos' },
+    { categoryName: t('categories.designes'), path: '/artwork/designes' },
+    { categoryName: t('categories.clothes'), path: '/artwork/clothes' },
+    { categoryName: t('categories.other'), path: '/artwork/other' },
   ];
 
   return (
     <div className={styles.galleryContainer}>
       <div>
         <ul className={styles.categoriesList}>
-          {categories.map((category, index) => {
+          {categories.map(({ categoryName, path }, index) => {
             return (
               <li key={index}>
-                <NavLink
-                  className={styles.categoriesListItem}
-                  to={category.patch}
-                >
-                  {category.categoryName}
+                <NavLink className={styles.categoriesListItem} to={path}>
+                  {categoryName}
                 </NavLink>
               </li>
             );

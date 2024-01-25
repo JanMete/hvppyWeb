@@ -108,3 +108,9 @@
   color: white;
   cursor: pointer;
 }
+.langBtn {
+  font-size: 1.5rem;
+}
+.activeLang {
+  text-decoration: underline;
+}

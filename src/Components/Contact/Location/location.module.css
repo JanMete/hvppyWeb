@@ -81,6 +81,11 @@
 }
 .newsLetterSendButton {
   margin-left: 1rem;
+  transition: all 0.1s;
+  background-image: radial-gradient(#7a3dae, #4f0e88);
+}
+.newsLetterSendButton:active {
+  filter: brightness(1.1);
 }
 .bolbContainer {
   transform: scale(1.3);

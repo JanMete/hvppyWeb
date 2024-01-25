@@ -1,29 +1,12 @@
 import styles from './menu.module.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import hvppyThumbnail from '../../../assets/Artwork Images/Thumbnails/hvppyThumbnail.jpeg';
 import { useTranslation } from 'react-i18next';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 export default function Menu() {
   const categoryRef = useRef<HTMLDivElement>(null);
-  const [isCategoryVisible, setIsCategoryVisible] = useState(false);
-
-  useEffect(() => {
-    const categoryObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsCategoryVisible(entry.isIntersecting);
-    });
-
-    if (categoryRef.current) {
-      categoryObserver.observe(categoryRef.current);
-    }
-
-    return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      if (categoryRef.current) {
-        categoryObserver.disconnect();
-      }
-    };
-  }, []);
+  const isCategoryVisible = useIntersectionObserver(categoryRef);
 
   const [t] = useTranslation('global');
   const categories = [
@@ -59,7 +42,7 @@ export default function Menu() {
         ref={categoryRef}
         className={`${styles.menuContainer} ${styles.pink}`}
       >
-        {categories.map((category, index) => {
+        {categories.map(({ categoryName, patch, img }, index) => {
           return (
             <div
               key={index}
@@ -68,15 +51,11 @@ export default function Menu() {
               }`}
             >
               <div className={styles.categoryContentContainer}>
-                <a href={category.patch}>
+                <a href={patch}>
                   <div className={styles.categoryContainerModal}>
-                    {category.categoryName}
+                    {categoryName}
                   </div>
-                  <img
-                    className={styles.categoryImage}
-                    src={category.img}
-                    alt={category.img}
-                  />
+                  <img className={styles.categoryImage} src={img} alt={img} />
                 </a>
               </div>
             </div>

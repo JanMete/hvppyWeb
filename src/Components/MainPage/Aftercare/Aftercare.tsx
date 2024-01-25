@@ -64,10 +64,10 @@ export default function Aftercare() {
                 section2RefIsVisible ? styles.showReverse : styles.hideReverse
               }`}
             >
-              <h2>{t('main.aftercare.header2')}</h2>
-              <p className={styles.sectionSecondaryHeading}>
-                {t('main.aftercare.text2')}
-              </p>
+              <h2 className={styles.sectionSecondaryHeading}>
+                {t('main.aftercare.header2')}
+              </h2>
+              <p>{t('main.aftercare.text2')}</p>
             </div>
           </section>
         ) : (

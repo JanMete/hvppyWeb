@@ -1,20 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import styles from './footer.module.css';
 import { useTranslation } from 'react-i18next';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 export default function Footer() {
   const [t] = useTranslation('global');
   const footerRef = useRef<HTMLDivElement>(null);
-  const [isFootRefVisible, setIsFootRefVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-
-      setIsFootRefVisible(entry.isIntersecting);
-    });
-    observer.observe(footerRef.current!);
-  }, []);
+  const isFootRefVisible = useIntersectionObserver(footerRef);
 
   return (
     <div className={styles.footerContainer}>
