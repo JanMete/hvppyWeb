@@ -1,11 +1,3 @@
-declare const process: {
-  env: {
-    REACT_APP_EMAILJS1: string;
-    REACT_APP_EMAILJS2: string;
-    REACT_APP_EMAILJS3: string;
-  };
-};
-
 import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 
@@ -91,12 +83,9 @@ const useContactForm = () => {
       return;
     }
 
-    const emailjs1 = process.env.REACT_APP_EMAILJS1;
-    const emailjs2 = process.env.REACT_APP_EMAILJS2;
-    const emailjs3 = process.env.REACT_APP_EMAILJS3;
-    console.log('EmailJS 1:', emailjs1);
-    console.log('EmailJS 2:', emailjs2);
-    console.log('EmailJS 3:', emailjs3);
+    const emailjs1 = import.meta.env.VITE_VARK_EMAILJS1;
+    const emailjs2 = import.meta.env.VITE_VARK_EMAILJS2;
+    const emailjs3 = import.meta.env.VITE_VARK_EMAILJS3;
 
     emailjs.sendForm(emailjs1, emailjs2, form.current!, emailjs3).then(
       () => {
