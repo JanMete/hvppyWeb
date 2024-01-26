@@ -94,6 +94,9 @@ const useContactForm = () => {
     const emailjs1 = process.env.REACT_APP_EMAILJS1;
     const emailjs2 = process.env.REACT_APP_EMAILJS2;
     const emailjs3 = process.env.REACT_APP_EMAILJS3;
+    console.log('EmailJS 1:', emailjs1);
+    console.log('EmailJS 2:', emailjs2);
+    console.log('EmailJS 3:', emailjs3);
 
     emailjs.sendForm(emailjs1, emailjs2, form.current!, emailjs3).then(
       () => {
