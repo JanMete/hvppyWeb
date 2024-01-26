@@ -21,14 +21,14 @@ export default function Aftercare() {
   // INTERSECTION OBSERVER END
 
   return (
-    <div className={styles.aftercareContainer}>
+    <section className={styles.aftercareContainer}>
       <h1 className={styles.aftercareHeading}>
         {t('main.aftercare.aftercare')}
       </h1>
       <div>
         {/* SECTION 1 */}
 
-        <section ref={section1Ref} className={styles.section}>
+        <article ref={section1Ref} className={styles.section}>
           <div
             className={`${styles.imageContainer} ${
               section1RefIsVisible ? styles.show : styles.hide
@@ -46,12 +46,12 @@ export default function Aftercare() {
             </h2>
             <p>{t('main.aftercare.text1')}</p>
           </div>
-        </section>
+        </article>
 
         {/* SECTION 2 */}
 
         {window.innerWidth < 1200 ? (
-          <section ref={section2Ref} className={styles.section}>
+          <article ref={section2Ref} className={styles.section}>
             <div
               className={`${styles.imageContainer} ${
                 section2RefIsVisible ? styles.showReverse : styles.hideReverse
@@ -69,9 +69,9 @@ export default function Aftercare() {
               </h2>
               <p>{t('main.aftercare.text2')}</p>
             </div>
-          </section>
+          </article>
         ) : (
-          <section ref={section2Ref} className={styles.section}>
+          <article ref={section2Ref} className={styles.section}>
             <div
               className={`${styles.txtContainer} ${
                 section2RefIsVisible ? styles.showReverse : styles.hideReverse
@@ -89,12 +89,12 @@ export default function Aftercare() {
             >
               <img src={aftercare2} alt='' />
             </div>
-          </section>
+          </article>
         )}
 
         {/* SECTION 3 */}
 
-        <section ref={section3Ref} className={styles.section}>
+        <article ref={section3Ref} className={styles.section}>
           <div
             className={`${styles.imageContainer} ${
               section3RefIsVisible ? styles.show : styles.hide
@@ -112,8 +112,8 @@ export default function Aftercare() {
             </h2>
             <p>{t('main.aftercare.text3')}</p>
           </div>
-        </section>
+        </article>
       </div>
-    </div>
+    </section>
   );
 }

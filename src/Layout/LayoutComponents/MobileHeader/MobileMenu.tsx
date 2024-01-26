@@ -34,7 +34,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   };
 
   return (
-    <div
+    <section
       className={`${styles.mobileMenuContainer} ${
         isMobileMenuOpen ? styles.mobileMenuContainerOpened : ''
       }`}
@@ -98,7 +98,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
       </div>
 
       {/* ICONS END */}
-    </div>
+    </section>
   );
 };
 

@@ -9,18 +9,21 @@ export default function Footer() {
   const isFootRefVisible = useIntersectionObserver(footerRef);
 
   return (
-    <div className={styles.footerContainer}>
-      <p
-        ref={footerRef}
-        className={`${
-          isFootRefVisible ? styles.showFooter : styles.hideFooter
-        }`}
-      >
-        © {t('footer.author')}{' '}
-        <a target='_blank' href='https://portfolio-janmete.netlify.app/'>
-          Jan Metelański
-        </a>
-      </p>
-    </div>
+    <footer className={styles.footerContainer}>
+      <div>
+        {' '}
+        <p
+          ref={footerRef}
+          className={`${
+            isFootRefVisible ? styles.showFooter : styles.hideFooter
+          }`}
+        >
+          © {t('footer.author')}{' '}
+          <a target='_blank' href='https://portfolio-janmete.netlify.app/'>
+            Jan Metelański
+          </a>
+        </p>
+      </div>
+    </footer>
   );
 }

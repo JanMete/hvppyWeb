@@ -70,8 +70,8 @@ export default function Gallery() {
   ];
 
   return (
-    <div className={styles.galleryContainer}>
-      <div>
+    <section className={styles.galleryContainer}>
+      <article>
         <ul className={styles.categoriesList}>
           {categories.map(({ categoryName, path }, index) => {
             return (
@@ -83,8 +83,8 @@ export default function Gallery() {
             );
           })}
         </ul>
-      </div>
-      <div className={styles.photosContainer}>
+      </article>
+      <article className={styles.photosContainer}>
         <div className={styles.photosColumn}>
           {imagesToDisplay1.map((image, index) => {
             return (
@@ -103,9 +103,9 @@ export default function Gallery() {
             );
           })}
         </div>
-      </div>
+      </article>
 
-      <div
+      <article
         className={`${styles.scrollButtonContaier} ${
           showScrollButton ? styles.showElement : ''
         }`}
@@ -113,7 +113,7 @@ export default function Gallery() {
         <button onClick={handleScroll} className={`${styles.topButton} `}>
           <FontAwesomeIcon icon={faArrowUp} />
         </button>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }

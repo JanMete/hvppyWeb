@@ -55,7 +55,7 @@ export default function ContactForm() {
   const isThereAnyErrors = errors.length > 0;
 
   return (
-    <div className={styles.contactFormMainContainer}>
+    <section className={styles.contactFormMainContainer}>
       <div className={styles.contentContainer}>
         <img
           ref={imageRef}
@@ -159,6 +159,6 @@ export default function ContactForm() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

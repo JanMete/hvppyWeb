@@ -1,6 +1,6 @@
+import './index.css';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './index.css';
 import Layout from './Layout/Layout.tsx';
 import MainPage from './Components/MainPage/MainPage.tsx';
 import Contact from './Components/Contact/Contact.tsx';

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 export default function About() {
   const [t] = useTranslation('global');
   return (
-    <main className={styles.mainContainer}>
+    <div className={styles.mainContainer}>
       <section className={styles.sectionContainer}>
         <article className={styles.imageArticleContainer}>
           <div className={styles.imagesContainer}>
@@ -22,6 +22,6 @@ export default function About() {
           <p>{t('about.when we turn such a smiling face...')}</p>
         </article>
       </section>
-    </main>
+    </div>
   );
 }

@@ -37,31 +37,29 @@ export default function Menu() {
   ];
 
   return (
-    <>
-      <div
-        ref={categoryRef}
-        className={`${styles.menuContainer} ${styles.pink}`}
-      >
-        {categories.map(({ categoryName, patch, img }, index) => {
-          return (
-            <div
-              key={index}
-              className={`${styles.categoryContainer} ${
-                isCategoryVisible ? styles.showElement : ''
-              }`}
-            >
-              <div className={styles.categoryContentContainer}>
-                <a href={patch}>
-                  <div className={styles.categoryContainerModal}>
-                    {categoryName}
-                  </div>
-                  <img className={styles.categoryImage} src={img} alt={img} />
-                </a>
-              </div>
+    <section
+      ref={categoryRef}
+      className={`${styles.menuContainer} ${styles.pink}`}
+    >
+      {categories.map(({ categoryName, patch, img }, index) => {
+        return (
+          <div
+            key={index}
+            className={`${styles.categoryContainer} ${
+              isCategoryVisible ? styles.showElement : ''
+            }`}
+          >
+            <div className={styles.categoryContentContainer}>
+              <a href={patch}>
+                <div className={styles.categoryContainerModal}>
+                  {categoryName}
+                </div>
+                <img className={styles.categoryImage} src={img} alt={img} />
+              </a>
             </div>
-          );
-        })}
-      </div>
-    </>
+          </div>
+        );
+      })}
+    </section>
   );
 }

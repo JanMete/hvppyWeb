@@ -1,15 +1,19 @@
-:root {
-  --hvppyGreen: rgb(26, 196, 51);
-  --hvppyPurple: rgb(147, 39, 239);
-  --hvppyYellow: rgb(242, 179, 0);
+body {
+  margin: 0;
+  background-color: var(--hvppyPurple);
 }
 * {
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
   border-color: theme('borderColor.DEFAULT', currentColor);
+}
+:root {
+  --hvppyGreen: rgb(26, 196, 51);
+  --hvppyPurple: rgb(147, 39, 239);
+  --hvppyYellow: rgb(242, 179, 0);
 }
 body {
   color: white;
@@ -20,7 +24,7 @@ svg,
 video,
 canvas,
 audio,
-iframe,
+iframes,
 embed,
 object {
   display: block;

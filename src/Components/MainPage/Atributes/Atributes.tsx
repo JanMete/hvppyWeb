@@ -29,10 +29,10 @@ export default function Atributes() {
   ];
 
   return (
-    <article className={styles.atributesContainer}>
+    <section className={styles.atributesContainer}>
       <div className={`${styles.atributesContentContainer}`}>
         {attributes.map((attribute, index) => (
-          <section
+          <article
             key={index}
             ref={sections[index]}
             className={`${styles.spanSection} ${
@@ -44,9 +44,9 @@ export default function Atributes() {
             {attribute.image && (
               <img className={styles.image} src={attribute.image} alt='' />
             )}
-          </section>
+          </article>
         ))}
       </div>
-    </article>
+    </section>
   );
 }
