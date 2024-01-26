@@ -1,3 +1,11 @@
+declare const process: {
+  env: {
+    REACT_APP_EMAILJS1: string;
+    REACT_APP_EMAILJS2: string;
+    REACT_APP_EMAILJS3: string;
+  };
+};
+
 import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 
@@ -85,10 +93,10 @@ const useContactForm = () => {
 
     emailjs
       .sendForm(
-        'service_a2vvc87',
-        'template_ff0idrb',
+        process.env.REACT_APP_EMAILJS1,
+        process.env.REACT_APP_EMAILJS2,
         form.current!,
-        'Awa1JN7Ui5zY3iohp'
+        process.env.REACT_APP_EMAILJS3
       )
       .then(
         () => {

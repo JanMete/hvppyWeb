@@ -1,3 +1,9 @@
+declare const process: {
+  env: {
+    REACT_APP_MAILCHIMPURL: string;
+  };
+};
+
 import { useEffect, useState } from 'react';
 import jsonp from 'jsonp';
 import KUTE from 'kute.js';
@@ -30,7 +36,7 @@ const useLocationHook = () => {
       return;
     }
 
-    const url = import.meta.env.VITE_MAILCHIMPURL;
+    const url = process.env.REACT_APP_MAILCHIMPURL;
     jsonp(`${url}&EMAIL=${email}`, { param: 'c' }, (_, data) => {
       const { msg }: { msg: string } = data;
 
