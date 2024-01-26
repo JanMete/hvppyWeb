@@ -26,13 +26,16 @@ import clothesPhoto1 from '../assets/Artwork Images/Clothes/1.jpeg';
 import clothesPhoto2 from '../assets/Artwork Images/Clothes/2.jpeg';
 import clothesPhoto3 from '../assets/Artwork Images/Clothes/3.jpeg';
 import clothesPhoto4 from '../assets/Artwork Images/Clothes/4.jpeg';
+import clothesPhoto5 from '../assets/Artwork Images/Clothes/5.jpeg';
+import clothesPhoto6 from '../assets/Artwork Images/Clothes/6.jpeg';
+import clothesPhoto7 from '../assets/Artwork Images/Clothes/7.jpeg';
+import clothesPhoto8 from '../assets/Artwork Images/Clothes/8.jpeg';
+import clothesPhoto9 from '../assets/Artwork Images/Clothes/9.jpeg';
 
 import otherPhoto1 from '../assets/Artwork Images/Other/1.jpeg';
 import otherPhoto2 from '../assets/Artwork Images/Other/2.jpeg';
 import otherPhoto3 from '../assets/Artwork Images/Other/3.jpeg';
 import otherPhoto4 from '../assets/Artwork Images/Other/4.jpeg';
-import otherPhoto5 from '../assets/Artwork Images/Other/5.jpeg';
-import otherPhoto6 from '../assets/Artwork Images/Other/6.jpeg';
 import otherPhoto7 from '../assets/Artwork Images/Other/7.jpeg';
 import otherPhoto8 from '../assets/Artwork Images/Other/8.jpeg';
 import otherPhoto9 from '../assets/Artwork Images/Other/9.jpeg';
@@ -125,6 +128,15 @@ export const clothes1 = [
   {
     img: clothesPhoto2,
   },
+  {
+    img: clothesPhoto7,
+  },
+  {
+    img: clothesPhoto8,
+  },
+  {
+    img: clothesPhoto9,
+  },
 ];
 
 export const clothes2 = [
@@ -133,6 +145,12 @@ export const clothes2 = [
   },
   {
     img: clothesPhoto4,
+  },
+  {
+    img: clothesPhoto5,
+  },
+  {
+    img: clothesPhoto6,
   },
 ];
 
@@ -148,9 +166,6 @@ export const other1 = [
   },
   {
     img: otherPhoto4,
-  },
-  {
-    img: otherPhoto5,
   },
 ];
 
@@ -172,8 +187,5 @@ export const other2 = [
   },
   {
     img: otherPhoto12,
-  },
-  {
-    img: otherPhoto6,
   },
 ];

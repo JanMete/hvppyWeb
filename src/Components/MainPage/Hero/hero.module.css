@@ -28,9 +28,6 @@
 .hideHeroContainer {
   display: none;
 }
-.hvppyHeader {
-  color: var(--hvppyYellow);
-}
 @media screen and (max-width: 1010px) {
   .heroContainer {
     max-width: 50%;
@@ -45,5 +42,17 @@
   }
   .mainContainer {
     background-position: 31%;
+  }
+  .mainContainer {
+    background-image: url('../../../assets/MainPage/heroMobile.jpeg');
+    /* background-position: 40% -170rem; */
+    background-position: center;
+    /* background-position: 0 -200rem; */
+    /* background-size: 100rem; */
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+  }
+  .heroHeader {
+    /* font-size: 2rem; */
   }
 }
