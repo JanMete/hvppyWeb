@@ -33,6 +33,12 @@ import otherPhoto3 from '../assets/Artwork Images/Other/3.jpeg';
 import otherPhoto4 from '../assets/Artwork Images/Other/4.jpeg';
 import otherPhoto5 from '../assets/Artwork Images/Other/5.jpeg';
 import otherPhoto6 from '../assets/Artwork Images/Other/6.jpeg';
+import otherPhoto7 from '../assets/Artwork Images/Other/7.jpeg';
+import otherPhoto8 from '../assets/Artwork Images/Other/8.jpeg';
+import otherPhoto9 from '../assets/Artwork Images/Other/9.jpeg';
+import otherPhoto10 from '../assets/Artwork Images/Other/10.jpeg';
+import otherPhoto11 from '../assets/Artwork Images/Other/11.jpeg';
+import otherPhoto12 from '../assets/Artwork Images/Other/12.jpeg';
 
 export const designes1 = [
   {
@@ -140,14 +146,32 @@ export const other1 = [
   {
     img: otherPhoto3,
   },
-];
-
-export const other2 = [
   {
     img: otherPhoto4,
   },
   {
     img: otherPhoto5,
+  },
+];
+
+export const other2 = [
+  {
+    img: otherPhoto7,
+  },
+  {
+    img: otherPhoto8,
+  },
+  {
+    img: otherPhoto9,
+  },
+  {
+    img: otherPhoto10,
+  },
+  {
+    img: otherPhoto11,
+  },
+  {
+    img: otherPhoto12,
   },
   {
     img: otherPhoto6,

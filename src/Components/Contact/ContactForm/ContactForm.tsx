@@ -55,7 +55,11 @@ export default function ContactForm() {
   const isThereAnyErrors = errors.length > 0;
 
   return (
-    <section className={styles.contactFormMainContainer}>
+    <section
+      className={`${styles.contactFormMainContainer} ${
+        isThereAnyErrors ? styles.moveElementWithError : ''
+      }`}
+    >
       <div className={styles.contentContainer}>
         <img
           ref={imageRef}

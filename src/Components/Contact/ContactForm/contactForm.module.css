@@ -1,4 +1,5 @@
 .contactFormMainContainer {
+  background-color: var(--hvppyYellow);
   background-image: url('../../../assets/Contact/contactFormBackground.svg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -6,9 +7,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 30rem;
+  padding-bottom: 23rem;
   padding-top: 9rem;
   overflow: hidden;
+}
+.moveElementWithError {
+  padding-bottom: 26rem;
 }
 .contentContainer {
   position: relative;
@@ -161,7 +165,7 @@ textarea {
 }
 @media screen and (max-width: 510px) {
   .formHeadingBottomContainer h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   .formHeadingBottomContainer {
     bottom: -17.965rem;
