@@ -108,7 +108,7 @@ export default function Location() {
             <h2 className={styles.subsectionHeading}>
               {t('location.contact')}
             </h2>
-            <a href='mailto:someone@example.com'>TATTOOHVPPY@GMAIL.COM</a>
+            <a href='mailto:tattoohvppy@gmail.com'>TATTOOHVPPY@GMAIL.COM</a>
           </div>
         </div>
         <div

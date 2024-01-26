@@ -91,27 +91,24 @@ const useContactForm = () => {
       return;
     }
 
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS1,
-        process.env.REACT_APP_EMAILJS2,
-        form.current!,
-        process.env.REACT_APP_EMAILJS3
-      )
-      .then(
-        () => {
-          console.log('Message sent.');
-          setIsSubmitting(false);
-          setName('');
-          setEmail('');
-          setMessage('');
-          setKeepCheckingEmail(false);
-        },
-        () => {
-          console.log('There was an error sending the message.');
-          setIsSubmitting(false);
-        }
-      );
+    const emailjs1 = process.env.REACT_APP_EMAILJS1;
+    const emailjs2 = process.env.REACT_APP_EMAILJS2;
+    const emailjs3 = process.env.REACT_APP_EMAILJS3;
+
+    emailjs.sendForm(emailjs1, emailjs2, form.current!, emailjs3).then(
+      () => {
+        console.log('Message sent.');
+        setIsSubmitting(false);
+        setName('');
+        setEmail('');
+        setMessage('');
+        setKeepCheckingEmail(false);
+      },
+      () => {
+        console.log('There was an error sending the message.');
+        setIsSubmitting(false);
+      }
+    );
   };
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
