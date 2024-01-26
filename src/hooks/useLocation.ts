@@ -1,9 +1,3 @@
-declare const process: {
-  env: {
-    REACT_APP_MAILCHIMPURL: string;
-  };
-};
-
 import { useEffect, useState } from 'react';
 import jsonp from 'jsonp';
 import KUTE from 'kute.js';
@@ -35,9 +29,8 @@ const useLocationHook = () => {
       setIsMailCorrect(false);
       return;
     }
-
-    const url = process.env.REACT_APP_MAILCHIMPURL;
-    jsonp(`${url}&EMAIL=${email}`, { param: 'c' }, (_, data) => {
+    const mailchimpurl = import.meta.env.VITE_VARK_MAILCHIMPURL;
+    jsonp(`${mailchimpurl}&EMAIL=${email}`, { param: 'c' }, (_, data) => {
       const { msg }: { msg: string } = data;
 
       if (msg.includes('Please enter a value')) {
