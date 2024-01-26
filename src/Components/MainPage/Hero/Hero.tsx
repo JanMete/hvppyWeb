@@ -1,3 +1,9 @@
+declare const process: {
+  env: {
+    REACT_APP_EMAILJS3: string;
+  };
+};
+
 import { useRef, useState, useEffect, useContext } from 'react';
 import { scrollPositionContext } from '../../../contexts/scrollPositionContext';
 import styles from './hero.module.css';
@@ -30,6 +36,7 @@ export default function Hero() {
       >
         <h1 className={styles.heroHeader}>
           {t('main.hero.hello1')}
+          <p>{process.env.REACT_APP_EMAILJS3}</p>
           <span style={{ color: 'var(--hvppyYellow)' }}>
             {' '}
             {t('main.hero.hvppyTattoo')}
