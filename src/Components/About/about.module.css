@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   flex: 1;
-  z-index: -2;
+  z-index: 0;
 }
 .sectionContainer {
   max-width: 60%;

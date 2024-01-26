@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 28rem;
+  padding-bottom: 30rem;
   padding-top: 9rem;
   overflow: hidden;
 }
@@ -23,14 +23,14 @@
 .formHeadingBottomContainer {
   position: absolute;
   min-width: 100%;
-  bottom: -19.967rem;
+  bottom: -18.688rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .moveFormHeadingBottomContainer {
-  bottom: -28.688rem;
+  bottom: -23.418rem;
 }
 .formHeadingBottomContainer h1 {
   font-size: 5rem;
@@ -38,8 +38,9 @@
   transform: translateX(-50%);
   opacity: 0;
   /* padding: 1rem 0; */
+  padding-bottom: 1rem;
   transition: all 1s;
-  line-height: 0;
+  /* line-height: 0; */
 }
 .mailForm {
   display: flex;
@@ -152,10 +153,10 @@ textarea {
     font-size: 4rem;
   }
   .formHeadingBottomContainer {
-    bottom: -19.188rem;
+    bottom: -18.824rem;
   }
   .moveFormHeadingBottomContainer {
-    bottom: -27.875rem;
+    bottom: -23.555rem;
   }
 }
 @media screen and (max-width: 510px) {
@@ -163,10 +164,10 @@ textarea {
     font-size: 3rem;
   }
   .formHeadingBottomContainer {
-    bottom: -18.438rem;
+    bottom: -17.965rem;
   }
   .moveFormHeadingBottomContainer {
-    bottom: -27.063rem;
+    bottom: -24.316rem;
   }
   .formHeadingBottomContainer h1 {
     padding: 0;
