@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LOGO from '../../../assets/MainPage/homeLogo.png';
 import { sections } from '../../../utils/sections';
 import styles from './mobileHeader.module.css';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { activeLanguageContext } from '../../../contexts/activeLanguageContext';
 import { setActiveLanguageContext } from '../../../contexts/setActiveLanguageContext';
 import { socialMediaLinks } from '../../../utils/socialMedia';
@@ -32,6 +32,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     setActiveLanguage(lang);
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  useEffect(() => {
+    const lang = JSON.parse(localStorage.getItem('lang')!);
+    if (lang) {
+      setActiveLanguage(lang);
+    }
+  }, [setActiveLanguage]);
+
+  useEffect(() => {
+    localStorage.setItem('lang', JSON.stringify(activeLanguage));
+  }, [activeLanguage]);
 
   return (
     <section

@@ -30,7 +30,7 @@ export default function Hero() {
       >
         <h1 className={styles.heroHeader}>
           {t('main.hero.hello1')}
-          <span style={{ color: 'var(--hvppyPurple)' }}>
+          <span style={{ color: 'var(--hvppyGreen)' }}>
             {' '}
             {t('main.hero.hvppyTattoo')}
             {t('main.hero.website')}

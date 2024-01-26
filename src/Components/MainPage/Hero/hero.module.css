@@ -1,6 +1,7 @@
 .mainContainer {
-  background-image: url('../../../assets/MainPage/hero.jpg');
-  background-position: 50% 42%;
+  background-image: url('../../../assets/MainPage/heroMobile.jpeg');
+  /* background-position: 50% 42%; */
+  background-position: 50% 80%;
   background-attachment: fixed;
   width: 100%;
   height: 100dvh;
@@ -13,10 +14,10 @@
 .heroContainer {
   position: fixed;
   left: 4rem;
-  bottom: 11rem;
+  bottom: 5rem;
   max-width: 40%;
   padding: 2.5rem 1.25rem;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 1.5rem;
   transition: opacity 2s;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
@@ -44,15 +45,12 @@
     background-position: 31%;
   }
   .mainContainer {
-    background-image: url('../../../assets/MainPage/heroMobile.jpeg');
     /* background-position: 40% -170rem; */
-    background-position: center;
-    /* background-position: 0 -200rem; */
-    /* background-size: 100rem; */
+    /* background-position: center; */
+    /* background-position: 0 -500rem; */
+    background-size: 80rem;
+    background-position: top;
     /* background-size: cover; */
     /* background-attachment: fixed; */
-  }
-  .heroHeader {
-    /* font-size: 2rem; */
   }
 }

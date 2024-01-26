@@ -27,6 +27,13 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
   };
 
   useEffect(() => {
+    const lang = JSON.parse(localStorage.getItem('lang')!);
+    if (lang) {
+      setActiveLanguage(lang);
+    }
+  }, [setActiveLanguage]);
+
+  useEffect(() => {
     if (headerRef.current) {
       if (scrollPosition > headerRef.current.getBoundingClientRect().height) {
         setScrollExceededHeader(true);
@@ -34,7 +41,8 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
         setScrollExceededHeader(false);
       }
     }
-  }, [scrollPosition]);
+    localStorage.setItem('lang', JSON.stringify(activeLanguage));
+  }, [activeLanguage, scrollPosition]);
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
