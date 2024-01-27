@@ -11,12 +11,12 @@
   z-index: 0;
 }
 .sectionContainer {
-  max-width: 60%;
+  max-width: 75%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 10rem;
-  padding: 7rem 0;
+  /* padding: 7rem 0; */
   padding-top: 9rem;
   position: relative;
 }
@@ -25,12 +25,12 @@
 }
 .aboutPortrait2 {
   position: absolute;
-  width: 55%;
-  bottom: -7rem;
-  right: -7rem;
+  max-width: 55%;
+  bottom: -4rem;
+  right: -4rem;
 }
 .imageArticleContainer {
-  min-width: 35%;
+  min-width: 30%;
 }
 .textArticleContainer {
   display: flex;
