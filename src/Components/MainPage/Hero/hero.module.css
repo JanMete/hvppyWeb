@@ -12,7 +12,8 @@
   filter: brightness(1);
 }
 .heroContainer {
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   left: 4rem;
   bottom: 5rem;
   max-width: 40%;

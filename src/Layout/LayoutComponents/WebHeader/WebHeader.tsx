@@ -30,6 +30,8 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
     const lang = JSON.parse(localStorage.getItem('lang')!);
     if (lang) {
       setActiveLanguage(lang);
+    } else {
+      setActiveLanguage('pl');
     }
   }, [setActiveLanguage]);
 

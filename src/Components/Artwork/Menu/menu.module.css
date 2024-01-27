@@ -19,8 +19,8 @@
   transform: scale(1.03);
 }
 .categoryContainer {
-  width: 400px;
-  height: 600px;
+  width: 320px;
+  height: 500px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 30px;
   position: relative;
   transition: all 1s;

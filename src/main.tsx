@@ -12,7 +12,8 @@ import global_pl from './translations/pl/global.json';
 import i18next from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 
-const lang = JSON.parse(localStorage.getItem('lang')!);
+const defaultLang = 'pl';
+const lang = JSON.parse(localStorage.getItem('lang')!) || defaultLang;
 
 i18next.init({
   interpolation: { escapeValue: true },
