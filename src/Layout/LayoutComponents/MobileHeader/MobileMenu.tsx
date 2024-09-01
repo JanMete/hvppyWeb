@@ -54,7 +54,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 
       <div className={`${styles.logoContainer}`}>
         <Link onClick={scrollToTopCloseMenu} to='/'>
-          <img src={LOGO} alt='Logo portrait of artist' />
+          <img
+            className={styles.logoImg}
+            src={LOGO}
+            alt='Logo portrait of artist'
+          />
         </Link>
       </div>
 

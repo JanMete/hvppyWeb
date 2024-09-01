@@ -78,7 +78,15 @@ export default function WebHeader({ scrollPosition }: WebHeaderProps) {
           }`}
         >
           <Link onClick={scrollToTop} to='/'>
-            <img src={LOGO} alt='Logo portrait of artist' />
+            <img
+              src={LOGO}
+              className={`${
+                scrollExceededHeader
+                  ? `${styles.smallLogoImg}`
+                  : `${styles.logoImg}`
+              }`}
+              alt='Logo portrait of artist'
+            />
           </Link>
         </div>
 

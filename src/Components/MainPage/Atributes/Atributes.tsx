@@ -10,42 +10,73 @@ export default function Atributes() {
   const [t] = useTranslation('global');
 
   // INTERSECTION OBSERVER
-  const sections = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
-  const sectionIsVisible = sections.map(useIntersectionObserver);
-  // INTERSECTION OBSERVER END
+  const section1 = useRef(null);
+  const section2 = useRef(null);
+  const section3 = useRef(null);
+  const section4 = useRef(null);
+  const section5 = useRef(null);
 
-  const attributes = [
-    { texts: [t('main.attributes.happy'), t('main.attributes.vibes')] },
-    { image: ATRIBUTEICON1 },
-    { texts: [t('main.attributes.unique'), t('main.attributes.designes')] },
-    { image: ATRIBUTEICON2 },
-    { texts: [t('main.attributes.great'), t('main.attributes.quality')] },
-  ];
+  const sectionIsVisible1 = useIntersectionObserver(section1);
+  const sectionIsVisible2 = useIntersectionObserver(section2);
+  const sectionIsVisible3 = useIntersectionObserver(section3);
+  const sectionIsVisible4 = useIntersectionObserver(section4);
+  const sectionIsVisible5 = useIntersectionObserver(section5);
+  // INTERSECTION OBSERVER END
 
   return (
     <section className={styles.atributesContainer}>
       <div className={`${styles.atributesContentContainer}`}>
-        {attributes.map((attribute, index) => (
-          <article
-            key={index}
-            ref={sections[index]}
-            className={`${styles.spanSection} ${
-              sectionIsVisible[index] ? styles.show : styles.hide
-            }`}
-          >
-            {attribute.texts &&
-              attribute.texts.map((text, i) => <span key={i}>{text}</span>)}
-            {attribute.image && (
-              <img className={styles.image} src={attribute.image} alt='' />
-            )}
-          </article>
-        ))}
+        <article
+          ref={section1}
+          className={`${styles.spanSection} ${
+            sectionIsVisible1 ? styles.show : styles.hide
+          }`}
+        >
+          <span>{t('main.attributes.happy')}</span>
+          <span>{t('main.attributes.vibes')}</span>
+        </article>
+
+        <article
+          ref={section2}
+          className={`${styles.spanSection} ${
+            sectionIsVisible2 ? styles.show : styles.hide
+          }`}
+        >
+          <img
+            className={`${styles.image} ${styles.secondImage}`}
+            src={ATRIBUTEICON1}
+            alt=''
+          />
+        </article>
+
+        <article
+          ref={section3}
+          className={`${styles.spanSection} ${
+            sectionIsVisible3 ? styles.show : styles.hide
+          }`}
+        >
+          <span>{t('main.attributes.unique')}</span>
+          <span>{t('main.attributes.designes')}</span>
+        </article>
+
+        <article
+          ref={section4}
+          className={`${styles.spanSection} ${
+            sectionIsVisible4 ? styles.show : styles.hide
+          }`}
+        >
+          <img className={styles.image} src={ATRIBUTEICON2} alt='' />
+        </article>
+
+        <article
+          ref={section5}
+          className={`${styles.spanSection} ${
+            sectionIsVisible5 ? styles.show : styles.hide
+          }`}
+        >
+          <span>{t('main.attributes.great')}</span>
+          <span>{t('main.attributes.quality')}</span>
+        </article>
       </div>
     </section>
   );

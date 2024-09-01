@@ -86,3 +86,13 @@
 .linkContainer:hover a {
   transform: scale(1.05);
 }
+.logoImg {
+  width: 45%;
+  position: relative;
+  left: 30px;
+}
+.smallLogoImg {
+  width: 45%;
+  position: relative;
+  left: 20px;
+}

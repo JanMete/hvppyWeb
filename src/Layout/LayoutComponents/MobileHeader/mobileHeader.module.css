@@ -114,3 +114,8 @@
 .activeLang {
   text-decoration: underline;
 }
+.logoImg {
+  width: 45%;
+  position: relative;
+  left: 30px;
+}
