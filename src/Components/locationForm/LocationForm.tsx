@@ -25,6 +25,7 @@ export default function LocationForm() {
 
   const onSubmit = async (data: newsletterFormDataTypes) => {
     const url = import.meta.env.VITE_VARK_MAILCHIMPURL;
+    const apiKey = import.meta.env.VITE_VARK_MAILCHIMPAPIKEY;
 
     const subscriberData = {
       email_address: data.email,
@@ -32,12 +33,9 @@ export default function LocationForm() {
     };
 
     try {
-      const apiKey = import.meta.env.VITE_VARK_MAILCHIMPAPIKEY;
-      const encodedApiKey = btoa(`anystring:${apiKey}`);
-
       await axios.post(url, subscriberData, {
         headers: {
-          Authorization: `Basic ${encodedApiKey}`,
+          Authorization: apiKey,
         },
       });
     } catch (error) {
@@ -54,7 +52,6 @@ export default function LocationForm() {
       </h1>
     );
   }
-
   const animationStyles = isNewsletterVisible
     ? 'animate__animated animate__fadeInRight'
     : '';
