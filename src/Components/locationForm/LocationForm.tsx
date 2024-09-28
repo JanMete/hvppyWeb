@@ -32,9 +32,12 @@ export default function LocationForm() {
     };
 
     try {
+      const apiKey = import.meta.env.VITE_VARK_MAILCHIMPAPIKEY;
+      const encodedApiKey = btoa(`anystring:${apiKey}`);
+
       await axios.post(url, subscriberData, {
         headers: {
-          Authorization: import.meta.env.VITE_VARK_MAILCHIMPAPIKEY,
+          Authorization: `Basic ${encodedApiKey}`,
         },
       });
     } catch (error) {
@@ -51,6 +54,7 @@ export default function LocationForm() {
       </h1>
     );
   }
+
   const animationStyles = isNewsletterVisible
     ? 'animate__animated animate__fadeInRight'
     : '';
