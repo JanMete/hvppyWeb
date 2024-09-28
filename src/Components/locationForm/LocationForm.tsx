@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form';
 import style from './locationForm.module.css';
-import axios from 'axios';
 import { useRef } from 'react';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import SubBtn from '../subBtn/SubBtn';
 import { useTranslation } from 'react-i18next';
+import jsonp from 'jsonp';
 
 type newsletterFormDataTypes = {
   email: string;
@@ -23,28 +23,23 @@ export default function LocationForm() {
     setError,
   } = useForm<newsletterFormDataTypes>();
 
-  const onSubmit = async (data: newsletterFormDataTypes) => {
-    const url = import.meta.env.VITE_VARK_MAILCHIMPURL;
-    const apiKey = import.meta.env.VITE_VARK_MAILCHIMPAPIKEY;
+  const onSubmit = (data: newsletterFormDataTypes) => {
+    const url = `${import.meta.env.VITE_VARK_MAILCHIMPURL}&EMAIL=${
+      data.email
+    }&c=?`;
 
-    const subscriberData = {
-      email_address: data.email,
-      status: 'subscribed',
-    };
-
-    try {
-      await axios.post(url, subscriberData, {
-        headers: {
-          Authorization: apiKey,
-        },
-      });
-    } catch (error) {
-      console.log(error);
-
-      setError('email', {
-        message: t('contact.globalError'),
-      });
-    }
+    jsonp(url, { param: 'c' }, (err, response) => {
+      if (err) {
+        console.error(err);
+        setError('email', {
+          message: t('contact.globalError'),
+        });
+      } else if (response.result !== 'success') {
+        setError('email', {
+          message: response.msg || t('contact.globalError'),
+        });
+      }
+    });
   };
 
   if (isSubmitSuccessful) {
