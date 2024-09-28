@@ -1,0 +1,11 @@
+.langButtonsContainer {
+  display: flex;
+  gap: 1rem;
+}
+.langButtonsContainer button {
+  background-color: transparent;
+  cursor: pointer;
+}
+.activeLang {
+  text-decoration: underline;
+}

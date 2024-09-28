@@ -1,0 +1,31 @@
+.locationContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--yellow);
+  align-items: center;
+  padding-bottom: 7rem;
+  overflow: hidden;
+  padding-top: 5rem;
+}
+.contactNewsletterContainer {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (max-width: 1135px) {
+  .locationContainer {
+    flex-direction: column;
+    padding: 7rem 0;
+    gap: 5rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .locationContainer {
+    padding: 3rem 1rem 3rem 1rem;
+  }
+  .contactNewsletterContainer {
+    width: 100%;
+  }
+}

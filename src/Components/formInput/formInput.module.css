@@ -1,0 +1,17 @@
+.inputErrorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+.input {
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: var(--black);
+  width: 100%;
+  outline: none;
+}
+.errorMsg {
+  color: var(--red);
+}

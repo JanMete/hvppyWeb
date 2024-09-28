@@ -1,0 +1,7 @@
+.linkContainer a {
+  transition: all 0.3s;
+  display: inline-block;
+}
+.linkContainer:hover a {
+  transform: scale(1.05);
+}

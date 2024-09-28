@@ -13,7 +13,8 @@
     "enterName": "Wprowadź Imię",
     "enterEmail": "Wprowadź Email",
     "validEmail": "Wprowadź prawidłowy Email",
-    "enterMessage": "Wprowadź wiadomość"
+    "enterMessage": "Wprowadź wiadomość",
+    "globalError": "Coś poszło nie tak. Proszę spróbować ponownie później"
   },
   "location": {
     "location": "Lokalizacja",
@@ -21,7 +22,8 @@
     "contact": "Kontakt",
     "newsLetter": "Zapisz się do NewsLettera",
     "enterEmail": "Wprowadź Email",
-    "send": "Wyślij"
+    "send": "Wyślij",
+    "signedIn": "Dzięki za zapisanie się do newslettera!"
   },
   "main": {
     "hero": {
@@ -34,7 +36,7 @@
       "happy": "POZYTYWNY",
       "vibes": "NASTRÓJ",
       "unique": "UNIKALNE",
-      "designes": "PROJEKTY",
+      "designs": "PROJEKTY",
       "great": "ŚWIETNA",
       "quality": "JAKOŚĆ"
     },
@@ -55,7 +57,7 @@
   },
   "categories": {
     "tattoos": "Tatuaże",
-    "designes": "Projekty",
+    "designs": "Projekty",
     "clothes": "Ciuchy",
     "other": "Inne"
   },

@@ -1,0 +1,7 @@
+.link {
+  margin: 0 0 1rem 1rem;
+  font-size: 3rem;
+}
+.link:first-child {
+  margin-top: 1rem;
+}

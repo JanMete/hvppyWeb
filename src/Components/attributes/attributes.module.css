@@ -1,0 +1,23 @@
+.attributesContainer {
+  background-image: url('../../assets/MainPage/attributesSection.svg');
+  background-position: center top -56px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-content: space-between;
+  justify-items: center;
+  padding: 2rem 0;
+  z-index: 5;
+  font-size: 2rem;
+  background-color: var(--yellow);
+}
+@media screen and (max-width: 800px) {
+  .attributesContainer {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+  .attributesContainer {
+    padding: 5rem 0;
+  }
+}

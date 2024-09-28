@@ -1,17 +1,18 @@
 import './index.css';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './Layout/Layout.tsx';
-import MainPage from './Components/MainPage/MainPage.tsx';
-import Contact from './Components/Contact/Contact.tsx';
-import Menu from './Components/Artwork/Menu/Menu.tsx';
-import Gallery from './Components/Artwork/Gallery/Gallery.tsx';
-import About from './Components/About/About.tsx';
+import Layout from './views/layout/Layout.tsx';
+import MainPage from './views/mainPage/MainPage.tsx';
+import Contact from './views/contact/Contact.tsx';
+import About from './views/about/About.tsx';
 import global_en from './translations/en/global.json';
 import global_pl from './translations/pl/global.json';
 import i18next from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import 'animate.css';
+import ArtworkMenu from './views/artworkMenu/ArtworkMenu.tsx';
+import ArtworkGallery from './views/artworkGallery/ArtworkGallery.tsx';
 
 const defaultLang = 'pl';
 const lang = JSON.parse(localStorage.getItem('lang')!) || defaultLang;
@@ -44,11 +45,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/artwork',
-        element: <Menu />,
+        element: <ArtworkMenu />,
       },
       {
         path: '/artwork/:category',
-        element: <Gallery />,
+        element: <ArtworkGallery />,
       },
       {
         path: '/about',

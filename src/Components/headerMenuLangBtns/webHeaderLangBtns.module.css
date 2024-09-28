@@ -1,0 +1,12 @@
+.btnsContainer {
+  display: flex;
+  gap: 1rem;
+}
+.langBtn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+.activeLang {
+  text-decoration: underline;
+}

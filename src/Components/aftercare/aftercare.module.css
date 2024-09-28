@@ -1,0 +1,25 @@
+.aftercareContainer {
+  width: 100%;
+  background-image: url('../../assets/MainPage/aftercareSection.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+.aftercareHeading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  opacity: 0;
+}
+@media screen and (max-width: 1264px) {
+  .aftercareContainer {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1264px) {
+  .aftercareHeading {
+    margin-bottom: 1.5rem;
+  }
+}

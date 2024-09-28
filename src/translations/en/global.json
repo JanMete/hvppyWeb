@@ -13,7 +13,8 @@
     "enterName": "Please enter your Name",
     "enterEmail": "Please enter your Email",
     "validEmail": "Please enter a valid Email",
-    "enterMessage": "Please enter a Message"
+    "enterMessage": "Please enter a Message",
+    "globalError": "Something went wrong. Please try again later"
   },
   "location": {
     "location": "Location",
@@ -21,7 +22,8 @@
     "contact": "Contact",
     "newsLetter": "Sign up for NewsLetter",
     "enterEmail": "Please enter your Email",
-    "send": "Send"
+    "send": "Send",
+    "signedIn": "Thank you for signing up for newsletter!"
   },
   "main": {
     "hero": {
@@ -34,7 +36,7 @@
       "happy": "HAPPY",
       "vibes": "VIBES",
       "unique": "UNIQUE",
-      "designes": "DESIGNES",
+      "designs": "DESIGNS",
       "great": "GREAT",
       "quality": "QUALITY"
     },
@@ -55,7 +57,7 @@
   },
   "categories": {
     "tattoos": "Tattoos",
-    "designes": "Designes",
+    "designs": "Designs",
     "clothes": "Clothes",
     "other": "Other"
   },

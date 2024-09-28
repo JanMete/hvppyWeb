@@ -1,0 +1,35 @@
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.textAreaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.textareaInput {
+  border-radius: 8px;
+  height: 10rem;
+  color: var(--black);
+  padding: 0.5rem;
+  border: none;
+  resize: none;
+  overflow-wrap: break-word;
+}
+.textareaInput:focus {
+  outline: none;
+}
+.subBtnContainer {
+  display: flex;
+  align-items: center;
+}
+.errorMsg {
+  color: var(--red);
+}
+
+@media screen and (max-width: 800px) {
+  .submitBtn:hover {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,22 @@
+.mapArticleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.iframeContainer {
+  width: 600px;
+  height: 450px;
+}
+.iframe {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 800px) {
+  .iframeContainer {
+    width: 100%;
+  }
+  .mapArticleContainer {
+    width: 100%;
+  }
+}

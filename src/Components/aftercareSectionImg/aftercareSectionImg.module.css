@@ -1,0 +1,18 @@
+.imageContainer {
+  width: 42rem;
+  transition: all 1s;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  opacity: 0;
+}
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 1243px) {
+  .imageContainer {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+}

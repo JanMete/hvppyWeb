@@ -1,0 +1,14 @@
+.submitBtn {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  color: var(--black);
+  margin-left: auto;
+  background-color: var(--white);
+  transition: all 0.4s;
+  cursor: pointer;
+  outline: none;
+}
+.submitBtn:hover {
+  transform: scale(1.1);
+}

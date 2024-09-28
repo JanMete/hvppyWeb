@@ -1,0 +1,20 @@
+.galleryContainer {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+  z-index: 1;
+}
+.backgroundImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}

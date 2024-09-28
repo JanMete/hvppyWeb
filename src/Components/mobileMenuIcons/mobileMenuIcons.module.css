@@ -1,0 +1,6 @@
+.iconsList {
+  display: flex;
+  gap: 1rem;
+  margin-left: 1rem;
+  font-size: 3rem;
+}

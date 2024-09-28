@@ -1,0 +1,22 @@
+.mobileMenuContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100dvh;
+  transition: all 0.3s ease-in-out;
+  padding-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+.mobileMenuContainerOpened {
+  opacity: 1;
+  width: 100vw;
+}
+.iconsLangContainer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

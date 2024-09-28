@@ -1,0 +1,9 @@
+.descriptionContainer {
+  width: 50%;
+  opacity: 0;
+}
+@media screen and (max-width: 1243px) {
+  .descriptionContainer {
+    width: 100%;
+  }
+}

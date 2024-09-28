@@ -1,0 +1,47 @@
+.galleryContainer {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+}
+.backgroundImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.photosContainer {
+  width: 70%;
+  display: flex;
+  gap: 1.5rem;
+}
+.scrollButtonContainer {
+  transform: translateY(140%);
+  filter: blur(1);
+  opacity: 0;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  transition: all 0.7s;
+  z-index: 100;
+}
+@media screen and (max-width: 1350px) {
+  .photosContainer {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .photosContainer {
+    flex-direction: column;
+  }
+  .galleryContainer {
+    padding-top: 3rem;
+  }
+}

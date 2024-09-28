@@ -1,84 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+:root {
+  --green: rgb(26, 196, 51);
+  --purple: rgb(147, 39, 239);
+  --yellow: rgb(242, 179, 0);
+  --white: #fff;
+  --black: #000;
+  --red: #ff0000;
+  --roundedCorners: 1.5rem;
+}
+
 body {
   margin: 0;
-  background-color: var(--hvppyPurple);
+  font-family: 'Lato', sans-serif;
 }
 * {
   padding: 0;
   box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: theme('borderColor.DEFAULT', currentColor);
-}
-:root {
-  --hvppyGreen: rgb(26, 196, 51);
-  --hvppyPurple: rgb(147, 39, 239);
-  --hvppyYellow: rgb(242, 179, 0);
-}
-body {
-  color: white;
-  font-family: 'Lato', sans-serif;
-}
-img,
-svg,
-video,
-canvas,
-audio,
-iframes,
-embed,
-object {
-  display: block;
-}
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-h1 {
-  font-size: 3rem;
-  line-height: 4rem;
-  letter-spacing: 0.1rem;
-  font-weight: bold;
-  font-family: 'Anton', sans-serif;
   margin: 0;
-}
-h2 {
-  font-size: 2.2rem;
-  line-height: 3rem;
-  letter-spacing: 0.1rem;
-  font-weight: bold;
-  font-family: 'Anton', sans-serif;
-  margin: 0;
-}
-h3 {
-  line-height: 1.8rem;
-  margin: 0;
-}
-p {
-  line-height: 1.7rem;
-  margin: 0;
+  color: var(--white);
 }
 ul {
   list-style-type: none;
 }
-link::after {
-  color: white;
-}
 a {
   text-decoration: none;
-  color: white;
+  color: var(--white);
 }
 a:visited {
-  color: white;
+  color: var(--white);
 }
 a:active {
-  color: white;
-}
-a {
-  -webkit-tap-highlight-color: transparent;
+  color: var(--white);
 }
 .active {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+h1 {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  font-family: 'Anton', sans-serif;
+}
+h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-family: 'Anton', sans-serif;
 }

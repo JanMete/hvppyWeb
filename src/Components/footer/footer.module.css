@@ -1,0 +1,19 @@
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple);
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  overflow: hidden;
+  z-index: 1;
+}
+.footerContainer a {
+  font-weight: bold;
+}
+.footerParagraph {
+  opacity: 0;
+}
+.footerLink {
+  text-decoration: underline;
+}
