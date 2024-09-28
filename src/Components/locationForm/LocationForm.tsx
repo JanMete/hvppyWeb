@@ -39,6 +39,8 @@ export default function LocationForm() {
         },
       });
     } catch (error) {
+      console.log(error);
+
       setError('email', {
         message: t('contact.globalError'),
       });
