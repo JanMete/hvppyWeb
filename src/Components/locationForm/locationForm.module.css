@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
+  text-align: center;
 }
 .InputContainer {
   display: flex;

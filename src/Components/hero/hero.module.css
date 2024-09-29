@@ -1,13 +1,17 @@
 .mainContainer {
   width: auto;
-  height: 100dvh;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100vh;
 }
 .heroImg {
   width: 100%;
   height: 100%;
   position: fixed;
+  object-fit: cover;
+}
+.staticHeroImg {
+  width: 100%;
+  height: 100%;
+  position: relative;
   object-fit: cover;
 }
 .heroContainer {
