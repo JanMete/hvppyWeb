@@ -9,6 +9,7 @@
   opacity: 0;
   width: 0;
   overflow: hidden;
+  z-index: 2;
 }
 .mobileMenuContainerOpened {
   opacity: 1;
