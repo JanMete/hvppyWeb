@@ -16,7 +16,7 @@ Animations: Utilized animate.css and Intersection Observer API to bring smooth a
 
 Localization: Google Maps integration provides an interactive map to display the artist's location, helping potential clients find the studio easily.
 
-Additional Libraries: FontAwesome icons for a visually appealing design, and i18next for future multilingual support.
+Additional Libraries: FontAwesome icons for a visually appealing design, and i18next for multilingual support.
 
 Tools & Libraries:
 
