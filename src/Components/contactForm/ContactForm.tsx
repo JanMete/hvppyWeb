@@ -25,6 +25,10 @@ export default function ContactForm() {
 
   const { t } = useTranslation('global');
 
+  const emailService = import.meta.env.VITE_VARK_EMAILJSSERVICE;
+  const emailTemplate = import.meta.env.VITE_VARK_EMAILJSTEMPLATE;
+  const emailKey = import.meta.env.VITE_VARK_EMAILJSKEY;
+
   const {
     register,
     handleSubmit,
@@ -36,14 +40,14 @@ export default function ContactForm() {
   const onSubmit = (data: ContactFormData) => {
     emailjs
       .send(
-        import.meta.env.VITE_VARK_EMAILJSSERVICE,
-        import.meta.env.VITE_VARK_EMAILJSTEMPLATE,
+        emailService,
+        emailTemplate,
         {
           from_name: data.name,
           from_email: data.email,
           message: data.textArea,
         },
-        import.meta.env.VITE_VARK_EMAILJSKEY
+        emailKey
       )
       .then(
         (response) => {
