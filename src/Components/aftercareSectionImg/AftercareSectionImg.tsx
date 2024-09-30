@@ -16,7 +16,7 @@ export default function AftercareSectionImg({
   isLoading,
   reversedStyling,
 }: AftercareSectionImgProps) {
-  const imageRef = useRef(null);
+  const imageRef = useRef<HTMLDivElement | null>(null);
   const isImageVisible = useIntersectionObserver(imageRef);
 
   const animationClass = isImageVisible
@@ -26,14 +26,23 @@ export default function AftercareSectionImg({
     : '';
 
   return (
-    <div ref={imageRef} className={`${style.imageContainer} ${animationClass}`}>
+    <figure
+      ref={imageRef}
+      className={`${style.imageContainer} ${animationClass}`}
+    >
       {isLoading ? (
         <LoaderErrorContainer isGallery={false}>
           <Loader />
         </LoaderErrorContainer>
       ) : (
-        <img src={img.src} alt={img.alt} className={style.image} />
+        <img
+          src={img.src}
+          alt={img.alt || 'Descriptive alternative text'}
+          className={style.image}
+          loading='lazy'
+        />
       )}
-    </div>
+      <figcaption>{img.alt || 'Image description'}</figcaption>{' '}
+    </figure>
   );
 }

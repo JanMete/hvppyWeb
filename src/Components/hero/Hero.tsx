@@ -2,10 +2,10 @@ import { useRef } from 'react';
 import style from './hero.module.css';
 import { useTranslation } from 'react-i18next';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import HEROIMAGE from '../../assets/MainPage/heroMobile.jpeg';
+import HEROIMAGE from '../../assets/MainPage/heroMobile.webp';
 import { useWindowSizeAndScroll } from '../../hooks/useWindowSizeAndScroll';
 
-export default function Hero() {
+const Hero = () => {
   const heroTextRef = useRef<HTMLDivElement>(null);
 
   const isHeroTextRefVisible = useIntersectionObserver(heroTextRef);
@@ -18,13 +18,13 @@ export default function Hero() {
 
   const { scrollPosition } = useWindowSizeAndScroll();
   const isHeroImageVisible = scrollPosition < 1200;
-
   return (
     <div className={style.mainContainer}>
       <img
         className={`${
           isHeroImageVisible ? style.heroImg : style.staticHeroImg
         }`}
+        alt='Hero image'
         src={HEROIMAGE}
       />
       <div
@@ -41,4 +41,6 @@ export default function Hero() {
       </div>
     </div>
   );
-}
+};
+
+export default Hero;
