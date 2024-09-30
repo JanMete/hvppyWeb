@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import { ImageWithCaption } from '../../types/imageWithCaption';
 
-const Aftercare = () => {
+export default function Aftercare() {
   const location = useLocation().pathname;
 
   const [t] = useTranslation('global');
@@ -33,6 +33,7 @@ const Aftercare = () => {
   const firstImage = data?.[0] ?? defaultImage;
   const secondImage = data?.[1] ?? defaultImage;
   const thirdImage = data?.[2] ?? defaultImage;
+
   return (
     <article className={styles.aftercareContainer}>
       <h1
@@ -74,6 +75,4 @@ const Aftercare = () => {
       </div>
     </article>
   );
-};
-
-export default Aftercare;
+}

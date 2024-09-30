@@ -5,7 +5,7 @@ import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import HEROIMAGE from '../../assets/MainPage/heroMobile.webp';
 import { useWindowSizeAndScroll } from '../../hooks/useWindowSizeAndScroll';
 
-const Hero = () => {
+export default function Hero() {
   const heroTextRef = useRef<HTMLDivElement>(null);
 
   const isHeroTextRefVisible = useIntersectionObserver(heroTextRef);
@@ -18,6 +18,7 @@ const Hero = () => {
 
   const { scrollPosition } = useWindowSizeAndScroll();
   const isHeroImageVisible = scrollPosition < 1200;
+
   return (
     <div className={style.mainContainer}>
       <img
@@ -41,6 +42,4 @@ const Hero = () => {
       </div>
     </div>
   );
-};
-
-export default Hero;
+}

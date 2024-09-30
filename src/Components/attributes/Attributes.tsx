@@ -6,7 +6,7 @@ import AttributeIcon from '../attributeIcon/AttributeIcon';
 import { useGetImages } from '../../hooks/useGetImages';
 import { ImageWithCaption } from '../../types/imageWithCaption';
 
-const Attributes = () => {
+export default function Attributes() {
   const location = 'attributes';
   const { data } = useGetImages({ location });
 
@@ -21,6 +21,7 @@ const Attributes = () => {
   const defaultImage: ImageWithCaption = { src: '', alt: '' };
   const image1 = data?.[0] ?? defaultImage;
   const image2 = data?.[1] ?? defaultImage;
+
   return (
     <section className={styles.attributesContainer}>
       <AttributeText section={textSection1}>
@@ -39,6 +40,4 @@ const Attributes = () => {
       </AttributeText>
     </section>
   );
-};
-
-export default Attributes;
+}

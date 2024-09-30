@@ -1,8 +1,12 @@
 .iconContainer {
   opacity: 0;
   height: 10rem;
+  width: 100%;
+  max-width: 11rem;
 }
+
 .image {
-  width: 190px;
-  height: 160px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
