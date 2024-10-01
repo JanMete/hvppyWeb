@@ -1,28 +1,16 @@
 import galleryStyle from './galleryLoaderErrorContainer.module.css';
 import defaultStyle from './defaultLoaderErrorContainer.module.css';
-import BACKGROUNDIMAGE from '../../assets/Artwork Images/galleryBackground.svg';
 import { FunctionComponent, PropsWithChildren } from 'react';
 
 type LoaderErrorContainerProps = {
-  isGallery: boolean;
+  withBackground: boolean;
 };
 
 const LoaderErrorContainer: FunctionComponent<
   PropsWithChildren<LoaderErrorContainerProps>
-> = ({ children, isGallery }) => {
-  const style = isGallery ? galleryStyle : defaultStyle;
-  return (
-    <section className={style.galleryContainer}>
-      {isGallery && (
-        <img
-          src={BACKGROUNDIMAGE}
-          className={style.backgroundImg}
-          alt='Background'
-        />
-      )}
-      {children}
-    </section>
-  );
+> = ({ children, withBackground }) => {
+  const style = withBackground ? galleryStyle : defaultStyle;
+  return <section className={style.galleryContainer}>{children}</section>;
 };
 
 export default LoaderErrorContainer;

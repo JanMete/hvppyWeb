@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element: (
           <Suspense
             fallback={
-              <LoaderErrorContainer isGallery={false}>
+              <LoaderErrorContainer withBackground={true}>
                 <Loader />
               </LoaderErrorContainer>
             }
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         element: (
           <Suspense
             fallback={
-              <LoaderErrorContainer isGallery={false}>
+              <LoaderErrorContainer withBackground={true}>
                 <Loader />
               </LoaderErrorContainer>
             }
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         element: (
           <Suspense
             fallback={
-              <LoaderErrorContainer isGallery={false}>
+              <LoaderErrorContainer withBackground={true}>
                 <Loader />
               </LoaderErrorContainer>
             }
@@ -90,7 +90,7 @@ const router = createBrowserRouter([
         element: (
           <Suspense
             fallback={
-              <LoaderErrorContainer isGallery={false}>
+              <LoaderErrorContainer withBackground={true}>
                 <Loader />
               </LoaderErrorContainer>
             }
@@ -104,7 +104,7 @@ const router = createBrowserRouter([
         element: (
           <Suspense
             fallback={
-              <LoaderErrorContainer isGallery={false}>
+              <LoaderErrorContainer withBackground={true}>
                 <Loader />
               </LoaderErrorContainer>
             }

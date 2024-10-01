@@ -15,7 +15,7 @@ const MainPage = () => {
       <Hero />
       <Suspense
         fallback={
-          <LoaderErrorContainer isGallery={false}>
+          <LoaderErrorContainer withBackground={false}>
             <Loader />
           </LoaderErrorContainer>
         }
@@ -24,7 +24,7 @@ const MainPage = () => {
       </Suspense>
       <Suspense
         fallback={
-          <LoaderErrorContainer isGallery={false}>
+          <LoaderErrorContainer withBackground={false}>
             <Loader />
           </LoaderErrorContainer>
         }

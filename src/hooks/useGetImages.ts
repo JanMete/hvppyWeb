@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { ImageWithCaption } from '../types/imageWithCaption';
 
 type useGetImagesProps = {
   location: string;
@@ -32,38 +31,29 @@ export const useGetImages = ({ location }: useGetImagesProps) => {
       `https://public-api.wordpress.com/wp/v2/sites/${siteID}/posts/${slug}`
     );
 
-    const content = data.content?.rendered;
-
-    if (!content) {
-      throw new Error('No content found');
-    }
-
+    const res = data.content.rendered;
     const parser = new DOMParser();
-    const doc = parser.parseFromString(content, 'text/html');
-    const imgTags = doc.querySelectorAll('img');
-    const figCaptions = doc.querySelectorAll('figcaption');
-
-    const imageWithCaptions: ImageWithCaption[] = Array.from(imgTags).map(
-      (img, index) => ({
-        src: img.src,
-        alt: figCaptions[index]?.textContent || '',
-      })
-    );
+    const html = parser.parseFromString(res, 'text/html');
+    const img = html.querySelectorAll('img');
+    const imgArray = Array.from(img).map((image) => ({
+      src: image.src,
+      alt: image.alt,
+    }));
 
     if (location === '/') {
-      return imageWithCaptions.slice(0, 3);
+      return imgArray.slice(0, 3);
     } else if (location === '/artwork') {
-      return imageWithCaptions.slice(0, 4);
+      return imgArray.slice(0, 4);
     } else if (location === '/about') {
-      return imageWithCaptions.slice(0, 2);
+      return imgArray.slice(0, 2);
     } else if (location === '/contact') {
-      return imageWithCaptions.slice(0, 1);
+      return imgArray.slice(0, 1);
     } else if (location === 'attributes') {
-      return imageWithCaptions.slice(0, 2);
+      return imgArray.slice(0, 2);
     } else if (location === 'logo') {
-      return imageWithCaptions.slice(0, 1);
+      return imgArray.slice(0, 1);
     } else {
-      return imageWithCaptions;
+      return imgArray;
     }
   };
 

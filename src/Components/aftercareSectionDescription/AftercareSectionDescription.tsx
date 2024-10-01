@@ -6,20 +6,20 @@ import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 type AftercareSectionDescriptionProps = {
   header: string;
   description: string;
-  reversedStyling: boolean;
+  reversed: boolean;
 };
 
 export default function AftercareSectionDescription({
   header,
   description,
-  reversedStyling,
+  reversed,
 }: AftercareSectionDescriptionProps) {
   const descriptionRef = useRef(null);
   const isDescriptionVisible = useIntersectionObserver(descriptionRef);
   const [t] = useTranslation('global');
 
   const animationClass = isDescriptionVisible
-    ? reversedStyling
+    ? reversed
       ? 'animate__animated animate__fadeInRight'
       : 'animate__animated animate__fadeInLeft'
     : '';

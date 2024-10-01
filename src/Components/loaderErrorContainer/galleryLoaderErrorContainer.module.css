@@ -8,6 +8,10 @@
   position: relative;
   flex: 1;
   z-index: 1;
+  background-image: url('../../assets/Artwork Images/galleryBackground.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .backgroundImg {
   position: absolute;

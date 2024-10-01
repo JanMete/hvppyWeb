@@ -2,7 +2,6 @@ import style from './aftercareSection.module.css';
 import { MutableRefObject } from 'react';
 import AftercareSectionImg from '../aftercareSectionImg/AftercareSectionImg';
 import AftercareSectionDescription from '../aftercareSectionDescription/AftercareSectionDescription';
-import { useWindowSizeAndScroll } from '../../hooks/useWindowSizeAndScroll';
 import { ImageWithCaption } from '../../types/imageWithCaption';
 
 type AftercareSectionProps = {
@@ -11,8 +10,6 @@ type AftercareSectionProps = {
   header: string;
   description: string;
   reversed: boolean;
-  isLoading: boolean;
-  reversedStyling: boolean;
 };
 
 export default function AftercareSection({
@@ -21,42 +18,20 @@ export default function AftercareSection({
   header,
   description,
   reversed,
-  isLoading,
-  reversedStyling,
 }: AftercareSectionProps) {
-  const { windowSize } = useWindowSizeAndScroll();
-  const isMobile = windowSize[0] < 1243;
-  isMobile ? (reversed = true) : '';
-
   return (
-    <section ref={section} className={style.section}>
-      {reversed ? (
-        <>
-          <AftercareSectionDescription
-            header={header}
-            description={description}
-            reversedStyling={reversedStyling}
-          />
-          <AftercareSectionImg
-            img={img}
-            isLoading={isLoading}
-            reversedStyling={reversedStyling}
-          />
-        </>
-      ) : (
-        <>
-          <AftercareSectionImg
-            isLoading={isLoading}
-            img={img}
-            reversedStyling={reversedStyling}
-          />
-          <AftercareSectionDescription
-            header={header}
-            description={description}
-            reversedStyling={reversedStyling}
-          />
-        </>
-      )}
+    <section
+      ref={section}
+      className={`${style.section} ${reversed ? style.reversed : ''}`}
+    >
+      <>
+        <AftercareSectionImg img={img} reversed={reversed} />
+        <AftercareSectionDescription
+          header={header}
+          description={description}
+          reversed={reversed}
+        />
+      </>
     </section>
   );
 }

@@ -1,26 +1,28 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import Loader from '../loader/Loader';
 import LoaderErrorContainer from '../loaderErrorContainer/loaderErrorContainer';
 import style from './aftercareSectionImg.module.css';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import { ImageWithCaption } from '../../types/imageWithCaption';
+import { useTranslation } from 'react-i18next';
+import { IsLoadingContext } from '../../contexts/IsLoadingContext';
 
 type AftercareSectionImgProps = {
   img: ImageWithCaption;
-  isLoading: boolean;
-  reversedStyling: boolean;
+  reversed: boolean;
 };
 
 export default function AftercareSectionImg({
   img,
-  isLoading,
-  reversedStyling,
+  reversed,
 }: AftercareSectionImgProps) {
+  const { isLoading } = useContext(IsLoadingContext);
+  const [t] = useTranslation('global');
   const imageRef = useRef<HTMLDivElement | null>(null);
   const isImageVisible = useIntersectionObserver(imageRef);
 
   const animationClass = isImageVisible
-    ? reversedStyling
+    ? reversed
       ? 'animate__animated animate__fadeInRight'
       : 'animate__animated animate__fadeInLeft'
     : '';
@@ -31,18 +33,17 @@ export default function AftercareSectionImg({
       className={`${style.imageContainer} ${animationClass}`}
     >
       {isLoading ? (
-        <LoaderErrorContainer isGallery={false}>
+        <LoaderErrorContainer withBackground={false}>
           <Loader />
         </LoaderErrorContainer>
       ) : (
         <img
           src={img.src}
-          alt={img.alt || 'Descriptive alternative text'}
+          alt={img.alt || t('alt.aftercare')}
           className={style.image}
           loading='lazy'
         />
       )}
-      <figcaption>{img.alt || 'Image description'}</figcaption>{' '}
     </figure>
   );
 }

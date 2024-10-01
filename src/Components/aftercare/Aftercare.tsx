@@ -7,6 +7,7 @@ import LoaderErrorContainer from '../loaderErrorContainer/loaderErrorContainer';
 import { useLocation } from 'react-router-dom';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import { ImageWithCaption } from '../../types/imageWithCaption';
+import { IsLoadingContext } from '../../contexts/IsLoadingContext';
 
 export default function Aftercare() {
   const location = useLocation().pathname;
@@ -23,7 +24,7 @@ export default function Aftercare() {
 
   if (error) {
     return (
-      <LoaderErrorContainer isGallery={false}>
+      <LoaderErrorContainer withBackground={false}>
         <div>Error!</div>
       </LoaderErrorContainer>
     );
@@ -45,33 +46,29 @@ export default function Aftercare() {
         {t('main.aftercare.aftercare')}
       </h1>
       <div>
-        <AftercareSection
-          section={aftercareSection1}
-          img={firstImage}
-          header={'main.aftercare.header1'}
-          description={'main.aftercare.text1'}
-          reversed={false}
-          reversedStyling={false}
-          isLoading={isLoading}
-        />
-        <AftercareSection
-          section={aftercareSection2}
-          img={secondImage}
-          header={'main.aftercare.header2'}
-          description={'main.aftercare.text2'}
-          reversed={true}
-          reversedStyling={true}
-          isLoading={isLoading}
-        />
-        <AftercareSection
-          section={aftercareSection3}
-          img={thirdImage}
-          header={'main.aftercare.header3'}
-          description={'main.aftercare.text3'}
-          reversed={false}
-          reversedStyling={false}
-          isLoading={isLoading}
-        />
+        <IsLoadingContext.Provider value={{ isLoading }}>
+          <AftercareSection
+            section={aftercareSection1}
+            img={firstImage}
+            header={'main.aftercare.header1'}
+            description={'main.aftercare.text1'}
+            reversed={false}
+          />
+          <AftercareSection
+            section={aftercareSection2}
+            img={secondImage}
+            header={'main.aftercare.header2'}
+            description={'main.aftercare.text2'}
+            reversed={true}
+          />
+          <AftercareSection
+            section={aftercareSection3}
+            img={thirdImage}
+            header={'main.aftercare.header3'}
+            description={'main.aftercare.text3'}
+            reversed={false}
+          />
+        </IsLoadingContext.Provider>
       </div>
     </article>
   );

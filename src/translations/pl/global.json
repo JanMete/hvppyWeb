@@ -63,5 +63,10 @@
   },
   "footer": {
     "author": "Stronę stworzył"
+  },
+  "alt": {
+    "attributes": "Ikona",
+    "aftercare": "Tatuator podczas pracy",
+    "logo": "Happy Tattoo Logo"
   }
 }

@@ -63,5 +63,10 @@
   },
   "footer": {
     "author": "Website created by"
+  },
+  "alt": {
+    "attributes": "Icon",
+    "aftercare": "Tattoo artist at work",
+    "logo": "Logo Happy Tattoo"
   }
 }

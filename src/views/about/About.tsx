@@ -51,26 +51,25 @@ export default function About() {
               : ''
           }`}
         >
-          {isLoading ? (
-            <LoaderErrorContainer isGallery={false}>
+          {isLoading && (
+            <LoaderErrorContainer withBackground={false}>
               <Loader />
             </LoaderErrorContainer>
-          ) : (
-            <>
-              {!isMobile && (
-                <img
-                  className={style.aboutImg1}
-                  src={firstImage.src}
-                  alt={firstImage.alt}
-                />
-              )}
-              <img
-                className={style.aboutImg2}
-                src={secondImage.src}
-                alt={secondImage.alt}
-              />
-            </>
           )}
+          <>
+            {!isMobile && (
+              <img
+                className={style.aboutImg1}
+                src={firstImage.src}
+                alt={firstImage.alt}
+              />
+            )}
+            <img
+              className={style.aboutImg2}
+              src={secondImage.src}
+              alt={secondImage.alt}
+            />
+          </>
         </div>
       </article>
 

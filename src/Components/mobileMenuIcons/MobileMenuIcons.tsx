@@ -5,10 +5,10 @@ import style from './mobileMenuIcons.module.css';
 export default function MobileMenuIcons() {
   return (
     <ul className={style.iconsList}>
-      {socialMediaLinks.map(({ icon, path }, index) => {
+      {socialMediaLinks.map(({ icon, path, ariaLabel }, index) => {
         return (
           <li key={index}>
-            <a target='_blank' href={path}>
+            <a target='_blank' href={path} aria-label={ariaLabel}>
               <FontAwesomeIcon icon={icon} />
             </a>
           </li>
