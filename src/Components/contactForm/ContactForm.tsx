@@ -77,7 +77,7 @@ export default function ContactForm() {
         }`}
       >
         {isLoading ? (
-          <LoaderErrorContainer isGallery={false}>
+          <LoaderErrorContainer withBackground={false}>
             <Loader />
           </LoaderErrorContainer>
         ) : (
