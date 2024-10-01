@@ -35,7 +35,7 @@ export default function ArtworkMenu() {
             <a href={path}>
               <div className={style.categoryModal}></div>
               {isLoading ? (
-                <LoaderErrorContainer isGallery={false}>
+                <LoaderErrorContainer withBackground={false}>
                   <Loader />
                 </LoaderErrorContainer>
               ) : (

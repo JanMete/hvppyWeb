@@ -26,7 +26,7 @@ export default function ArtworkGallery() {
 
   if (isLoading) {
     return (
-      <LoaderErrorContainer isGallery={true}>
+      <LoaderErrorContainer withBackground={true}>
         <Loader />
       </LoaderErrorContainer>
     );
@@ -34,7 +34,7 @@ export default function ArtworkGallery() {
 
   if (error) {
     return (
-      <LoaderErrorContainer isGallery={true}>
+      <LoaderErrorContainer withBackground={true}>
         <p>Error loading images</p>
       </LoaderErrorContainer>
     );
