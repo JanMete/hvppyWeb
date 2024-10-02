@@ -8,6 +8,7 @@ export default function MobileMenuButton({
   return (
     <div className={style.menuButtonContainer}>
       <button
+        aria-label='Open Menu'
         onClick={() => {
           setIsMobileMenuOpen(!isMobileMenuOpen);
         }}

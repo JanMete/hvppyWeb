@@ -24,6 +24,7 @@ export default function LocationGoogleMap() {
           className={style.iframe}
           loading='lazy'
           referrerPolicy='no-referrer-when-downgrade'
+          title='Google Maps showing the location of Hvppy Tattoo'
         ></iframe>
       </div>
     </article>

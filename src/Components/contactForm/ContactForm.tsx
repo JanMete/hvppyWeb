@@ -1,5 +1,4 @@
 import style from './newContactForm.module.css';
-import BACKGROUND from '../../assets/Contact/contactFormBackground.svg';
 import { useForm } from 'react-hook-form';
 import { ContactFormData } from '../../types/formTypes';
 import ContactFormTopSection from '../contactFormTopSection/ContactFormTopSection';
@@ -69,7 +68,6 @@ export default function ContactForm() {
 
   return (
     <div className={style.formMainContainer}>
-      <img src={BACKGROUND} className={style.backgroundImage} />
       <div
         ref={contactImageRef}
         className={`${style.contactImageContainer} ${
@@ -81,7 +79,12 @@ export default function ContactForm() {
             <Loader />
           </LoaderErrorContainer>
         ) : (
-          <img className={style.contactImage} src={image.src} alt={image.alt} />
+          <img
+            className={style.contactImage}
+            src={image.src}
+            alt={image.alt ?? t('alt.about')}
+            loading='lazy'
+          />
         )}
       </div>
       <div
