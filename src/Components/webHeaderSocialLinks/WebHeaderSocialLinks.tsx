@@ -7,8 +7,8 @@ export default function WebHeaderSocialLinks() {
     <ul className={style.iconsList}>
       {socialMediaLinks.map(({ icon, path, ariaLabel }, index) => {
         return (
-          <li key={index} aria-label={ariaLabel} className={style.icon}>
-            <a target='_blank' href={path}>
+          <li key={index} className={style.icon}>
+            <a target='_blank' aria-label={ariaLabel} href={path}>
               <FontAwesomeIcon icon={icon} />
             </a>
           </li>

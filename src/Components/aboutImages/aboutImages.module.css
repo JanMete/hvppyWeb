@@ -1,0 +1,35 @@
+.imageArticleContainer {
+  width: 20rem;
+  display: flex;
+  align-items: center;
+}
+.aboutImagesContainer {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+}
+.aboutImg1 {
+  width: 100%;
+}
+.aboutImg2 {
+  width: 50%;
+  position: absolute;
+  bottom: -5rem;
+  right: -3rem;
+}
+@media screen and (max-width: 1066px) {
+  .aboutImagesContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .aboutImg2 {
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+}
+@media screen and (max-width: 1066px) {
+  .aboutImg2 {
+    width: 100%;
+  }
+}
