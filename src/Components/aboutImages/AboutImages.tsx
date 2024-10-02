@@ -46,6 +46,7 @@ export default function AboutImages() {
               className={style.aboutImg1}
               src={firstImage.src}
               alt={firstImage.alt ?? t('alt.about')}
+              loading='lazy'
             />
           )}
           <img

@@ -14,6 +14,10 @@ export default function About() {
 
   const [t] = useTranslation('global');
 
+  const animationStyles = isTextArticleContainerRef
+    ? 'animate__animated animate__fadeInRight'
+    : '';
+
   return (
     <section className={style.mainContainer}>
       <img
@@ -24,11 +28,7 @@ export default function About() {
       <AboutImages />
       <article
         ref={textArticleContainerRef}
-        className={`${style.textArticleContainer} ${
-          isTextArticleContainerRef
-            ? 'animate__animated animate__fadeInRight'
-            : ''
-        }`}
+        className={`${style.textArticleContainer} ${animationStyles}`}
       >
         <div className={style.text}>
           <h1>{t('about.youre probably wondering...')}</h1>

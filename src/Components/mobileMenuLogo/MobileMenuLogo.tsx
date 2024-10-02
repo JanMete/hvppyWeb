@@ -18,14 +18,14 @@ export default function MobileMenuLogo({
 
   const image = data?.[0] ?? defaultImage;
   return (
-    <div className={`${style.logoContainer}`}>
-      <Link onClick={scrollToTopCloseMenu} to='/' className={style.logoLink}>
+    <Link onClick={scrollToTopCloseMenu} to='/' className={style.logoLink}>
+      <div className={`${style.logoContainer}`}>
         <img
           className={style.logoImg}
           src={image.src}
           alt={image.alt ?? t('alt.logo')}
         />
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

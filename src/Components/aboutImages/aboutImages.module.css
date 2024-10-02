@@ -9,10 +9,11 @@
   opacity: 0;
 }
 .aboutImg1 {
-  width: 100%;
+  width: 20rem;
+  height: auto;
 }
 .aboutImg2 {
-  width: 50%;
+  width: 10rem;
   position: absolute;
   bottom: -5rem;
   right: -3rem;
@@ -30,6 +31,6 @@
 }
 @media screen and (max-width: 1066px) {
   .aboutImg2 {
-    width: 100%;
+    width: 20rem;
   }
 }
