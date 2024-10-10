@@ -1,4 +1,7 @@
 .galleryContainer {
+  background-image: url('../../assets/Artwork Images/galleryBackground.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 6rem;
   padding-bottom: 2rem;
   display: flex;
@@ -7,15 +10,6 @@
   justify-content: center;
   position: relative;
   flex: 1;
-}
-.backgroundImg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
 }
 .photosContainer {
   width: 70%;

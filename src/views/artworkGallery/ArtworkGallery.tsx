@@ -3,7 +3,6 @@ import style from './artworkGallery.module.css';
 import { useGetGalleryImages } from '../../hooks/useGetGalleryImages';
 import ArtworkGalleryNav from '../../Components/artworkGalleryNav/ArtworkGalleryNav';
 import ArtworkGalleryImgColumn from '../../Components/artworkGalleryImgColumn/ArtworkGalleryImgColumn';
-import BACKGROUNDIMAGE from '../../assets/Artwork Images/galleryBackground.svg';
 import ArtworkGalleryScrollBtn from '../../Components/artworkGalleryScrollBtn/ArtworkGalleryScrollBtn';
 import LoaderErrorContainer from '../../Components/loaderErrorContainer/loaderErrorContainer';
 import Loader from '../../Components/loader/Loader';
@@ -42,11 +41,6 @@ export default function ArtworkGallery() {
 
   return (
     <section className={style.galleryContainer}>
-      <img
-        src={BACKGROUNDIMAGE}
-        className={style.backgroundImg}
-        alt='Background'
-      />
       <ArtworkGalleryNav />
       <article className={style.photosContainer}>
         <ArtworkGalleryImgColumn images={imagesToDisplay1} />

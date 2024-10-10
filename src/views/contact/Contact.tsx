@@ -1,7 +1,10 @@
+import React from 'react';
 import ContactForm from '../../Components/contactForm/ContactForm';
-import Location from '../../Components/location/Location';
 
 export default function Contact() {
+  const Location = React.lazy(
+    () => import('../../Components/location/Location')
+  );
   return (
     <>
       <ContactForm />
